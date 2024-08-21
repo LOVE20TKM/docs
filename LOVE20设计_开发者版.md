@@ -73,7 +73,11 @@ LOVE20 protocol is a decentralized community minting protocol based on LP govern
 
 - 环节：投票轮（第 1~7 天）
 
-  - 推举 VCA 提案：
+  - 质押获取治理权
+
+    - 质押 LP 和代币，以获得治理权
+
+  - VCA 提案推举：
 
     - 资格获取：持有不少于 0.5%的治理票
     - 推举限制：每轮只可推举一个提案
