@@ -16,3 +16,8 @@
    - 私有和内部变量：下划线开头
    - 入参如果有重名：下划线结尾
 4. 常量：全大写，单词间下划线
+
+合约函数顺序
+
+1. external、public、internal、private
+2. write 函数、read 函数
