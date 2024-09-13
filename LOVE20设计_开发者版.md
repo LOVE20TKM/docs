@@ -94,9 +94,7 @@ LOVE20 protocol is a decentralized community minting protocol based on LP govern
         - 资格类
 
           - 质押上限：
-          - 地址限定：填写合约白名单地址
-            - 不填写：任何地址都可以参与
-            - 填写：合约需包含 isValidAddress 函数，入参：地址、轮次、提案 id，返回：地址是否可参与行动
+          - 白名单：填写可参与行动的地址数组，不填写表示不限制
 
         - 验证类
 
