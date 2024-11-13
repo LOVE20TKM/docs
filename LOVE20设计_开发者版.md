@@ -1,7 +1,7 @@
 # 0. 什么是 LOVE20 协议
 
 LOVE20 协议是一个基于 LP 治理权和可验证共识行动的去中心化社群铸币协议。
-LOVE20 protocol is a decentralized community minting protocol based on LP governance rights and verifiable consensus action.
+LOVE20 protocol is a decentralized community token minting protocol based on LP governance rights and verifiable consensus action.
 
 希望能够通过这个协议，鼓励每个人，能够每天做 20 分钟自己真正喜欢的生活，以此获得精神上和物质上的富足。
 
