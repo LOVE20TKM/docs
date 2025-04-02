@@ -1,0 +1,22 @@
+title: LOVE20 协议
+description:
+theme: jekyll-theme-hacker
+
+# 网站导航
+nav:
+  - title: 首页
+    url: /
+  - title: 白皮书
+    url: /docs/whitepaper
+  - title: 常见问题
+    url: /docs/faq
+
+# 设置Markdown处理器
+markdown: kramdown
+
+# 排除不需要处理的文件和目录
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
