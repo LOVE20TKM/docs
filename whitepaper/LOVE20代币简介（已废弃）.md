@@ -1,5 +1,5 @@
 ---
-title: "LOVE20 代币简介"
+title: "LOVE20 代币简介（已废弃）"
 description: "LOVE20代币是LOVE20协议部署时自动创建的第一个代币"
 ---
 
