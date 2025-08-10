@@ -21,6 +21,7 @@ LOVE20 是一个开源的去中心化社群铸币协议。旨在让每一个人�
 
 - [去中心化前端](https://github.com/LOVE20TKM/interface)
 
-## 内测地址
+## 相关网址
 
-- [内测地址](https://love20tkm.github.io/interface/)
+- [正式地址](https://love20tkm.github.io/interface/)
+- [测试地址](https://love20tkm.github.io/interface-test/)
