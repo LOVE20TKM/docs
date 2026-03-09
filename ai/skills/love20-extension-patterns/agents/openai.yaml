@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Extension Patterns"
+  short_description: "Design and inspect LOVE20 extensions and factories"
+  default_prompt: "Use $love20-extension-patterns to design or inspect a LOVE20 extension, factory, or whitelist-based reward flow."

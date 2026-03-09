@@ -1,0 +1,26 @@
+# LOVE20 Glossary
+
+- LOVE20: A decentralized community minting protocol built around liquidity-backed governance and verifiable consensus actions.
+- Parent token: The token used to launch or back a child token.
+- Child token: A token launched from a parent token inside the LOVE20 token tree.
+- Fair launch: The initial 10 percent minting phase where users contribute the parent token and later claim allocation plus refund.
+- Parent pool: The floor pool inside `LOVE20Token` that accepts `burnForParentToken` redemptions.
+- SL stake: Liquidity stake that mints `SL` receipts and creates governance votes.
+- ST stake: Token-only stake that mints `ST` receipts and participates in boost rewards.
+- Phase: One of the three equal timing slices in the governance pipeline: submit and vote, action, or verify.
+- Business round: The whitepaper-level governance cycle that moves through submit and vote, action, then verify as a rolling pipeline.
+- Contract round: The value returned by `currentRound()` on a specific phase-aware contract. It increments every `phaseBlocks` on that contract and is offset by the contract's `originBlocks`.
+- Round: Unless stated otherwise, clarify whether you mean the business round or the contract-local round.
+- Rolling pipeline: Different rounds occupy different phases at the same time. LOVE20 should not be read as a single round finishing submit and vote, then action, then verify before the next round starts.
+- Governance votes: Voting power derived from valid SL stake and promised waiting phases.
+- Action: A community task proposal with title, verification rule, minimum stake, whitelist, random verifier cap, and verification info schema.
+- Submit: The first-phase act of creating or nominating an action for the current round.
+- Vote: The first-phase act of allocating governance weight across submitted actions in the current round.
+- `submit` vs `vote`: Both belong to the first phase. `submit` determines which actions are available to the round, while `vote` determines how governance support is distributed across them.
+- Join: The action-phase act of staking tokens into an action and updating verification info.
+- Verify: The verification-phase act of scoring randomly selected participants in actions that the governor voted for.
+- Mint: The post-verification reward preparation, reservation, burn, and claim flow for governance rewards and action rewards.
+- `phase` vs `round`: `phase` tells you which lifecycle slice is active. `round` must be read in context: whitepaper discussions usually mean the business round, while contract calls such as `currentRound()` mean the contract-local round on that exact contract.
+- Round offset: Core deployment staggers `originBlocks` so submit and vote start at `T0`, join and random at `T0 + phaseBlocks`, and verify at `T0 + 2 * phaseBlocks`. At the same wall-clock block, different contracts can therefore report different round numbers while still referring to the same rolling pipeline.
+- Extension action: An action whose whitelist points to an extension contract instead of regular user addresses.
+- Chain group: A LOVE20-related ERC721 identity system used by chain-group extensions.

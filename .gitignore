@@ -42,3 +42,4 @@ yarn-error.log*
 
 # Node.js依赖
 node_modules/ 
+*.pyc

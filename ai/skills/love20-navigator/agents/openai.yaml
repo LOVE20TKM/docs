@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Navigator"
+  short_description: "Map LOVE20 docs, repos, and sources of truth"
+  default_prompt: "Use $love20-navigator to locate the authoritative LOVE20 document, repository, or source file for a concept or workflow."

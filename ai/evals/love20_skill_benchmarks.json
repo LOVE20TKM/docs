@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "benchmarks": [
+    {
+      "id": "playbook-launch-child-token",
+      "title": "Build a concrete launch-token write playbook",
+      "primary_skill": "love20-contract-playbooks",
+      "secondary_skills": ["love20-core-protocol"],
+      "expected_output": "operation playbook",
+      "prompt": "我想让一个用户发起 LOVE20 子币公平发射。请给我精确的交互手册：需要哪些合约、函数、批准、前置条件、时间限制，以及能复用哪些 cast 脚本。",
+      "must_cover": [
+        "exact write surfaces",
+        "approvals and timing",
+        "existing cast scripts"
+      ]
+    },
+    {
+      "id": "playbook-mint-and-burn-rewards",
+      "title": "Build a reward mint and burn playbook",
+      "primary_skill": "love20-contract-playbooks",
+      "secondary_skills": ["love20-state-and-events"],
+      "expected_output": "contract interaction checklist",
+      "prompt": "请给我 LOVE20 奖励相关的合约交互手册，覆盖 gov reward、action reward、claim reward、burn overflow 这些路径，并说明要先读哪些状态再发交易。",
+      "must_cover": [
+        "mint and burn surfaces",
+        "viewer or state prerequisites",
+        "clear separation of reward paths"
+      ]
+    },
+    {
+      "id": "core-governance-lifecycle-explainer",
+      "title": "Explain the three-stage governance lifecycle",
+      "primary_skill": "love20-core-protocol",
+      "secondary_skills": ["love20-navigator"],
+      "expected_output": "mechanism explanation",
+      "prompt": "请解释 LOVE20 的三阶段治理生命周期，从 stake、submit、vote、join、verify、mint 一直到奖励兑现。要求同时说明协议意图和合约里的真实行为。",
+      "must_cover": [
+        "phase and round logic",
+        "key contracts or interfaces",
+        "docs and code comparison"
+      ]
+    },
+    {
+      "id": "core-parent-child-token-behavior",
+      "title": "Explain parent-child token relationship and burn path",
+      "primary_skill": "love20-core-protocol",
+      "secondary_skills": ["love20-contract-playbooks"],
+      "expected_output": "protocol explanation with caveats",
+      "prompt": "请解释 LOVE20 父子币关系、子币公平发射、以及 burn for parent token 这条路径。需要指出核心状态、主要接口和容易被文档误读的地方。",
+      "must_cover": [
+        "parent and child token model",
+        "burn or mint path semantics",
+        "specific core interfaces"
+      ]
+    },
+    {
+      "id": "extension-new-factory-integration",
+      "title": "Plan a new extension factory integration",
+      "primary_skill": "love20-extension-patterns",
+      "secondary_skills": ["love20-contract-playbooks"],
+      "expected_output": "implementation map",
+      "prompt": "如果我要新增一种 LOVE20 扩展行动工厂，并接到 ExtensionCenter，需要补哪些接口、注册点、权限和绑定关系？请按实现顺序说明。",
+      "must_cover": [
+        "ExtensionCenter integration points",
+        "factory or registration pattern",
+        "implementation order"
+      ]
+    },
+    {
+      "id": "extension-group-vs-lp-patterns",
+      "title": "Compare group and LP extension patterns",
+      "primary_skill": "love20-extension-patterns",
+      "secondary_skills": ["love20-state-and-events"],
+      "expected_output": "structured comparison",
+      "prompt": "请对比 LOVE20 的链群扩展和 LP 扩展：它们的 join token、验证方式、奖励路径、注册方式分别有什么不同？",
+      "must_cover": [
+        "group vs LP differences",
+        "join and reward model",
+        "extension files or examples"
+      ]
+    },
+    {
+      "id": "frontend-trace-token-stat-card",
+      "title": "Trace a token stats UI card to its data source",
+      "primary_skill": "love20-frontend-bridge",
+      "secondary_skills": ["love20-state-and-events"],
+      "expected_output": "frontend trace",
+      "prompt": "LOVE20 页面上某个 token 的统计卡片数据是从哪里来的？请从页面或 hook 一直追到 viewer/合约函数，并指出环境变量和 ABI 入口。",
+      "must_cover": [
+        "frontend hook chain",
+        "viewer or contract function",
+        "ABI or env binding"
+      ]
+    },
+    {
+      "id": "frontend-trace-stake-lp-flow",
+      "title": "Trace the stake-LP page flow from UI to contract",
+      "primary_skill": "love20-frontend-bridge",
+      "secondary_skills": ["love20-contract-playbooks"],
+      "expected_output": "UI-to-contract walkthrough",
+      "prompt": "请把 LOVE20 的 stake LP 页面交互链路讲清楚：页面读了什么状态、怎样检查 allowance、最后打到哪些 helper 或 core 合约。",
+      "must_cover": [
+        "page-level data flow",
+        "allowance checks",
+        "write target contracts"
+      ]
+    },
+    {
+      "id": "navigator-fair-launch-source-of-truth",
+      "title": "Locate source of truth for fair launch and claim delay",
+      "primary_skill": "love20-navigator",
+      "secondary_skills": ["love20-core-protocol"],
+      "expected_output": "short navigation answer",
+      "prompt": "LOVE20 的公平发射和 claim delay 到底应该先看哪些文档、哪些仓库、哪些源码入口？请给我 source of truth 顺序，并指出核心实现文件。",
+      "must_cover": [
+        "docs vs code hierarchy",
+        "specific repos or directories",
+        "exact file paths or entry files"
+      ]
+    },
+    {
+      "id": "navigator-routing-for-extension-question",
+      "title": "Route an extension-related question to the right repos",
+      "primary_skill": "love20-navigator",
+      "secondary_skills": ["love20-extension-patterns"],
+      "expected_output": "ordered navigation checklist",
+      "prompt": "如果我要回答“链群扩展的加入、验证、奖励分别在哪看”，应该先读 LOVE20 哪些仓库和文档？请按阅读顺序给我导航。",
+      "must_cover": [
+        "cross-repo reading order",
+        "extension-related source files",
+        "clear distinction between docs and implementation"
+      ]
+    },
+    {
+      "id": "prompts-rewrite-vague-state-question",
+      "title": "Rewrite a vague state question into a precise prompt",
+      "primary_skill": "love20-prompts",
+      "secondary_skills": ["love20-state-and-events"],
+      "expected_output": "reusable prompt",
+      "prompt": "帮我把这个模糊问题改写成适合另一个 AI Agent 的 prompt：‘帮我看看 LOVE20 页面上这个数是怎么来的。’要求 prompt 里明确该查哪些锚点、证据和输出格式。",
+      "must_cover": [
+        "prompt rewrite",
+        "evidence requirements",
+        "companion skill suggestion"
+      ]
+    },
+    {
+      "id": "prompts-split-broad-request",
+      "title": "Split a broad LOVE20 ask into smaller prompts",
+      "primary_skill": "love20-prompts",
+      "secondary_skills": [
+        "love20-core-protocol",
+        "love20-contract-playbooks",
+        "love20-runbooks"
+      ],
+      "expected_output": "prompt set",
+      "prompt": "把这个大需求拆成 3 个更精确的 LOVE20 prompts：‘帮我理解这个协议、告诉我怎么交互、顺便排查页面为什么失败。’每个 prompt 都要说明适合搭配哪个 LOVE20 skill。",
+      "must_cover": [
+        "prompt splitting",
+        "task decomposition",
+        "skill routing guidance"
+      ]
+    },
+    {
+      "id": "runbook-eth-contribute-invalid-recipient",
+      "title": "Troubleshoot contribute-with-ETH invalid recipient failure",
+      "primary_skill": "love20-runbooks",
+      "secondary_skills": ["love20-contract-playbooks"],
+      "expected_output": "debug checklist",
+      "prompt": "LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 `Invalid recipient address`。请给我最短的排查路径和该先看的测试/合约文件。",
+      "must_cover": [
+        "wrapper-layer failure classification",
+        "relevant tests",
+        "first checks to confirm cause"
+      ]
+    },
+    {
+      "id": "runbook-group-name-invisible-space",
+      "title": "Troubleshoot group name invisible whitespace failure",
+      "primary_skill": "love20-runbooks",
+      "secondary_skills": ["love20-selectors-and-errors"],
+      "expected_output": "troubleshooting answer",
+      "prompt": "用户创建 LOVE20 链群时说“名字里明明没有空格”，但交易失败。请按最短路径帮我排查，重点看 Unicode whitespace 这类问题。",
+      "must_cover": [
+        "group runbook",
+        "unicode whitespace edge case",
+        "relevant test files"
+      ]
+    },
+    {
+      "id": "selectors-decode-custom-error",
+      "title": "Decode a custom error selector",
+      "primary_skill": "love20-selectors-and-errors",
+      "secondary_skills": ["love20-runbooks"],
+      "expected_output": "selector decoding answer",
+      "prompt": "我有一个 LOVE20 回滚选择器 `0xa748da06`。请告诉我它对应什么错误、可能来自哪些合约、前端会怎么翻译它。",
+      "must_cover": [
+        "custom error selector decoding",
+        "candidate contracts",
+        "frontend mapping layer"
+      ]
+    },
+    {
+      "id": "selectors-map-chinese-error-message",
+      "title": "Map a Chinese UI error message back to source",
+      "primary_skill": "love20-selectors-and-errors",
+      "secondary_skills": ["love20-frontend-bridge"],
+      "expected_output": "error mapping explanation",
+      "prompt": "LOVE20 前端报了“链上交易失败，流动性不足，请稍后重试”这种中文消息。请倒查它来自 parser 的哪条规则、哪类原始错误、以及相关 ABI/合约范围。",
+      "must_cover": [
+        "frontend parser heuristic",
+        "raw error category",
+        "ABI or contract scope"
+      ]
+    },
+    {
+      "id": "state-govdata-read-path",
+      "title": "Find the current govData read path",
+      "primary_skill": "love20-state-and-events",
+      "secondary_skills": ["love20-frontend-bridge"],
+      "expected_output": "state-source mapping",
+      "prompt": "我想查 LOVE20 当前某个 token 的 govData 在哪里读、前端哪个 hook 会用到、页面上的治理占比是怎么拼出来的。",
+      "must_cover": [
+        "viewer truth source",
+        "frontend hook chain",
+        "current state vs derived metric"
+      ]
+    },
+    {
+      "id": "state-reward-and-flow-history",
+      "title": "Find indexed queries for reward and flow history",
+      "primary_skill": "love20-state-and-events",
+      "secondary_skills": ["love20-runbooks"],
+      "expected_output": "indexed-query answer",
+      "prompt": "我想看 LOVE20 最近 30 轮的奖励地址数和 TUSDT 流入流出走势，应该用哪些 SQLite views 和 stat SQL？如果页面和链上状态对不上，又该怎么解释？",
+      "must_cover": [
+        "SQL views or stat queries",
+        "log_round vs current state distinction",
+        "indexing caveats"
+      ]
+    }
+  ]
+}

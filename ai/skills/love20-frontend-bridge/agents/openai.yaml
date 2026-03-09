@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Frontend Bridge"
+  short_description: "Trace LOVE20 UI behavior to contracts and data"
+  default_prompt: "Use $love20-frontend-bridge to trace a LOVE20 frontend behavior to wagmi hooks, ABIs, viewers, and contract calls."

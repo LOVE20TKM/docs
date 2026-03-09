@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Contract Playbooks"
+  short_description: "Find LOVE20 calls, viewers, and interaction scripts"
+  default_prompt: "Use $love20-contract-playbooks to identify the contracts, functions, viewers, and cast scripts needed for a LOVE20 operation."

@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "run_name": "demo-three-states",
+  "created_at": "2026-03-07T11:24:49.190874+00:00",
+  "benchmark_file": "docs/ai/evals/love20_skill_benchmarks.json",
+  "results": [
+    {
+      "id": "navigator-fair-launch-source-of-truth",
+      "selected_skills": ["love20-navigator"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case1.pass.md",
+      "cited_files": [
+        "docs/whitepaper/LOVE20协议设计.md",
+        "docs/ai/skills/love20-navigator/references/source-of-truth.md",
+        "core/src/interfaces/ILOVE20Launch.sol",
+        "core/src/LOVE20Launch.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "docs vs code hierarchy": true,
+          "specific repos or directories": true,
+          "exact file paths or entry files": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case"
+      }
+    },
+    {
+      "id": "navigator-routing-for-extension-question",
+      "selected_skills": ["love20-navigator"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case2.review.md",
+      "cited_files": [
+        "docs/ai/skills/love20-navigator/references/repo-index.md",
+        "extension/README.md",
+        "group/README.md"
+      ],
+      "judgement": {
+        "must_cover": {
+          "cross-repo reading order": true,
+          "extension-related source files": false,
+          "clear distinction between docs and implementation": false
+        },
+        "output_shape_match": true,
+        "notes": "demo REVIEW case: routing hit, but coverage is too shallow"
+      }
+    },
+    {
+      "id": "core-governance-lifecycle-explainer",
+      "selected_skills": ["love20-core-protocol"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case3.incomplete.md",
+      "cited_files": [
+        "docs/whitepaper/LOVE20协议设计.md",
+        "core/src/interfaces/IPhase.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "phase and round logic": null,
+          "key contracts or interfaces": null,
+          "docs and code comparison": null
+        },
+        "output_shape_match": null,
+        "notes": "demo INCOMPLETE case: response exists, but judgement has not been filled yet"
+      }
+    },
+    {
+      "id": "core-parent-child-token-behavior",
+      "selected_skills": ["love20-core-protocol"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case13.core-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-core-protocol/references/protocol-overview.md",
+        "core/src/interfaces/ILOVE20Launch.sol",
+        "core/src/interfaces/ILOVE20Token.sol",
+        "core/src/LOVE20TokenFactory.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "parent and child token model": true,
+          "burn or mint path semantics": true,
+          "specific core interfaces": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for parent-child token explanation"
+      }
+    },
+    {
+      "id": "playbook-launch-child-token",
+      "selected_skills": ["love20-contract-playbooks"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case4.playbook-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-contract-playbooks/references/operation-playbooks.md",
+        "docs/ai/skills/love20-contract-playbooks/references/prerequisites-and-timing.md",
+        "docs/ai/skills/love20-contract-playbooks/references/cast-script-index.md",
+        "core/src/interfaces/ILOVE20Launch.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "exact write surfaces": true,
+          "approvals and timing": true,
+          "existing cast scripts": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for contract playbook"
+      }
+    },
+    {
+      "id": "playbook-mint-and-burn-rewards",
+      "selected_skills": ["love20-contract-playbooks"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case14.mint-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-contract-playbooks/references/operation-playbooks.md",
+        "docs/ai/skills/love20-contract-playbooks/references/cast-script-index.md",
+        "core/src/interfaces/ILOVE20Mint.sol",
+        "periphery/src/LOVE20MintViewer.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "mint and burn surfaces": true,
+          "viewer or state prerequisites": true,
+          "clear separation of reward paths": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for reward playbook"
+      }
+    },
+    {
+      "id": "extension-new-factory-integration",
+      "selected_skills": ["love20-extension-patterns"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case7.extension-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-extension-patterns/references/extension-framework.md",
+        "docs/ai/skills/love20-extension-patterns/references/extension-examples.md",
+        "extension/src/interface/IExtensionCenter.sol",
+        "extension/src/ExtensionCenter.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "ExtensionCenter integration points": true,
+          "factory or registration pattern": true,
+          "implementation order": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for extension integration"
+      }
+    },
+    {
+      "id": "extension-group-vs-lp-patterns",
+      "selected_skills": ["love20-extension-patterns"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case15.extension-compare-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-extension-patterns/references/extension-examples.md",
+        "extension-lp/src/ExtensionLp.sol",
+        "extension-group/src/ExtensionGroupAction.sol",
+        "extension-group/src/GroupJoin.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "group vs LP differences": true,
+          "join and reward model": true,
+          "extension files or examples": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for extension comparison"
+      }
+    },
+    {
+      "id": "frontend-trace-token-stat-card",
+      "selected_skills": ["love20-frontend-bridge"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case10.frontend-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-frontend-bridge/references/frontend-map.md",
+        "docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md",
+        "periphery/src/LOVE20TokenViewer.sol",
+        "interface/src/hooks/contracts/useLOVE20TokenViewer.ts"
+      ],
+      "judgement": {
+        "must_cover": {
+          "frontend hook chain": true,
+          "viewer or contract function": true,
+          "ABI or env binding": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for frontend trace"
+      }
+    },
+    {
+      "id": "frontend-trace-stake-lp-flow",
+      "selected_skills": ["love20-frontend-bridge"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case16.frontend-stake-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md",
+        "docs/ai/skills/love20-contract-playbooks/references/periphery-and-viewers.md",
+        "interface/src/hooks/composite/useStakeLpPageData.ts",
+        "periphery/src/LOVE20Hub.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "page-level data flow": true,
+          "allowance checks": true,
+          "write target contracts": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for stake LP frontend trace"
+      }
+    },
+    {
+      "id": "selectors-decode-custom-error",
+      "selected_skills": ["love20-selectors-and-errors"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case6.selector-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-selectors-and-errors/references/generated-error-selector-index.md",
+        "docs/ai/skills/love20-selectors-and-errors/references/decoding-workflow.md",
+        "interface/src/errors/contractErrorParser.ts",
+        "interface/src/errors/unifiedErrorMap.ts"
+      ],
+      "judgement": {
+        "must_cover": {
+          "custom error selector decoding": true,
+          "candidate contracts": true,
+          "frontend mapping layer": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for selector decoding"
+      }
+    },
+    {
+      "id": "selectors-map-chinese-error-message",
+      "selected_skills": ["love20-selectors-and-errors"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case12.selector-ui-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-selectors-and-errors/references/source-files.md",
+        "interface/src/errors/contractErrorParser.ts",
+        "interface/src/errors/unifiedErrorMap.ts",
+        "interface/src/errors/errorMessages.ts"
+      ],
+      "judgement": {
+        "must_cover": {
+          "frontend parser heuristic": true,
+          "raw error category": true,
+          "ABI or contract scope": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for Chinese error mapping"
+      }
+    },
+    {
+      "id": "runbook-eth-contribute-invalid-recipient",
+      "selected_skills": ["love20-runbooks"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case8.runbook-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-runbooks/references/evidence-sources.md",
+        "docs/ai/skills/love20-runbooks/references/launch-and-stake-runbooks.md",
+        "periphery/test/LOVE20Hub.contributeWithETH.t.sol",
+        "periphery/src/LOVE20Hub.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "wrapper-layer failure classification": true,
+          "relevant tests": true,
+          "first checks to confirm cause": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for wrapper triage"
+      }
+    },
+    {
+      "id": "runbook-group-name-invisible-space",
+      "selected_skills": ["love20-runbooks"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case17.runbook-group-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-runbooks/references/extensions-and-groups-runbooks.md",
+        "group/test/UnicodeWhitespaceTest.t.sol",
+        "group/test/LOVE20Group.t.sol"
+      ],
+      "judgement": {
+        "must_cover": {
+          "group runbook": true,
+          "unicode whitespace edge case": true,
+          "relevant test files": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for Unicode whitespace triage"
+      }
+    },
+    {
+      "id": "state-govdata-read-path",
+      "selected_skills": ["love20-state-and-events"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case5.state-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-state-and-events/references/entity-lookup-playbooks.md",
+        "docs/ai/skills/love20-state-and-events/references/generated-state-event-index.md",
+        "periphery/src/LOVE20RoundViewer.sol",
+        "interface/src/hooks/composite/useMyGovData.ts"
+      ],
+      "judgement": {
+        "must_cover": {
+          "viewer truth source": true,
+          "frontend hook chain": true,
+          "current state vs derived metric": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for state read path"
+      }
+    },
+    {
+      "id": "state-reward-and-flow-history",
+      "selected_skills": ["love20-state-and-events"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case11.history-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-state-and-events/references/event-and-indexing.md",
+        "docs/ai/skills/love20-state-and-events/references/generated-state-event-index.md",
+        "script/script/log/sql/stat/flow.sql",
+        "script/script/log/sql/init/02_views.sql"
+      ],
+      "judgement": {
+        "must_cover": {
+          "SQL views or stat queries": true,
+          "log_round vs current state distinction": true,
+          "indexing caveats": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for history indexing"
+      }
+    },
+    {
+      "id": "prompts-rewrite-vague-state-question",
+      "selected_skills": ["love20-prompts"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case9.prompt-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-prompts/references/prompt-selection.md",
+        "docs/ai/skills/love20-prompts/references/interaction-state-and-debug-prompts.md",
+        "docs/ai/skills/love20-state-and-events/SKILL.md",
+        "docs/ai/skills/love20-frontend-bridge/SKILL.md"
+      ],
+      "judgement": {
+        "must_cover": {
+          "prompt rewrite": true,
+          "evidence requirements": true,
+          "companion skill suggestion": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for prompt rewrite"
+      }
+    },
+    {
+      "id": "prompts-split-broad-request",
+      "selected_skills": ["love20-prompts"],
+      "response_file": "docs/ai/evals/runs/demo-three-states.case18.prompts-split-pass.md",
+      "cited_files": [
+        "docs/ai/skills/love20-prompts/references/prompt-selection.md",
+        "docs/ai/skills/love20-prompts/references/interaction-state-and-debug-prompts.md",
+        "docs/ai/skills/love20-prompts/references/protocol-and-architecture-prompts.md"
+      ],
+      "judgement": {
+        "must_cover": {
+          "prompt splitting": true,
+          "task decomposition": true,
+          "skill routing guidance": true
+        },
+        "output_shape_match": true,
+        "notes": "demo PASS case for prompt splitting"
+      }
+    }
+  ]
+}

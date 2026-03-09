@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Selectors & Errors"
+  short_description: "Decode LOVE20 selectors, errors, and event topics"
+  default_prompt: "Use $love20-selectors-and-errors to decode a LOVE20 function selector, custom error, or event topic and trace it back to the relevant contract or frontend error map."

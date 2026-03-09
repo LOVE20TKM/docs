@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Runbooks"
+  short_description: "Troubleshoot LOVE20 flows, failures, and operator checks"
+  default_prompt: "Use $love20-runbooks to troubleshoot a LOVE20 launch, stake, action, extension, or frontend failure and list the fastest checks to run next."

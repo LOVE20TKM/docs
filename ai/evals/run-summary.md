@@ -1,0 +1,11 @@
+# LOVE20 Skill Run Summary
+
+| Run | Cases | Pass | Review | Incomplete | Complete | Primary Skill Hit | Cited Files | Must Cover | Output Shape |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `demo-three-states`<br>`docs/ai/evals/runs/demo-three-states.json`<br>[report](ai/evals/runs/demo-three-states.report.md)<br>[todo](ai/evals/runs/demo-three-states.todo.md) | 18 | 16 | 1 | 1 | 17 | 18/18 | 18/18 | 91% | 17/17 |
+| `demo-walkthrough`<br>`docs/ai/evals/runs/demo-walkthrough.json`<br>[report](ai/evals/runs/demo-walkthrough.report.md) | 18 | 18 | 0 | 0 | 18 | 18/18 | 18/18 | 100% | 18/18 |
+
+## Notes
+
+- `demo-walkthrough` should stay as the all-PASS ideal-answer baseline.
+- `demo-three-states` should keep at least one REVIEW and one INCOMPLETE case.

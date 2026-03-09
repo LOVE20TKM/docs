@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Prompts"
+  short_description: "Template prompts for LOVE20 analysis and execution"
+  default_prompt: "Use $love20-prompts to frame a LOVE20 protocol, contract, state, or troubleshooting request into a precise prompt with the right evidence requirements."
