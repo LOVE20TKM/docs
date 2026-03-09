@@ -25,7 +25,8 @@ def load_json(path: Path) -> dict:
 
 def display_run_file(repo_root: Path, run_file: Path) -> str:
     try:
-        return f"docs/{run_file.relative_to(repo_root)}"
+        relative = run_file.relative_to(repo_root).as_posix()
+        return relative if relative.startswith("docs/") else f"docs/{relative}"
     except ValueError:
         return str(run_file)
 

@@ -97,5 +97,6 @@
 - Repo: `script`
 - There is no single unit-test gate. Validate by:
   cast query scripts in `script/script/cast/*`,
-  network param files in `script/script/network/*`,
+  canonical repo-local network files in `*/script/network/<network>/*.params`,
+  `script/script/network/*` only when validating mirror or export consumers,
   and log refresh flow in `script/script/log/one_click_process.sh`

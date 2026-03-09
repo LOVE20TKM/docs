@@ -23,6 +23,13 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def cited_file_exists(repo_root: Path, path_str: str) -> bool:
+    path = Path(path_str)
+    if not path.is_absolute():
+        path = repo_root / path
+    return path.exists()
+
+
 def bool_count(values: list[bool | None]) -> tuple[int, int]:
     considered = [value for value in values if value is not None]
     return sum(1 for value in considered if value), len(considered)
@@ -30,7 +37,8 @@ def bool_count(values: list[bool | None]) -> tuple[int, int]:
 
 def display_run_file(repo_root: Path, run_file: Path) -> str:
     try:
-        return f"docs/{run_file.relative_to(repo_root)}"
+        relative = run_file.relative_to(repo_root).as_posix()
+        return relative if relative.startswith("docs/") else f"docs/{relative}"
     except ValueError:
         return str(run_file)
 
@@ -85,11 +93,17 @@ def render_report(repo_root: Path, run_file: Path, run_data: dict, benchmark_dat
     for case in results:
         benchmark = benchmark_by_id[case["id"]]
         status, warnings, must_cover_hit, must_cover_total = case_status(case, benchmark)
+        cited_files = case.get("cited_files", [])
+        missing_cited_files = [path for path in cited_files if not cited_file_exists(repo_root, path)]
+        if missing_cited_files:
+            warnings = [*warnings, f"missing cited files: {len(missing_cited_files)}"]
+            if status == "PASS":
+                status = "REVIEW"
         total_must_cover_hit += must_cover_hit
         total_must_cover += must_cover_total
         if benchmark["primary_skill"] in case.get("selected_skills", []):
             primary_hits += 1
-        if case.get("cited_files"):
+        if cited_files and not missing_cited_files:
             cited_complete += 1
         if status != "INCOMPLETE":
             complete_cases += 1
@@ -104,6 +118,7 @@ def render_report(repo_root: Path, run_file: Path, run_data: dict, benchmark_dat
                 "warnings": warnings,
                 "must_cover_hit": must_cover_hit,
                 "must_cover_total": must_cover_total,
+                "missing_cited_files": missing_cited_files,
             }
         )
 
@@ -161,7 +176,8 @@ def render_report(repo_root: Path, run_file: Path, run_data: dict, benchmark_dat
         if cited_files:
             lines.append("- Cited files:")
             for path in cited_files:
-                lines.append(f"  - ok: `{path}`")
+                label = "ok" if cited_file_exists(repo_root, path) else "missing"
+                lines.append(f"  - {label}: `{path}`")
         else:
             lines.append("- Cited files: _none_")
         if row["warnings"]:
@@ -181,9 +197,8 @@ def main() -> int:
     run_file = Path(args.run_file).resolve()
     run_data = load_json(run_file)
 
-    repo_root = Path(__file__).resolve().parents[2]
-    benchmark_rel = run_data["benchmark_file"].replace("docs/", "", 1)
-    benchmark_file = (repo_root / benchmark_rel).resolve()
+    repo_root = Path(__file__).resolve().parents[3]
+    benchmark_file = (repo_root / run_data["benchmark_file"]).resolve()
     benchmark_data = load_json(benchmark_file)
 
     output = Path(args.output).resolve() if args.output else run_file.with_suffix(".report.md")

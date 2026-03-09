@@ -16,8 +16,17 @@
   `extension/script/deploy/*`,
   `extension-lp/script/deploy/*`,
   `extension-group/script/deploy/*`,
+  `group/script/deploy/*`,
   `periphery/script/deploy/*`
-- High-value shared network files:
+- Canonical repo-local network files:
+  `core/script/network/<network>/address.params`,
+  `extension/script/network/<network>/address.extension.center.params`,
+  `extension-lp/script/network/<network>/address.extension.lp.params`,
+  `extension-group/script/network/<network>/address.extension.group.params`,
+  `group/script/network/<network>/address.group.params`,
+  `periphery/script/network/<network>/address.params`,
+  `periphery/script/network/<network>/address.core.params`
+- `script` repo network files are mirrors or consumers for interaction and export flows:
   `script/script/network/<network>/*.params`,
   `script/script/network/<network>/contracts.json`
 

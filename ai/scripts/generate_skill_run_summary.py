@@ -27,6 +27,13 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def cited_file_exists(repo_root: Path, path_str: str) -> bool:
+    path = Path(path_str)
+    if not path.is_absolute():
+        path = repo_root / path
+    return path.exists()
+
+
 def bool_count(values: list[bool | None]) -> tuple[int, int]:
     considered = [value for value in values if value is not None]
     return sum(1 for value in considered if value), len(considered)
@@ -68,8 +75,7 @@ def case_status(case: dict, benchmark: dict) -> tuple[str, list[str], int, int]:
 
 def summarize_run(run_file: Path, repo_root: Path) -> dict[str, object]:
     run_data = load_json(run_file)
-    benchmark_rel = run_data["benchmark_file"].replace("docs/", "", 1)
-    benchmark_file = (repo_root / benchmark_rel).resolve()
+    benchmark_file = (repo_root / run_data["benchmark_file"]).resolve()
     benchmark_data = load_json(benchmark_file)
     benchmark_by_id = {item["id"]: item for item in benchmark_data["benchmarks"]}
 
@@ -85,12 +91,16 @@ def summarize_run(run_file: Path, repo_root: Path) -> dict[str, object]:
 
     for case in run_data["results"]:
         benchmark = benchmark_by_id[case["id"]]
-        status, _, must_cover_hit, must_cover_total = case_status(case, benchmark)
+        status, warnings, must_cover_hit, must_cover_total = case_status(case, benchmark)
+        cited_files = case.get("cited_files", [])
+        missing_cited_files = [path for path in cited_files if not cited_file_exists(repo_root, path)]
+        if missing_cited_files and status == "PASS":
+            status = "REVIEW"
         total_must_cover_hit += must_cover_hit
         total_must_cover += must_cover_total
         if benchmark["primary_skill"] in case.get("selected_skills", []):
             primary_hits += 1
-        if case.get("cited_files"):
+        if cited_files and not missing_cited_files:
             cited_complete += 1
         if status != "INCOMPLETE":
             complete_cases += 1
@@ -121,7 +131,8 @@ def summarize_run(run_file: Path, repo_root: Path) -> dict[str, object]:
     }
 
 
-def render_summary(repo_root: Path, run_summaries: list[dict[str, object]]) -> str:
+def render_summary(repo_root: Path, output_file: Path, run_summaries: list[dict[str, object]]) -> str:
+    output_dir = output_file.parent
     lines = [
         "# LOVE20 Skill Run Summary",
         "",
@@ -134,12 +145,13 @@ def render_summary(repo_root: Path, run_summaries: list[dict[str, object]]) -> s
         report_file = run_file.with_suffix(".report.md")
         todo_file = run_file.with_suffix(".todo.md")
         run_label = f"`{summary['run_name']}`"
-        run_ref = f"`docs/{run_file.relative_to(repo_root)}`"
+        run_relative = run_file.relative_to(repo_root).as_posix()
+        run_ref = f"`{run_relative if run_relative.startswith('docs/') else f'docs/{run_relative}'}`"
         links = [run_ref]
         if report_file.exists():
-            links.append(f"[report]({report_file.relative_to(repo_root).as_posix()})")
+            links.append(f"[report]({report_file.relative_to(output_dir).as_posix()})")
         if todo_file.exists():
-            links.append(f"[todo]({todo_file.relative_to(repo_root).as_posix()})")
+            links.append(f"[todo]({todo_file.relative_to(output_dir).as_posix()})")
         run_text = f"{run_label}<br>{'<br>'.join(links)}"
         lines.append(
             "| "
@@ -169,23 +181,23 @@ def render_summary(repo_root: Path, run_summaries: list[dict[str, object]]) -> s
 
 def main() -> int:
     args = parse_args()
-    repo_root = Path(__file__).resolve().parents[2]
+    repo_root = Path(__file__).resolve().parents[3]
     runs_dir = (
         Path(args.runs_dir).resolve()
         if args.runs_dir
-        else (repo_root / "ai" / "evals" / "runs").resolve()
+        else (repo_root / "docs" / "ai" / "evals" / "runs").resolve()
     )
     output = (
         Path(args.output).resolve()
         if args.output
-        else (repo_root / "ai" / "evals" / "run-summary.md").resolve()
+        else (repo_root / "docs" / "ai" / "evals" / "run-summary.md").resolve()
     )
 
     run_summaries = [
         summarize_run(run_file, repo_root)
         for run_file in sorted(runs_dir.glob("*.json"))
     ]
-    output.write_text(render_summary(repo_root, run_summaries), encoding="utf-8")
+    output.write_text(render_summary(repo_root, output, run_summaries), encoding="utf-8")
     return 0
 
 
