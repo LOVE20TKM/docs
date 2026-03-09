@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Extension Development"
+  short_description: "Build LOVE20 extension contracts, factories, and tests"
+  default_prompt: "Use $love20-extension-dev to implement or modify a LOVE20 extension, derivative protocol, factory, test, or integration flow."

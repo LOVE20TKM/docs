@@ -23,7 +23,7 @@ Use this skill to choose the right LOVE20 source before answering in detail.
 
 Before routing, classify the request on these axes:
 
-1. Intent: explain, operate, inspect state, decode, debug, or update docs.
+1. Intent: explain, operate, inspect state, decode, debug, develop, integrate, validate, release, or update docs.
 2. Surface: base LOVE20, extension, extension-lp, extension-group, group, or frontend adapter.
 3. Timing: business round in the whitepaper, or contract-local `currentRound()` on a named contract.
 4. Authority: design intent, deployed contract behavior, adapter behavior, or indexed history.
@@ -35,11 +35,15 @@ If any axis is ambiguous, say which assumption you are making before routing dee
 
 - Continue with `docs/ai/skills/love20-core-protocol/SKILL.md` for protocol mechanics, round flow, staking, submit-and-vote flow, verification, or minting questions.
 - Continue with `docs/ai/skills/love20-contract-playbooks/SKILL.md` for concrete calls, scripts, viewer contracts, or step-by-step interaction tasks.
-- Continue with `docs/ai/skills/love20-extension-patterns/SKILL.md` for extension, LP extension, or chain-group extension work.
+- Continue with `docs/ai/skills/love20-extension-patterns/SKILL.md` for extension, LP extension, or chain-group extension design and behavior questions.
+- Continue with `docs/ai/skills/love20-extension-dev/SKILL.md` for implementing or modifying extension, LP extension, chain-group extension, or derivative protocol contracts, factories, tests, or integration wiring.
 - Continue with `docs/ai/skills/love20-frontend-bridge/SKILL.md` for UI, wagmi hooks, ABI loading, or frontend tracing.
+- Continue with `docs/ai/skills/love20-frontend-dev/SKILL.md` for building or modifying LOVE20 pages, components, hooks, extension registration, or transaction flows.
+- Continue with `docs/ai/skills/love20-integration-dev/SKILL.md` for cross-repo wiring across contracts, viewers, scripts, env files, and frontend hooks.
 - Continue with `docs/ai/skills/love20-state-and-events/SKILL.md` for viewer reads, hook-to-contract tracing, SQL views, event indexing, or state lookup tasks.
 - Continue with `docs/ai/skills/love20-selectors-and-errors/SKILL.md` for selector decoding, event topic lookup, custom error mapping, or frontend error translation questions.
 - Continue with `docs/ai/skills/love20-runbooks/SKILL.md` for troubleshooting, failure classification, shortest debug path, or "what should I check first" requests.
+- Continue with `docs/ai/skills/love20-test-and-release/SKILL.md` for test planning, regression scope, deployment checks, release signoff, or post-release verification.
 - Continue with `docs/ai/skills/love20-prompts/SKILL.md` when the user wants to rewrite, split, or tighten a LOVE20 prompt for another AI agent.
 - For "what phase is this" or "how is round computed" questions, start with `docs/ai/skills/love20-core-protocol/SKILL.md`, then use `docs/ai/skills/love20-state-and-events/SKILL.md` if the issue is about viewer data or indexed history.
 

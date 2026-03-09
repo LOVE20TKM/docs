@@ -9,13 +9,17 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 | --- | ---: |
 | `love20-contract-playbooks` | 2 |
 | `love20-core-protocol` | 2 |
+| `love20-extension-dev` | 2 |
 | `love20-extension-patterns` | 2 |
 | `love20-frontend-bridge` | 2 |
+| `love20-frontend-dev` | 2 |
+| `love20-integration-dev` | 2 |
 | `love20-navigator` | 2 |
 | `love20-prompts` | 2 |
 | `love20-runbooks` | 2 |
 | `love20-selectors-and-errors` | 2 |
 | `love20-state-and-events` | 2 |
+| `love20-test-and-release` | 2 |
 
 ## love20-contract-playbooks
 
@@ -79,6 +83,37 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - specific core interfaces
 
 
+## love20-extension-dev
+
+### Plan a new token-join extension implementation
+
+- `id`: `extension-dev-new-token-join-flow`
+- Secondary skills: `love20-extension-patterns`, `love20-contract-playbooks`
+- Expected output: implementation plan with file edits
+- Prompt:
+
+> 如果我要新增一个 LOVE20 扩展协议，要求用户质押某种 ERC20 参与行动并按自定义权重分配奖励，请按开发顺序告诉我该改哪些合约、工厂、测试和部署脚本，并指出最接近的现有实现。
+
+- Must cover:
+- closest base class or repo
+- contract factory script test file plan
+- acceptance or verification checks
+
+### Extend a group-based extension write surface
+
+- `id`: `extension-dev-group-write-surface`
+- Secondary skills: `love20-frontend-dev`
+- Expected output: development walkthrough
+- Prompt:
+
+> 我要给 LOVE20 链群服务扩展增加一个新的链上写入口。请说明应该从哪些合约、接口、测试和前端联调点入手，避免只停留在架构说明。
+
+- Must cover:
+- group extension source files
+- interface or test updates
+- frontend handoff points
+
+
 ## love20-extension-patterns
 
 ### Plan a new extension factory integration
@@ -139,6 +174,68 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - page-level data flow
 - allowance checks
 - write target contracts
+
+
+## love20-frontend-dev
+
+### Implement a new extension plugin in the dApp
+
+- `id`: `frontend-dev-new-extension-plugin`
+- Secondary skills: `love20-frontend-bridge`, `love20-extension-dev`
+- Expected output: file-level implementation map
+- Prompt:
+
+> 如果我要把一种新的 LOVE20 扩展协议接入前端，需要补哪些页面、组件、hook、ABI、配置和环境变量？请按实际开发顺序给我文件级改动地图。
+
+- Must cover:
+- extension registration surfaces
+- component and hook plan
+- env or ABI updates
+
+### Add a new frontend write flow
+
+- `id`: `frontend-dev-new-write-page`
+- Secondary skills: `love20-contract-playbooks`
+- Expected output: frontend development checklist
+- Prompt:
+
+> 我要在 LOVE20 前端新增一个链上写操作页面，复用现有 wagmi 和 universal transaction 模式。请指出应该从哪个页面模板起步、写哪个 hook、如何接 ABI 和地址、最后怎么做 build 验证。
+
+- Must cover:
+- route component hook chain
+- useUniversalTransaction write path
+- build or acceptance verification
+
+
+## love20-integration-dev
+
+### Wire a new extension end to end
+
+- `id`: `integration-dev-extension-end-to-end`
+- Secondary skills: `love20-extension-dev`, `love20-frontend-dev`
+- Expected output: cross-repo integration plan
+- Prompt:
+
+> 一个新的 LOVE20 扩展协议合约已经写好了。现在要把它接到部署脚本、network 地址文件、script 交互、viewer 或前端里。请按跨仓库实际顺序给我 integration 方案，指出哪些文件必须保持同步。
+
+- Must cover:
+- behavior owner and downstream repos
+- abi address env sync points
+- end-to-end verification path
+
+### Sync a new read surface across viewers and logs
+
+- `id`: `integration-dev-viewer-and-log-sync`
+- Secondary skills: `love20-state-and-events`
+- Expected output: integration checklist
+- Prompt:
+
+> 如果 LOVE20 新增了一个需要前端展示的状态字段，除了改合约本身，还要怎样把 periphery viewer、script 日志导出、以及前端读取链路串起来？请给我集成检查清单。
+
+- Must cover:
+- periphery or viewer layer
+- script log or export layer
+- frontend hook or env layer
 
 
 ## love20-navigator
@@ -294,3 +391,34 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - SQL views or stat queries
 - log_round vs current state distinction
 - indexing caveats
+
+
+## love20-test-and-release
+
+### Choose the minimum checks for an extension change
+
+- `id`: `test-release-extension-change-matrix`
+- Secondary skills: `love20-extension-dev`
+- Expected output: test and release matrix
+- Prompt:
+
+> 如果我刚改了 LOVE20 的 extension-lp 合约和对应前端接入，合并前和发布前最少应该跑哪些测试、build、部署检查和上线后验证？请给我最小充分矩阵。
+
+- Must cover:
+- repo-specific checks
+- pre-deploy versus post-deploy split
+- explicit residual risk handling
+
+### Plan release checks for a core plus viewer rollout
+
+- `id`: `test-release-core-viewer-rollout`
+- Secondary skills: `love20-integration-dev`
+- Expected output: release checklist
+- Prompt:
+
+> 如果一次改动同时涉及 LOVE20 core 合约、periphery viewer、以及 script/network 地址文件，准备上 public test 之前和之后各要验证什么？请按发布顺序列出检查项和建议命令。
+
+- Must cover:
+- core and periphery test coverage
+- network or address-file checks
+- post-release reads or log verification

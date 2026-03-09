@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Integration Development"
+  short_description: "Wire LOVE20 contracts, viewers, scripts, and frontend together"
+  default_prompt: "Use $love20-integration-dev to integrate a LOVE20 feature across contracts, viewers, scripts, env bindings, and frontend paths."

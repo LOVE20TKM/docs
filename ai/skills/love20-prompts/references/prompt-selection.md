@@ -4,6 +4,10 @@
 
 - Protocol or mechanism explanation:
   use `$love20-navigator` and `$love20-core-protocol`.
+- Extension or derivative protocol implementation:
+  use `$love20-extension-dev`; add `$love20-extension-patterns` when base-class choice or reward model is still unclear.
+- Cross-repo integration or end-to-end wiring:
+  use `$love20-integration-dev`; add the most relevant implementation skill when the owning repo still needs code changes.
 - Contract interaction or user flow:
   use `$love20-contract-playbooks`, and add `$love20-extension-patterns` if extensions are involved.
 - State query, read path, viewer, hook, or event timeline:
@@ -12,6 +16,10 @@
   use `$love20-runbooks`; add `$love20-selectors-and-errors` when the symptom is a selector, topic, or raw revert.
 - Frontend source mapping:
   use `$love20-frontend-bridge`; add `$love20-state-and-events` if the ask includes viewers or event history.
+- Frontend feature or extension UI implementation:
+  use `$love20-frontend-dev`; add `$love20-frontend-bridge` when you first need to trace the nearest existing page or hook chain.
+- Test, regression, or release planning:
+  use `$love20-test-and-release`; add `$love20-integration-dev` when the change crosses contract, script, and frontend layers.
 - Acceptance or regression checks for another agent:
   use `$love20-prompts` and `references/junior-agent-acceptance-cases.md`.
 - Review, docs sync, or skill update:

@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Test And Release"
+  short_description: "Validate LOVE20 changes before merge or deployment"
+  default_prompt: "Use $love20-test-and-release to choose or run the right LOVE20 tests, regression checks, deployment steps, and post-release verification."
