@@ -73,3 +73,34 @@ Requirements:
 - identify which source is design intent and which source is behavior truth
 - keep adapters and frontend layers secondary unless the recurring question is explicitly about them
 ```
+
+## Ask for a junior-agent acceptance sweep
+
+Recommended skills:
+
+- `$love20-prompts`
+- the domain skills touched by the recent change
+
+Template:
+
+```text
+Use $love20-prompts and the relevant LOVE20 domain skills.
+
+Run a focused acceptance sweep for the recent LOVE20 docs or skill updates.
+
+Context:
+- changed area: <skills, docs, repos, or files>
+- target agent level: junior / generic
+- run only these acceptance cases if known: <A1, A2, ... or unknown>
+
+Deliver:
+- which acceptance cases were run
+- which cases passed or failed
+- the exact wrong assumptions exposed by any failed case
+- the smallest doc or skill edits needed to fix the failures
+
+Requirements:
+- reuse `references/junior-agent-acceptance-cases.md`
+- prefer the cases that match the changed area instead of running everything blindly
+- for every failed case, cite the exact files that would need correction
+```

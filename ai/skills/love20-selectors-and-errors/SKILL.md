@@ -22,6 +22,17 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
    - `references/generated-event-topic-index.md`
 4. Open the matching ABI, interface, or frontend parser file only after you know the likely contract or symbol.
 
+## Decode Decision Tree
+
+1. Classify the symbol first:
+   function selector, custom error selector, event topic0, or frontend error message.
+2. Check whether the generated catalog is current before trusting a "not found" result.
+3. If multiple contracts share the same signature, use calldata context, contract address, repo, or hook path to narrow candidates.
+4. Separate three layers:
+   - ABI declaration
+   - deployed contract declaration site
+   - frontend translation layer
+
 ## Working Rules
 
 - Treat `interface/docs/function-selectors.json` as the generated function-selector catalog for frontend ABI modules across core, extension, extension-group, and group contracts.
@@ -41,6 +52,16 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
   - where the error is declared in LOVE20 ABI sources
 - For events, call out indexed parameters because they explain which values land in topics beyond topic0.
 - If a selector or topic is not in the generated references, check whether the source is an inherited ERC20/ERC721/Uniswap interface rather than a LOVE20-specific contract.
+
+## Response Contract
+
+When answering, list:
+
+1. Raw selector or topic.
+2. Decoded signature.
+3. Candidate contracts.
+4. Final declaration file or ABI source.
+5. Frontend message mapping only if the question is UI-facing.
 
 ## References
 

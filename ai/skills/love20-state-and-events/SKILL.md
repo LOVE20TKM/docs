@@ -20,6 +20,21 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 4. Read `references/generated-state-event-index.md` when you need a refreshed inventory of viewer functions, core and extension read hooks, composite hooks, SQL tables, SQL views, or stat queries.
 5. Open the exact contract, hook, script, or SQL file only after you know which read surface should answer the question.
 
+## Read Decision Tree
+
+1. Decide whether the user wants current truth or historical timeline.
+2. Decide whether the entity is base LOVE20 or extension or group scoped.
+3. Choose the narrowest truth source:
+   - direct contract state for current truth
+   - viewer contracts for aggregated current reads
+   - frontend hooks only when tracing UI data flow
+   - SQL views and logs for history
+4. If a round is mentioned, decide whether it is:
+   - event payload round
+   - block-derived `log_round`
+   - contract-local `currentRound()`
+5. For extension-backed actions, check `ExtensionCenter`, extension contracts, or `GroupJoin` before assuming `LOVE20Join` owns the state.
+
 ## Working Rules
 
 - Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority truth sources for current on-chain state.
@@ -45,6 +60,15 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
   - `round` is the event payload field decoded from ABI data
 - If the task depends on exact event signatures or topic decoding, switch to `love20-selectors-and-errors`.
 - If the task turns into a concrete user operation or write sequence, switch to `love20-contract-playbooks`.
+
+## Response Contract
+
+When answering, state:
+
+1. Primary truth source.
+2. Supporting adapter layers such as viewer, hook, or SQL view.
+3. Exact lookup keys: token, actionId, round, account, or block range.
+4. One caveat about round semantics, extension routing, or history-vs-current differences when relevant.
 
 ## References
 

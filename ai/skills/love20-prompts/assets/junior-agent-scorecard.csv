@@ -1,0 +1,9 @@
+run_id,model_name,mode,case_id,case_name,question,expected_focus,score_0_2,pass_fail,failure_tags,wrong_assumptions,missing_requirements,notes
+,,,A1,Round Translation,"同一时刻如果 submit/vote 合约的 round 是 3，那么 join/random 和 verify 分别应该怎么理解？","contract-local round, originBlocks offsets, submit=3 join=2 verify=1",,,,,,
+,,,A2,Base vs Extension Join Surface,"一个 action 要调用 LOVE20Join，还是扩展合约，还是 GroupJoin？","classify action type first, base uses LOVE20Join, extension may use extension contract or GroupJoin",,,,,,
+,,,A3,Chain-Group Join Flow,"如何加入链群行动？","GroupJoin.join(extension, groupId, amount, verificationInfos), approvals, group constraints",,,,,,
+,,,A4,Extension Reward Claim,"LP 行动奖励怎么领？","IReward.claimReward or claimRewards on extension contract, not LOVE20Mint",,,,,,
+,,,A5,Frontend Branching on acting/join,"acting/join 页面怎么判断走普通行动还是扩展行动？","useActionInfo, useExtensionByActionInfoWithCache, ExtensionActionJoinPanel branch",,,,,,
+,,,A6,Extension Participation State Source,"扩展行动的参与人数和参与金额从哪里读？","ExtensionCenter.accountsCount, extension joinedAmount, group variants may involve GroupJoin",,,,,,
+,,,A7,Selector Coverage and Stale Catalogs,"为什么某个 GroupJoin 或 ExtensionCenter 的 selector 在旧索引里查不到？","generated catalogs may be stale, regenerate before saying absent",,,,,,
+,,,A8,Prompt Handoff for Another Agent,"帮我写一个让别的 AI 解释 LOVE20 join 流程的 prompt。","anchors, triage, source-of-truth rule, explicit output contract",,,,,,

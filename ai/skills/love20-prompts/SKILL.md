@@ -19,9 +19,11 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
    - `references/protocol-and-architecture-prompts.md`
    - `references/interaction-state-and-debug-prompts.md`
    - `references/review-and-doc-sync-prompts.md`
-3. Copy the closest template and replace placeholders such as token, round, action, account, network, file, or symptom.
-4. Keep only the companion LOVE20 skills that the task actually needs.
-5. If one ask mixes explanation, execution, and debugging, split it into multiple prompts.
+3. Read `references/junior-agent-acceptance-cases.md` when you need reusable eval or smoke-test questions for another agent.
+4. Use `assets/junior-agent-eval-handbook.md` and `assets/junior-agent-scorecard.csv` when you want a ready-to-run manual evaluation pack for other models.
+5. Copy the closest template and replace placeholders such as token, round, action, account, network, file, or symptom.
+6. Keep only the companion LOVE20 skills that the task actually needs.
+7. If one ask mixes explanation, execution, and debugging, split it into multiple prompts.
 
 ## Working Rules
 
@@ -37,6 +39,12 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
   - actual behavior from deployed contract repos (`core`, `extension`, `extension-lp`, `extension-group`, `group`)
   - convenience wrappers from core rules
   - current state from indexed history
+- For prompts aimed at junior or generic agents, force a triage step that classifies:
+  - base vs extension or group
+  - business round vs contract-local round
+  - current state vs history
+  - protocol truth vs adapter behavior
+- When validating another agent after a LOVE20 docs or skill update, reuse the acceptance cases in `references/junior-agent-acceptance-cases.md` instead of inventing new eval questions every time.
 - When the task could touch immutable on-chain behavior, require the prompt to treat `periphery`, `script`, and `interface` as adapters, examples, or read models rather than the final behavior authority.
 
 ## Guardrails
@@ -55,3 +63,4 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
 - `references/protocol-and-architecture-prompts.md`
 - `references/interaction-state-and-debug-prompts.md`
 - `references/review-and-doc-sync-prompts.md`
+- `references/junior-agent-acceptance-cases.md`

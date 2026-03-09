@@ -19,6 +19,20 @@ Use this skill to trace a LOVE20 screen or component down to the contract and da
 3. Start from the page route, then descend into components, extension-aware adapters, composite hooks, contract hooks, ABI modules, and configs.
 4. Open `interface/docs/extension.md` when the task involves extension UI plugins.
 
+## Trace Decision Tree
+
+1. Start from the route or component named in the question.
+2. Decide whether the page is base-only or extension-aware:
+   - if the route lives under `src/pages/extension` or `src/pages/group`, start in `src/hooks/extension`
+   - if the page loads `actionInfo` and then calls `useExtensionByActionInfoWithCache`, follow the extension branch first
+3. Separate read path from write path:
+   - read path ends at viewer or contract hooks
+   - write path ends at hooks using `useUniversalTransaction`
+4. After finding the hook chain, map it to:
+   - ABI module
+   - env-configured address
+   - deployed contract repo that owns the real behavior
+
 ## Working Rules
 
 - Trace reads through `src/hooks/extension`, `src/hooks/composite`, and `src/hooks/contracts` before reading low-level UI code.
@@ -35,6 +49,16 @@ Use this skill to trace a LOVE20 screen or component down to the contract and da
 - Distinguish page routing in `src/pages` from reusable components in `src/components`.
 - Follow extension flows through the action participation adapter when an action can be either base LOVE20 or extension-backed.
 - Use error maps in `src/errors` when explaining frontend failure states.
+
+## Response Contract
+
+When answering, keep this shape:
+
+1. Route or component entry point.
+2. Hook chain in order.
+3. ABI and configured contract address source.
+4. Extension or env conditions that change the path.
+5. Protocol-truth caveat if the frontend path differs from deployed contract behavior.
 
 ## References
 

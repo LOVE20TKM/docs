@@ -21,6 +21,21 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 5. Read `references/generated-playbook-index.md` when you need a refreshed contract or script inventory.
 6. Open the relevant interface or script file before giving exact call guidance.
 
+## Operation Decision Tree
+
+1. If the user wants reads only, prefer `call` guidance and consider switching to `love20-state-and-events`.
+2. Determine the write surface before naming any function:
+   - launch or claim: `LOVE20Launch` or `LOVE20Hub`
+   - stake: `LOVE20Stake` or `LOVE20Hub`
+   - base submit, vote, join, verify, mint: core contracts
+   - extension join, exit, reward claim: extension contracts
+   - group join or trial join: `GroupJoin`
+   - group verification or distrust flow: `GroupVerify`
+3. Determine whether the action is base or extension-backed before using any join or reward function.
+4. Read timing from the target contract you will call. Do not borrow `currentRound()` from a different phase contract.
+5. Collect prerequisites before suggesting the write:
+   allowance, voted action status, whitelist or extension registration, group membership, waiting blocks, and verification data shape.
+
 ## Working Rules
 
 - Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority contract-code sources when the requested operation targets deployed immutable contracts.
@@ -40,6 +55,17 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 - Keep direct call guidance aligned with `core/src/interfaces/*.sol`.
 - If an extension-backed or chain-group-backed action is involved, prefer the corresponding deployed contract repo over helper layers or frontend wiring.
 - If a user asks for a transaction sequence, state prerequisites such as approvals, phase timing, and waiting blocks.
+
+## Response Contract
+
+For each suggested operation, always include:
+
+1. Target contract and function.
+2. Whether it is a read or write.
+3. Required parameters and what each parameter represents.
+4. Required approvals or assets.
+5. Timing or eligibility preconditions.
+6. One confirmation read the agent should check after the write.
 
 ## References
 

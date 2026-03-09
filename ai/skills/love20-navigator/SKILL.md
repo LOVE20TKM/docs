@@ -19,6 +19,18 @@ Use this skill to choose the right LOVE20 source before answering in detail.
 3. Read `references/glossary.md` only when the question depends on LOVE20-specific terms.
 4. Open only the repo or document that the reference files point to. Do not bulk-read every LOVE20 repo.
 
+## Mandatory Triage
+
+Before routing, classify the request on these axes:
+
+1. Intent: explain, operate, inspect state, decode, debug, or update docs.
+2. Surface: base LOVE20, extension, extension-lp, extension-group, group, or frontend adapter.
+3. Timing: business round in the whitepaper, or contract-local `currentRound()` on a named contract.
+4. Authority: design intent, deployed contract behavior, adapter behavior, or indexed history.
+5. Horizon: current truth now, or historical timeline over logs and SQL.
+
+If any axis is ambiguous, say which assumption you are making before routing deeper.
+
 ## Routing
 
 - Continue with `docs/ai/skills/love20-core-protocol/SKILL.md` for protocol mechanics, round flow, staking, submit-and-vote flow, verification, or minting questions.
@@ -37,6 +49,8 @@ Use this skill to choose the right LOVE20 source before answering in detail.
 - Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` source files as the highest-priority on-chain behavior sources because they correspond to deployed immutable contracts.
 - Treat periphery, scripts, and frontend code as adapters around the core protocol, not the primary behavioral source.
 - Prefer normal source files over `core/src/merged/*.sol`.
+- If a question says only "round" or "phase", force the distinction between business round and contract-local round before continuing.
+- If a question says only "join" or "claim", determine whether the write surface is base LOVE20, extension, or group helper before routing to an interaction skill.
 - When docs and code diverge, state the divergence explicitly and separate documented design from implemented behavior.
 
 ## References

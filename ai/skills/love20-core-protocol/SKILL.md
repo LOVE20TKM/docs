@@ -21,6 +21,18 @@ Use this skill to explain LOVE20 as a state machine backed by focused core contr
 5. Read `references/generated-interface-index.md` when you need a refreshed function inventory.
 6. Open only the interfaces and implementations needed for the answer.
 
+## Mandatory Triage
+
+Before explaining a mechanism, answer these questions explicitly in your head:
+
+1. Is this base LOVE20 behavior, or does extension or group logic change it?
+2. Does "round" mean the whitepaper business round, or `currentRound()` on a specific contract?
+3. Is the user asking for design intent, implemented behavior, or both?
+4. Which contract actually owns the rule being described?
+5. Does the answer need current-state eligibility, or only abstract mechanics?
+
+If the topic is concrete interaction rather than mechanism, switch to `love20-contract-playbooks`.
+
 ## Working Rules
 
 - Start from the whitepaper semantics in `docs/whitepaper/LOVE20协议设计.md`, then verify against `core/src/interfaces`.
@@ -37,6 +49,16 @@ Use this skill to explain LOVE20 as a state machine backed by focused core contr
 - Treat `LOVE20TokenFactory` and `LOVE20Launch` as the token tree entry point.
 - Treat `LOVE20Token`, `LOVE20SLToken`, and `LOVE20STToken` as asset primitives, not governance flow contracts.
 - Call out when a constant is documented in the whitepaper but not exposed by the interface you are citing.
+
+## Response Contract
+
+When answering, prefer this order:
+
+1. Scope sentence: base-only or extension-aware.
+2. Round sentence: business round or contract-local round on which contract.
+3. Rule owner: name the contract or interface that enforces the behavior.
+4. Dependency sentence: note any dependent contracts such as `Vote`, `Join`, `Random`, `Verify`, or `Mint`.
+5. Exception sentence: mention extension or group exceptions when they materially change the base rule.
 
 ## References
 

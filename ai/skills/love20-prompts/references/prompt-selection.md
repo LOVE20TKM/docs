@@ -12,6 +12,8 @@
   use `$love20-runbooks`; add `$love20-selectors-and-errors` when the symptom is a selector, topic, or raw revert.
 - Frontend source mapping:
   use `$love20-frontend-bridge`; add `$love20-state-and-events` if the ask includes viewers or event history.
+- Acceptance or regression checks for another agent:
+  use `$love20-prompts` and `references/junior-agent-acceptance-cases.md`.
 - Review, docs sync, or skill update:
   pair the task with the most relevant domain skill above.
 
