@@ -25,6 +25,7 @@ Before routing, classify the request on these axes:
 
 1. Intent: explain, operate, inspect state, decode, debug, develop, integrate, validate, release, or update docs.
 2. Surface: base LOVE20, extension, extension-lp, extension-group, group, or frontend adapter.
+   If the user says only `action` or `行动`, assume it may span base and extension surfaces until a narrower scope is explicit.
 3. Timing: business round in the whitepaper, or contract-local `currentRound()` on a named contract.
 4. Authority: design intent, deployed contract behavior, adapter behavior, or indexed history.
 5. Horizon: current truth now, or historical timeline over logs and SQL.
@@ -54,6 +55,7 @@ If any axis is ambiguous, say which assumption you are making before routing dee
 - Treat periphery, scripts, and frontend code as adapters around the core protocol, not the primary behavioral source.
 - Prefer normal source files over `core/src/merged/*.sol`.
 - If a question says only "round" or "phase", force the distinction between business round and contract-local round before continuing.
+- If a question says only `action` or `行动`, do not route as if it were a base-core action by default. Include extension and group repos in the initial search space unless the user explicitly narrows the scope.
 - If a question says only "join" or "claim", determine whether the write surface is base LOVE20, extension, or group helper before routing to an interaction skill.
 - When docs and code diverge, state the divergence explicitly and separate documented design from implemented behavior.
 

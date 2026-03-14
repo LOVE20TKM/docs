@@ -24,16 +24,17 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 ## Operation Decision Tree
 
 1. If the user wants reads only, prefer `call` guidance and consider switching to `love20-state-and-events`.
-2. Determine the write surface before naming any function:
+2. Treat unqualified `action` or `行动` as potentially base, extension-backed, or group-backed before naming any function.
+3. Determine the write surface before naming any function:
    - launch or claim: `LOVE20Launch` or `LOVE20Hub`
    - stake: `LOVE20Stake` or `LOVE20Hub`
    - base submit, vote, join, verify, mint: core contracts
    - extension join, exit, reward claim: extension contracts
    - group join or trial join: `GroupJoin`
    - group verification or distrust flow: `GroupVerify`
-3. Determine whether the action is base or extension-backed before using any join or reward function.
-4. Read timing from the target contract you will call. Do not borrow `currentRound()` from a different phase contract.
-5. Collect prerequisites before suggesting the write:
+4. Determine whether the action is base or extension-backed before using any join or reward function.
+5. Read timing from the target contract you will call. Do not borrow `currentRound()` from a different phase contract.
+6. Collect prerequisites before suggesting the write:
    allowance, voted action status, whitelist or extension registration, group membership, `promisedWaitingPhases`, receipt-token balance or unstake status for stake exits, waiting blocks, and verification data shape.
 
 ## Working Rules
@@ -54,6 +55,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 - Use `periphery/src/LOVE20TokenViewer.sol`, `LOVE20RoundViewer.sol`, and `LOVE20MintViewer.sol` for aggregated reads.
 - Keep direct call guidance aligned with `core/src/interfaces/*.sol`.
 - If an extension-backed or chain-group-backed action is involved, prefer the corresponding deployed contract repo over helper layers or frontend wiring.
+- Do not silently narrow `action` to a base-core action. State when you are classifying it as base, generic extension, LP extension, or chain-group action.
 - Translate user phrases such as `解锁期`, `申请解锁`, and `取回质押资产` into the exact stake write or read surfaces before suggesting calls.
 - If a user asks for a transaction sequence, state prerequisites such as approvals, phase timing, and waiting blocks.
 

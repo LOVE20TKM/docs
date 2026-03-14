@@ -51,6 +51,10 @@ Use historical indexing when:
 
 ## Action
 
+Default scope:
+
+- If the user says only `action` or `行动`, assume the question may refer to a base action, generic extension action, LP extension action, or chain-group action until the action type is resolved.
+
 Use these surfaces first:
 
 - `LOVE20Submit.actionInfo` for the base action record.

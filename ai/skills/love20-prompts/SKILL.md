@@ -44,6 +44,7 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
   - business round vs contract-local round
   - current state vs history
   - protocol truth vs adapter behavior
+- If the prompt uses unqualified `action` or `行动`, explicitly say that the term includes extension-backed and group-backed actions unless the task is intentionally scoped to base/core only.
 - When validating another agent after a LOVE20 docs or skill update, reuse the acceptance cases in `references/junior-agent-acceptance-cases.md` instead of inventing new eval questions every time.
 - When the task could touch immutable on-chain behavior, require the prompt to treat `periphery`, `script`, and `interface` as adapters, examples, or read models rather than the final behavior authority.
 

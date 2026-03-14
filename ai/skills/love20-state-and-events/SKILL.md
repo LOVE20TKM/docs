@@ -24,6 +24,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 
 1. Decide whether the user wants current truth or historical timeline.
 2. Decide whether the entity is base LOVE20 or extension or group scoped.
+   If the user says only `action` or `行动`, default to an action universe that includes extension-backed and group-backed actions.
 3. If the question is "did this account participate in this action", classify the participation owner first:
    - `LOVE20Join` for base actions
    - extension contract plus `ExtensionCenter` for generic, LP, or service extensions
@@ -48,6 +49,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 - Use periphery viewer contracts for aggregated protocol reads after identifying the underlying deployed-contract truth source.
 - Use frontend hook files only after you identify the underlying contract surface.
 - When a page or API can involve extension-backed actions, inspect `interface/src/hooks/extension/**` and `ExtensionCenter` before assuming the data comes from `LOVE20Join` or a periphery viewer.
+- Treat unqualified `action` or `行动` as base-plus-extension scope unless the user explicitly says core-only or base-only.
 - For "did address X join or participate in action Y" questions, name the participation owner before checking totals or per-account state.
 - When the user asks "where does the page get this data", bridge all three layers:
   - contract or viewer function
@@ -59,6 +61,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 - Do not infer historical event order from current contract state alone.
 - Do not treat viewer output, frontend hook state, or SQLite rows as higher-priority than deployed contract state for current truth questions.
 - Do not explain indexed analytics without naming the SQL view, DB table, or log processor stage involved.
+- Do not interpret an unqualified `action` question as base-only without saying so and justifying the narrowing.
 - Do not conclude that an account did not participate in an action from `LOVE20Join` or a base viewer alone when the action might be extension-backed.
 - Do not assume extension action participation totals are stored in `LOVE20Join.amountByActionId`; many extension-backed actions read participation from `ExtensionCenter`, extension contracts, or `GroupJoin`.
 - Distinguish `log_round` from `round` in the SQLite event DB:

@@ -26,6 +26,7 @@ Use this skill to explain LOVE20 as a state machine backed by focused core contr
 Before explaining a mechanism, answer these questions explicitly in your head:
 
 1. Is this base LOVE20 behavior, or does extension or group logic change it?
+   If the user says only `action` or `行动`, treat it as potentially base, extension-backed, or group-backed until narrowed.
 2. Does "round" mean the whitepaper business round, or `currentRound()` on a specific contract?
 3. Is the user asking for design intent, implemented behavior, or both?
 4. Which contract actually owns the rule being described?
@@ -37,6 +38,7 @@ If the topic is concrete interaction rather than mechanism, switch to `love20-co
 ## Working Rules
 
 - Start from the whitepaper semantics in `docs/whitepaper/LOVE20协议设计.md`, then verify against `core/src/interfaces`.
+- Treat unqualified `action` or `行动` as extension-aware by default. Narrow to base-only action semantics only when the user explicitly scopes to core/base behavior or the cited contract surface proves it.
 - Translate whitepaper staking terms into on-chain stake vocabulary when relevant:
   - `解锁期` -> `promisedWaitingPhases`
   - `申请解锁` -> `unstake`

@@ -388,6 +388,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 > 如果我想判断某个地址是否真的参与了 LOVE20 某个行动，尤其这个行动可能是扩展行动，应该按什么顺序查？请区分 base action、普通扩展、链群扩展，并指出各自的 truth source。
 
 - Must cover:
+- unqualified action includes extension scope by default
 - action-type classification first
 - LOVE20Join vs ExtensionCenter or extension vs GroupJoin
 - negative conclusion requires checking the owning surface

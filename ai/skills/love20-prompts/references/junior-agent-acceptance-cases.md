@@ -6,6 +6,7 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
 
 - Fail the answer if it talks about `round` or `phase` without clarifying business round vs contract-local `currentRound()` when timing matters.
 - Fail the answer if it talks about `join`, `claim`, or `verify` without first deciding whether the surface is base LOVE20, extension, or group.
+- Fail the answer if it interprets an unqualified `action` or `行动` as base-core only without stating that narrowing or checking extension and group paths first.
 - Fail the answer if it treats `periphery`, `script`, or `interface` as immutable behavior truth when deployed contract repos are relevant.
 - Prefer small targeted evals. Run only the cases that match the changed skill or prompt.
 
@@ -29,6 +30,7 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
 - Ask:
   `一个 action 要调用 LOVE20Join，还是扩展合约，还是 GroupJoin？`
 - Must include:
+  - unqualified `action` is not base-only by default
   - determine the action type first from whitelist or extension detection
   - base action uses `LOVE20Join`
   - extension action may use an extension contract or `GroupJoin`
