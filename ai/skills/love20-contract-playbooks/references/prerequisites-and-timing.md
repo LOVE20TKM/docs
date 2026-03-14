@@ -22,9 +22,11 @@
 ## Stake
 
 - `stakeLiquidity` and `stakeToken` are not valid at round zero.
+- Whitepaper `解锁期` maps to `promisedWaitingPhases` on the stake path.
 - `promisedWaitingPhases` must stay within min and max bounds and cannot decrease across later stakes for the same account/token.
-- `unstake` starts a delayed exit flow; `withdraw` is only valid after the waiting period is fully satisfied.
-- Losing or transferring away SL or ST receipt tokens can disable governance or delay exits, because receipt balance matters to effective status.
+- Whitepaper `申请解锁` maps to `unstake`; whitepaper `取回质押资产` maps to `withdraw`.
+- `unstake` starts a delayed exit flow; `withdraw` is only valid after the full waiting period is satisfied.
+- Losing or transferring away SL or ST receipt tokens can disable governance or block unlock-related actions, because receipt balance matters to effective status.
 
 ## Submit and vote
 

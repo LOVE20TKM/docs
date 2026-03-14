@@ -1,4 +1,4 @@
 interface:
   display_name: "LOVE20 Core Protocol"
-  short_description: "Explain LOVE20 mechanics and core contract mapping"
-  default_prompt: "Use $love20-core-protocol to explain a LOVE20 mechanism and map it to the core contracts and lifecycle phases."
+  short_description: "Explain LOVE20 mechanics, staking unlocks, and core contract mapping"
+  default_prompt: "Use $love20-core-protocol to explain a LOVE20 mechanism, SL unlock-period rule, or staking lifecycle and map it to the core contracts and lifecycle phases."

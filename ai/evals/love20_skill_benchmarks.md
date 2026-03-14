@@ -8,7 +8,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 | Skill | Primary benchmark count |
 | --- | ---: |
 | `love20-contract-playbooks` | 2 |
-| `love20-core-protocol` | 2 |
+| `love20-core-protocol` | 3 |
 | `love20-extension-dev` | 2 |
 | `love20-extension-patterns` | 2 |
 | `love20-frontend-bridge` | 2 |
@@ -18,7 +18,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 | `love20-prompts` | 2 |
 | `love20-runbooks` | 2 |
 | `love20-selectors-and-errors` | 2 |
-| `love20-state-and-events` | 2 |
+| `love20-state-and-events` | 3 |
 | `love20-test-and-release` | 2 |
 
 ## love20-contract-playbooks
@@ -81,6 +81,20 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - parent and child token model
 - burn or mint path semantics
 - specific core interfaces
+
+### Explain SL unlock period, exit flow, and vote impact
+
+- `id`: `core-sl-unlock-period-semantics`
+- Secondary skills: `love20-contract-playbooks`
+- Expected output: mechanism explanation with operational mapping
+- Prompt:
+
+> 请解释 LOVE20 里的流动性质押解锁期：它怎样影响治理票数，申请解锁后何时能取回资产，receipt token 不足又会怎样影响治理与解锁？要求同时给出白皮书语义和链上对应接口或流程。
+
+- Must cover:
+- unlock period to governance-vote mapping
+- unstake and withdraw staging
+- receipt-token balance caveat
 
 
 ## love20-extension-dev
@@ -363,6 +377,20 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 
 
 ## love20-state-and-events
+
+### Check whether an address participated in an extension-backed action
+
+- `id`: `state-extension-action-participation-check`
+- Secondary skills: `love20-extension-patterns`
+- Expected output: state lookup playbook
+- Prompt:
+
+> 如果我想判断某个地址是否真的参与了 LOVE20 某个行动，尤其这个行动可能是扩展行动，应该按什么顺序查？请区分 base action、普通扩展、链群扩展，并指出各自的 truth source。
+
+- Must cover:
+- action-type classification first
+- LOVE20Join vs ExtensionCenter or extension vs GroupJoin
+- negative conclusion requires checking the owning surface
 
 ### Find the current govData read path
 

@@ -1,6 +1,6 @@
 ---
 name: love20-contract-playbooks
-description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, submit actions, vote, join, verify, mint rewards, burn for parent token, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
+description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, request unlock, withdraw staked assets, submit actions, vote, join, verify, mint rewards, burn for parent token, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
 ---
 
 # LOVE20 Contract Playbooks
@@ -34,7 +34,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 3. Determine whether the action is base or extension-backed before using any join or reward function.
 4. Read timing from the target contract you will call. Do not borrow `currentRound()` from a different phase contract.
 5. Collect prerequisites before suggesting the write:
-   allowance, voted action status, whitelist or extension registration, group membership, waiting blocks, and verification data shape.
+   allowance, voted action status, whitelist or extension registration, group membership, `promisedWaitingPhases`, receipt-token balance or unstake status for stake exits, waiting blocks, and verification data shape.
 
 ## Working Rules
 
@@ -54,6 +54,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 - Use `periphery/src/LOVE20TokenViewer.sol`, `LOVE20RoundViewer.sol`, and `LOVE20MintViewer.sol` for aggregated reads.
 - Keep direct call guidance aligned with `core/src/interfaces/*.sol`.
 - If an extension-backed or chain-group-backed action is involved, prefer the corresponding deployed contract repo over helper layers or frontend wiring.
+- Translate user phrases such as `解锁期`, `申请解锁`, and `取回质押资产` into the exact stake write or read surfaces before suggesting calls.
 - If a user asks for a transaction sequence, state prerequisites such as approvals, phase timing, and waiting blocks.
 
 ## Response Contract

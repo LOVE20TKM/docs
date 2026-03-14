@@ -54,6 +54,19 @@
       ]
     },
     {
+      "id": "core-sl-unlock-period-semantics",
+      "title": "Explain SL unlock period, exit flow, and vote impact",
+      "primary_skill": "love20-core-protocol",
+      "secondary_skills": ["love20-contract-playbooks"],
+      "expected_output": "mechanism explanation with operational mapping",
+      "prompt": "请解释 LOVE20 里的流动性质押解锁期：它怎样影响治理票数，申请解锁后何时能取回资产，receipt token 不足又会怎样影响治理与解锁？要求同时给出白皮书语义和链上对应接口或流程。",
+      "must_cover": [
+        "unlock period to governance-vote mapping",
+        "unstake and withdraw staging",
+        "receipt-token balance caveat"
+      ]
+    },
+    {
       "id": "extension-new-factory-integration",
       "title": "Plan a new extension factory integration",
       "primary_skill": "love20-extension-patterns",
@@ -168,6 +181,19 @@
         "periphery or viewer layer",
         "script log or export layer",
         "frontend hook or env layer"
+      ]
+    },
+    {
+      "id": "state-extension-action-participation-check",
+      "title": "Check whether an address participated in an extension-backed action",
+      "primary_skill": "love20-state-and-events",
+      "secondary_skills": ["love20-extension-patterns"],
+      "expected_output": "state lookup playbook",
+      "prompt": "如果我想判断某个地址是否真的参与了 LOVE20 某个行动，尤其这个行动可能是扩展行动，应该按什么顺序查？请区分 base action、普通扩展、链群扩展，并指出各自的 truth source。",
+      "must_cover": [
+        "action-type classification first",
+        "LOVE20Join vs ExtensionCenter or extension vs GroupJoin",
+        "negative conclusion requires checking the owning surface"
       ]
     },
     {

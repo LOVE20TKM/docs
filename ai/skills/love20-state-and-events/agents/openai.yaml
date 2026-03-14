@@ -1,4 +1,4 @@
 interface:
   display_name: "LOVE20 State and Events"
-  short_description: "Inspect LOVE20 chain state, viewers, and event timelines"
-  default_prompt: "Use $love20-state-and-events to find the right LOVE20 contracts, viewers, hooks, and event sources for a token, round, action, or account state question."
+  short_description: "Inspect LOVE20 chain state, viewers, extension participation, and event timelines"
+  default_prompt: "Use $love20-state-and-events to find the right LOVE20 contracts, viewers, hooks, and event sources for a token, round, action, account, or extension-backed participation question."

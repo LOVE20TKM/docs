@@ -1,6 +1,6 @@
 ---
 name: love20-state-and-events
-description: "Inspect LOVE20 chain state, viewer reads, frontend query hooks, and indexed event history across core, periphery, interface, and script repos. Use when asked where a token, round, action, account, reward, or event timeline is read from, which contract or hook powers a page, how to query historical events, or why current state and indexed history disagree."
+description: "Inspect LOVE20 chain state, viewer reads, frontend query hooks, and indexed event history across core, periphery, interface, and script repos. Use when asked where a token, round, action, account, reward, or event timeline is read from, which contract or hook powers a page, how to query historical events, whether an address participated in an action, or why current state and indexed history disagree."
 ---
 
 # LOVE20 State and Events
@@ -15,7 +15,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 ## Workflow
 
 1. Read `references/query-workflow.md` first.
-2. If the question is keyed by a token, round, action, or account, read `references/entity-lookup-playbooks.md`.
+2. If the question is keyed by a token, round, action, or account, or asks whether address `X` participated in action `Y`, read `references/entity-lookup-playbooks.md`.
 3. If the question is about logs, timelines, SQL, or analytics mismatch, read `references/event-and-indexing.md`.
 4. Read `references/generated-state-event-index.md` when you need a refreshed inventory of viewer functions, core and extension read hooks, composite hooks, SQL tables, SQL views, or stat queries.
 5. Open the exact contract, hook, script, or SQL file only after you know which read surface should answer the question.
@@ -24,16 +24,20 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 
 1. Decide whether the user wants current truth or historical timeline.
 2. Decide whether the entity is base LOVE20 or extension or group scoped.
-3. Choose the narrowest truth source:
+3. If the question is "did this account participate in this action", classify the participation owner first:
+   - `LOVE20Join` for base actions
+   - extension contract plus `ExtensionCenter` for generic, LP, or service extensions
+   - `GroupJoin` for chain-group join state
+4. Choose the narrowest truth source:
    - direct contract state for current truth
    - viewer contracts for aggregated current reads
    - frontend hooks only when tracing UI data flow
    - SQL views and logs for history
-4. If a round is mentioned, decide whether it is:
+5. If a round is mentioned, decide whether it is:
    - event payload round
    - block-derived `log_round`
    - contract-local `currentRound()`
-5. For extension-backed actions, check `ExtensionCenter`, extension contracts, or `GroupJoin` before assuming `LOVE20Join` owns the state.
+6. For extension-backed actions, check `ExtensionCenter`, extension contracts, or `GroupJoin` before assuming `LOVE20Join` owns the state.
 
 ## Working Rules
 
@@ -44,6 +48,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 - Use periphery viewer contracts for aggregated protocol reads after identifying the underlying deployed-contract truth source.
 - Use frontend hook files only after you identify the underlying contract surface.
 - When a page or API can involve extension-backed actions, inspect `interface/src/hooks/extension/**` and `ExtensionCenter` before assuming the data comes from `LOVE20Join` or a periphery viewer.
+- For "did address X join or participate in action Y" questions, name the participation owner before checking totals or per-account state.
 - When the user asks "where does the page get this data", bridge all three layers:
   - contract or viewer function
   - direct hook or composite hook
@@ -54,6 +59,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 - Do not infer historical event order from current contract state alone.
 - Do not treat viewer output, frontend hook state, or SQLite rows as higher-priority than deployed contract state for current truth questions.
 - Do not explain indexed analytics without naming the SQL view, DB table, or log processor stage involved.
+- Do not conclude that an account did not participate in an action from `LOVE20Join` or a base viewer alone when the action might be extension-backed.
 - Do not assume extension action participation totals are stored in `LOVE20Join.amountByActionId`; many extension-backed actions read participation from `ExtensionCenter`, extension contracts, or `GroupJoin`.
 - Distinguish `log_round` from `round` in the SQLite event DB:
   - `log_round` is block-derived protocol round
@@ -68,7 +74,8 @@ When answering, state:
 1. Primary truth source.
 2. Supporting adapter layers such as viewer, hook, or SQL view.
 3. Exact lookup keys: token, actionId, round, account, or block range.
-4. One caveat about round semantics, extension routing, or history-vs-current differences when relevant.
+4. Participation owner (`LOVE20Join`, extension plus `ExtensionCenter`, or `GroupJoin`) when the question is about account/action participation.
+5. One caveat about round semantics, extension routing, or history-vs-current differences when relevant.
 
 ## References
 

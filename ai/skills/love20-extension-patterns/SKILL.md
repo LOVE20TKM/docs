@@ -45,6 +45,7 @@ Use this skill to understand or design LOVE20 extension contracts without losing
 - Call `initializeIfNeeded()` before relying on action-bound state.
 - Call `registerActionIfNeeded()` before maintaining extension user lists.
 - Route user join, exit, and verification info changes through `ExtensionCenter` when the base classes expect it.
+- Do not conflate LP extension join accounting with core SL staking or unlock-period rules. Shared LP terminology does not mean they use the same governance-stake semantics.
 - Distinguish the generic extension framework repo from concrete extension repos such as LP and chain-group.
 - Distinguish `extension-group` from `group`: the first defines chain-group extension behavior, the second defines the chain-group NFT protocol the extension depends on.
 

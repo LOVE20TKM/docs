@@ -125,3 +125,33 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
   - one domain skill such as `love20-contract-playbooks` or `love20-core-protocol`
 - Fail if:
   - the prompt is generic and does not constrain truth sources or round semantics
+
+## Case A9: SL Unlock Period and Exit Flow
+
+- Ask:
+  `LOVE20 的流动性质押解锁期到底对应什么，申请解锁和取回资产分别是什么链上动作？`
+- Must include:
+  - whitepaper `解锁期` maps to `promisedWaitingPhases`
+  - `unstake` is the unlock request and `withdraw` retrieves assets after the full wait
+  - governance-vote or eligibility impact depends on unlock period and SL or ST receipt-token balance
+- Minimum sources:
+  - `docs/whitepaper/LOVE20协议设计.md`
+  - `core/src/interfaces/ILOVE20Stake.sol`
+- Fail if:
+  - it treats `unstake` and `withdraw` as the same step
+  - it ignores the receipt-token balance caveat
+
+## Case A10: Extension Participation Negative Check
+
+- Ask:
+  `某个地址是不是参与过这个行动？我查不到 LOVE20Join 里的 amount，是不是就说明没参与？`
+- Must include:
+  - classify the action as base, extension, or group before concluding
+  - generic extension paths use `IExtensionCenter.isAccountJoined` or extension `joinedAmountByAccount`
+  - chain-group paths can use `GroupJoin.joinedAmountByAccount` or `joinInfo`
+- Minimum sources:
+  - `core/src/interfaces/ILOVE20Join.sol`
+  - `extension/src/interface/IExtensionCenter.sol`
+  - `extension-group/src/interface/IGroupJoin.sol`
+- Fail if:
+  - it treats missing `LOVE20Join.amountByActionIdByAccount` as universal proof of non-participation
