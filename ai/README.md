@@ -4,11 +4,11 @@
 
 ## 结构
 
-- [skills](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/skills)
+- [skills](/ai/skills)
   LOVE20 skills 定义与 references
-- [evals/README.md](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/README.md)
+- [evals/README.md](/ai/evals/README.md)
   benchmark、demo run、report、todo、summary
-- [scripts](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/scripts)
+- [scripts](/ai/scripts)
   catalog、skeleton、report、todo、summary、runner
 
 ## 真值层级
@@ -24,14 +24,14 @@
 
 ## 入口
 
-- [AI skills 目录](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/skills)
-- [AI evals 说明](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/README.md)
-- [skill benchmark 目录](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/love20_skill_benchmarks.md)
-- [run summary](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/run-summary.md)
+- [AI skills 目录](/ai/skills)
+- [AI evals 说明](/ai/evals/README.md)
+- [skill benchmark 目录](/ai/evals/love20_skill_benchmarks.md)
+- [run summary](/ai/evals/run-summary.md)
 - demo baseline：
-  - [walkthrough](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/runs/demo-walkthrough.report.md)
-  - [three-states](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/runs/demo-three-states.report.md)
-  - [three-states todo](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/runs/demo-three-states.todo.md)
+  - [walkthrough](/ai/evals/runs/demo-walkthrough.report.md)
+  - [three-states](/ai/evals/runs/demo-three-states.report.md)
+  - [three-states todo](/ai/evals/runs/demo-three-states.todo.md)
 
 ## 常用命令
 

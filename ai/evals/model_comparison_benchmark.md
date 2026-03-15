@@ -346,38 +346,47 @@ Use $love20-prompts.
 - Date:
 
 ## Case 1
+
 - Score:
 - Findings:
 
 ## Case 2
+
 - Score:
 - Findings:
 
 ## Case 3
+
 - Score:
 - Findings:
 
 ## Case 4
+
 - Score:
 - Findings:
 
 ## Case 5
+
 - Score:
 - Findings:
 
 ## Case 6
+
 - Score:
 - Findings:
 
 ## Case 7
+
 - Score:
 - Findings:
 
 ## Case 8
+
 - Score:
 - Findings:
 
 ## Total
+
 - Total Score:
 - Main Failure Pattern:
 - Verdict:
@@ -397,11 +406,11 @@ Use $love20-prompts.
 
 当前仓库里的现有脚本和文件：
 
-- [love20_skill_benchmarks.json](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/love20_skill_benchmarks.json)
+- [love20_skill_benchmarks.json](/ai/evals/love20_skill_benchmarks.json)
   是当前自动 runner 的 benchmark source of truth。
-- [run_skill_benchmarks.py](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/scripts/run_skill_benchmarks.py)
+- [run_skill_benchmarks.py](/ai/scripts/run_skill_benchmarks.py)
   只能生成 JSON 里已经存在的 benchmark cases。
-- [ai/evals/README.md](/Users/BigPolarBear/Documents/github/LOVE20TKM/docs/ai/evals/README.md)
+- [ai/evals/README.md](/ai/evals/README.md)
   说明了现有 run/report/todo/summary 的结构。
 
 如果你只是想快速比较模型，最省事的做法是：
