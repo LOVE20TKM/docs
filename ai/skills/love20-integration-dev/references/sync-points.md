@@ -9,6 +9,7 @@
   `extension-lp/script/network/<network>/address.extension.lp.params`,
   `extension-group/script/network/<network>/address.extension.group.params`,
   `group/script/network/<network>/address.group.params`,
+  `group/script/network/<network>/address.group.defaults.params`,
   `periphery/script/network/<network>/address.params`,
   `periphery/script/network/<network>/address.core.params`
 - The `script` repo may mirror or consume addresses for interaction and export flows:
@@ -23,6 +24,8 @@
   `interface/.env.test`,
   `interface/.env.public_test`,
   `interface/.env.production`
+- Default group identity uses:
+  `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`
 
 ## ABI synchronization
 
@@ -42,6 +45,12 @@
   `interface/src/components/Extension/Base/Action/ExtensionPublicTabs.tsx`,
   `interface/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`,
   `interface/src/components/Extension/Base/Action/ExtensionMyParticipation.tsx`
+- Default group UI and address-transfer context use:
+  `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`,
+  `interface/src/components/Extension/Base/Group/MyGroups.tsx`,
+  `interface/src/components/Extension/Base/Group/GroupTransfer.tsx`,
+  `interface/src/components/WalletButton/index.tsx`,
+  `interface/src/components/Token/Transfer.tsx`
 
 ## History and exported-data synchronization
 

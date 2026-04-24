@@ -99,6 +99,7 @@ Use this playbook whenever the question is about whether an account joined, exit
 Use these surfaces first:
 
 - `core/src/interfaces/ILOVE20Stake.sol` and `core/src/interfaces/ILOVE20Mint.sol` for direct governance and reward truth.
+- `group/src/interfaces/IGroupDefaults.sol` for default group identity reads keyed by account.
 - `extension/src/interface/IExtensionCenter.sol` and extension `joinedAmountByAccount` reads when the account question is scoped to a known extension-backed action.
 - `extension-group/src/interface/IGroupJoin.sol` for group-scoped joined amounts or join metadata by account.
 - `LOVE20TokenViewer.participatedTokensByPage`
@@ -112,6 +113,7 @@ Frontend bridges:
 - `useParticipatedTokensByPage`
 - `useJoinedActions`
 - `useMyGovData`
+- `useDefaultGroupIdOf`, `useDefaultGroupsOf`, or `useDefaultGroupOf` for default group identity in the UI
 - `useActionRewardsByAccountOfLastRounds`
 - `useMyJoinedExtensionActions` when extension-backed joined actions may be excluded from the base joined-action list
 

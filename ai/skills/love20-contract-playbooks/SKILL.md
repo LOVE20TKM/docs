@@ -1,6 +1,6 @@
 ---
 name: love20-contract-playbooks
-description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, request unlock, withdraw staked assets, submit actions, vote, join, verify, mint rewards, burn for parent token, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
+description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, request unlock, withdraw staked assets, submit actions, vote, join, verify, mint rewards, burn for parent token, manage default group identity, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
 ---
 
 # LOVE20 Contract Playbooks
@@ -32,6 +32,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
    - extension join, exit, reward claim: extension contracts
    - group join or trial join: `GroupJoin`
    - group verification or distrust flow: `GroupVerify`
+   - default group identity: `GroupDefaults`
 4. Determine whether the action is base or extension-backed before using any join or reward function.
 5. Read timing from the target contract you will call. Do not borrow `currentRound()` from a different phase contract.
 6. Collect prerequisites before suggesting the write:

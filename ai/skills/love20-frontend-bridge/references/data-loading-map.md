@@ -34,12 +34,16 @@
   Group-action join adapter that combines base join round, vote status, balances, allowance, and extension verification info for the group join flow.
 - `interface/src/hooks/extension/base/contracts/useIReward.ts`
   Generic extension reward reads and reward-claim writes for contracts implementing `IReward`.
+- `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`
+  Reads `defaultGroupIdOf` and `defaultGroupsOf`, writes `setDefaultGroupId` and `clearDefaultGroupId`, and invalidates default group queries after writes.
 - Other composite hooks build page-specific state on top of viewer contracts and direct hooks.
 
 ## ABI and selector layer
 
 - `src/abis/*.ts`
   Typed ABI modules consumed by hooks, including core, extension, extension-group, group, and viewer contracts.
+- `src/abis/GroupDefaults.ts`
+  ABI module for default group identity.
 - `src/lib/abiLoader.ts`
   Lazy-load helper for ABI bundles.
 - `docs/function-selectors.json`

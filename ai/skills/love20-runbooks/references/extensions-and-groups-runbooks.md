@@ -76,3 +76,20 @@ Evidence:
 Interpretation:
 
 - If a user says "the visible name has no space", still check Unicode whitespace. Frontend text fields can carry non-ASCII separators that look invisible.
+
+## Default group identity fails
+
+Check these first:
+
+- Confirm `GroupDefaults.GROUP_ADDRESS()` matches the deployed `LOVE20Group`.
+- Confirm the caller currently owns the target `groupId` NFT before `setDefaultGroupId`.
+- Confirm `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS` is set when the frontend hides or disables default group UI.
+- If `defaultGroupIdOf(account)` returns `0`, check whether the NFT was transferred after the default was stored.
+
+Evidence:
+
+- `group/test/GroupDefaults.t.sol` covers:
+  - `GroupNotExist`
+  - `SenderNotGroupOwner`
+  - `DefaultGroupIdAlreadySet`
+  - `DefaultGroupIdNotSet`

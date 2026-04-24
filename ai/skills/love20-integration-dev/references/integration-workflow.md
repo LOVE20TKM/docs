@@ -11,7 +11,7 @@
 - Group extension behavior:
   `extension-group/src/*`
 - Group NFT or helper behavior:
-  `group/*` when the issue depends on group ownership or holder semantics
+  `group/*` when the issue depends on group ownership, holder semantics, or default group identity
 
 ## Downstream layers that usually need to stay in sync
 
@@ -49,6 +49,7 @@
 - Frontend hook and registration surfaces:
   `interface/src/hooks/contracts/*`,
   `interface/src/hooks/extension/*`,
+  `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`,
   `interface/src/config/extensionConfig.ts`,
   `interface/docs/extension.md`
 
@@ -66,4 +67,5 @@
 - Contract write -> periphery viewer read
 - Deploy script -> repo-local `*/script/network/<network>/*.params`
 - Extension factory registration -> `interface/src/config/extensionConfig.ts` plus `.env*`
+- GroupDefaults deployment -> `group/script/network/<network>/address.group.defaults.params` plus `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`
 - Event-emitting write -> `script/script/log/one_click_process.sh` export output

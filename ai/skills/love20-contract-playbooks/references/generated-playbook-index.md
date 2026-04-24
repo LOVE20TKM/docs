@@ -116,6 +116,19 @@ Regenerate it after updating periphery helpers, core interfaces, or cast scripts
 - File: `core/src/interfaces/ILOVE20Token.sol`
 - `burnForParentToken(uint256 amount)`
 
+## Group Operation Surfaces
+
+### IGroupDefaults
+
+- File: `group/src/interfaces/IGroupDefaults.sol`
+- Reads:
+  - `GROUP_ADDRESS()`
+  - `defaultGroupIdOf(address account)`
+  - `defaultGroupsOf(address[] calldata accounts)`
+- Writes:
+  - `setDefaultGroupId(uint256 groupId)`
+  - `clearDefaultGroupId()`
+
 ## Cast Scripts
 
 ### setup

@@ -1,6 +1,6 @@
 ---
 name: love20-runbooks
-description: "Troubleshoot LOVE20 protocol, contract, extension, group, and frontend failures by mapping a symptom to the fastest evidence sources and next checks. Use when a LOVE20 launch, contribute, claim, stake, submit, vote, join, verify, mint, extension registration, group mint, event sync, or frontend transaction flow does not behave as expected."
+description: "Troubleshoot LOVE20 protocol, contract, extension, group, and frontend failures by mapping a symptom to the fastest evidence sources and next checks. Use when a LOVE20 launch, contribute, claim, stake, submit, vote, join, verify, mint, extension registration, group mint, default group identity, event sync, or frontend transaction flow does not behave as expected."
 ---
 
 # LOVE20 Runbooks

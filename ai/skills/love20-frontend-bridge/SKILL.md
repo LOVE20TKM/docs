@@ -1,6 +1,6 @@
 ---
 name: love20-frontend-bridge
-description: "Trace LOVE20 frontend behavior to pages, components, hooks, ABIs, viewer contracts, and environment configuration. Use when asked how a LOVE20 UI action works, which contract a page calls, where data is aggregated in the frontend, how extension pages are registered, or how wagmi hooks map to LOVE20 contracts."
+description: "Trace LOVE20 frontend behavior to pages, components, hooks, ABIs, viewer contracts, and environment configuration. Use when asked how a LOVE20 UI action works, which contract a page calls, where data is aggregated in the frontend, how extension pages are registered, how default group identity is shown, or how wagmi hooks map to LOVE20 contracts."
 ---
 
 # LOVE20 Frontend Bridge
@@ -38,6 +38,7 @@ Use this skill to trace a LOVE20 screen or component down to the contract and da
 - Trace reads through `src/hooks/extension`, `src/hooks/composite`, and `src/hooks/contracts` before reading low-level UI code.
 - Trace writes through hooks that use `useUniversalTransaction`.
 - Use `src/config/extensionConfig.ts` and `.env*` files to understand which extension factories are enabled.
+- Use `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS` and `src/hooks/extension/base/contracts/useGroupDefaults.ts` for default group identity UI.
 - Treat `NEXT_PUBLIC_TOKEN_PREFIX` as a test-environment hint only. Actual extension UI availability comes from configured factory addresses in env plus `extensionConfig.ts`.
 - Use ABI files in `src/abis` and the lazy loader in `src/lib/abiLoader.ts` when the question is about contract surface or bundle behavior.
 - If the question becomes "what is the protocol truth" rather than "how does the UI load or send it", route to `docs/ai/skills/love20-state-and-events/SKILL.md` or `docs/ai/skills/love20-core-protocol/SKILL.md`.

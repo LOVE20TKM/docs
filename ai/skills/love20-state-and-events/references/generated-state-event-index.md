@@ -112,6 +112,7 @@ Regenerate it after updating LOVE20 viewer contracts, core or extension hooks, o
 | `useSubmitInfo` | `interface/src/hooks/contracts/useLOVE20Submit.ts` | `submitInfo` |
 | `useAllowance` | `interface/src/hooks/contracts/useLOVE20Token.ts` | `allowance` |
 | `useBalanceOf` | `interface/src/hooks/contracts/useLOVE20Token.ts` | `balanceOf` |
+| `useBalancesOf` | `interface/src/hooks/contracts/useLOVE20Token.ts` | `balanceOf` |
 | `useDecimals` | `interface/src/hooks/contracts/useLOVE20Token.ts` | `decimals` |
 | `useMaxSupply` | `interface/src/hooks/contracts/useLOVE20Token.ts` | `maxSupply` |
 | `useName` | `interface/src/hooks/contracts/useLOVE20Token.ts` | `name` |
@@ -170,9 +171,11 @@ Regenerate it after updating LOVE20 viewer contracts, core or extension hooks, o
 
 | Hook | File | Contract functions used |
 | --- | --- | --- |
+| `useAcquireLpJump` | `interface/src/hooks/composite/useAcquireLpJump.ts` | `token0`, `token1`, `isLOVE20Token`, `launchInfo`, `symbol` |
 | `useActionBaseInfosByIdsWithCache` | `interface/src/hooks/composite/useActionBaseInfosByIdsWithCache.ts` | `actionInfo` |
 | `useActionDetailData` | `interface/src/hooks/composite/useActionDetailData.ts` | `actionInfo`, `amountByActionId`, `numOfAccounts`, `currentRound`, `amountByActionIdByAccount` |
 | `useCanSubmit` | `interface/src/hooks/composite/useCanSubmit.ts` | `validGovVotes`, `govData` |
+| `useChildTokenLpBalance` | `interface/src/hooks/composite/useChildTokenLpBalance.ts` | `childTokensByPage`, `tokenDetails`, `getReserves`, `token0`, `token1` |
 | `useConvertTokenAmount` | `interface/src/hooks/composite/useConvertTokenAmount.ts` | `getPair`, `getReserves`, `token0`, `token1`, `totalSupply` |
 | `useConvertTokenAmounts` | `interface/src/hooks/composite/useConvertTokenAmount.ts` | `getPair`, `getReserves`, `token0`, `token1`, `totalSupply` |
 | `useEstimateAccountScoresByActionIdsByRounds` | `interface/src/hooks/composite/useEstimateAccountScoresByActionIdsByRounds.ts` | `randomAccounts`, `scoreByActionIdByAccount` |
@@ -209,6 +212,8 @@ Regenerate it after updating LOVE20 viewer contracts, core or extension hooks, o
 | `useVoteAddress` | `interface/src/hooks/extension/base/contracts/useExtensionCenter.ts` | `voteAddress` |
 | `useExtensionTokenActionPair` | `interface/src/hooks/extension/base/contracts/useExtensionCenter.ts` | `extensionTokenActionPair` |
 | `useIsAccountJoinedByRound` | `interface/src/hooks/extension/base/contracts/useExtensionCenter.ts` | `isAccountJoinedByRound` |
+| `useDefaultGroupIdOf` | `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts` | `defaultGroupIdOf` |
+| `useDefaultGroupsOf` | `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts` | `defaultGroupsOf` |
 | `useExtensionInitialized` | `interface/src/hooks/extension/base/contracts/useIExtension.ts` | `initialized` |
 | `useExtensionFactory` | `interface/src/hooks/extension/base/contracts/useIExtension.ts` | `FACTORY_ADDRESS` |
 | `useExtensionTokenAddress` | `interface/src/hooks/extension/base/contracts/useIExtension.ts` | `TOKEN_ADDRESS` |
@@ -381,7 +386,6 @@ Regenerate it after updating LOVE20 viewer contracts, core or extension hooks, o
 | `useMyJoinedExtensionActions` | `interface/src/hooks/extension/base/composite/useMyJoinedExtensionActions.ts` | `currentRound`, `votesNums`, `joinedAmountByAccount` |
 | `useAccountInfosByGroupIdByRound` | `interface/src/hooks/extension/plugins/group/composite/useAccountInfosByGroupIdByRound.ts` | `joinInfo` |
 | `useAccountsByGroupIdByRound` | `interface/src/hooks/extension/plugins/group/composite/useAccountsByGroupIdByRound.ts` | `accountsByGroupIdAtIndex` |
-| `useAllGroupsAccountsOfAction` | `interface/src/hooks/extension/plugins/group/composite/useAllGroupsAccountsOfAction.ts` | `accountsByGroupIdAtIndex` |
 | `useDistrustVotesOfGroupOwner` | `interface/src/hooks/extension/plugins/group/composite/useDistrustVotesOfGroupOwner.ts` | `scoreByVerifierByActionId`, `distrustVotesByVoterByGroupOwner`, `distrustReason` |
 | `useDistrustVotesOfRound` | `interface/src/hooks/extension/plugins/group/composite/useDistrustVotesOfRound.ts` | `groupIdsByVerifier`, `distrustVotesByGroupOwner` |
 | `useExtensionActionConstCache` | `interface/src/hooks/extension/plugins/group/composite/useExtensionActionConstCache.ts` | `TOKEN_ADDRESS`, `JOIN_TOKEN_ADDRESS`, `MAX_JOIN_AMOUNT_RATIO`, `ACTIVATION_MIN_GOV_RATIO`, `ACTIVATION_STAKE_AMOUNT`, `symbol` |
@@ -393,12 +397,14 @@ Regenerate it after updating LOVE20 viewer contracts, core or extension hooks, o
 | `useExtensionParams` | `interface/src/hooks/extension/plugins/group/composite/useExtensionParams.ts` | `TOKEN_ADDRESS`, `JOIN_TOKEN_ADDRESS`, `ACTIVATION_STAKE_AMOUNT`, `MAX_JOIN_AMOUNT_RATIO`, `ACTIVATION_MIN_GOV_RATIO` |
 | `useGetInfoForJoin` | `interface/src/hooks/extension/plugins/group/composite/useGetInfoForJoin.ts` | `currentRound`, `allowance`, `isActionIdVoted`, `joinInfo`, `balanceOf`, `verificationInfo` |
 | `useGroupAccountsJoinedAmountOfRound` | `interface/src/hooks/extension/plugins/group/composite/useGroupAccountsJoinedAmountOfRound.ts` | `joinedAmountByAccount`, `joinInfo` |
+| `useGroupAccountsRewardOfPage` | `interface/src/hooks/extension/plugins/group/composite/useGroupAccountsRewardOfPage.ts` | `accountsByGroupIdAtIndex`, `rewardByAccount`, `originScoreByAccount`, `accountScore`, `joinedAmountByAccount`, `joinInfo` |
 | `useGroupAccountsRewardOfRound` | `interface/src/hooks/extension/plugins/group/composite/useGroupAccountsRewardOfRound.ts` | `rewardByAccount`, `originScoreByAccount`, `accountScore`, `joinedAmountByAccount`, `joinInfo` |
 | `useGroupActionRewardsExtra` | `interface/src/hooks/extension/plugins/group/composite/useGroupActionRewardsExtra.ts` | `originScoreByAccount`, `groupIdByAccount` |
 | `useGroupScoresOfRound` | `interface/src/hooks/extension/plugins/group/composite/useGroupScoresOfRound.ts` | `originScoreByAccount`, `accountScore` |
+| `useGroupSummaryOfRound` | `interface/src/hooks/extension/plugins/group/composite/useGroupSummaryOfRound.ts` | `generatedActionRewardByGroupId`, `totalAccountScore`, `totalJoinedAmountByGroupId` |
 | `useGroupsRewardOfAction` | `interface/src/hooks/extension/plugins/group/composite/useGroupsRewardOfAction.ts` | `generatedActionRewardByGroupId`, `totalJoinedAmountByGroupId` |
 | `useMyGroupActionsDistrustInfoOfRound` | `interface/src/hooks/extension/plugins/group/composite/useMyGroupActionsDistrustInfoOfRound.ts` | `distrustVotesByGroupOwner`, `votesNumByActionId` |
-| `useMyGroupIdsNeedVerifiedByRound` | `interface/src/hooks/extension/plugins/group/composite/useMyGroupIdsNeedVerifiedByRound.ts` | `tokenOfOwnerByIndex`, `gActionIdsByTokenAddressByGroupId`, `isVerified`, `accountsByGroupIdCount` |
+| `useMyGroupIdsNeedVerifiedByRound` | `interface/src/hooks/extension/plugins/group/composite/useMyGroupIdsNeedVerifiedByRound.ts` | `tokenOfOwnerByIndex`, `actionIdsByGroupId`, `extension`, `isVerified`, `accountsByGroupIdCount` |
 | `useAccountRewardsOfRound` | `interface/src/hooks/extension/plugins/group-service/composite/useAccountRewardsOfRound.ts` | `rewardByAccount`, `actionIdsWithRecipients`, `generatedActionRewardByVerifier` |
 | `useGroupServiceActionAccounts` | `interface/src/hooks/extension/plugins/group-service/composite/useActionAccounts.ts` | `joinInfo`, `activeGroupIdsByOwner` |
 | `useActionGroupRecipientsData` | `interface/src/hooks/extension/plugins/group-service/composite/useActionGroupRecipientsData.ts` | `recipients` |
@@ -501,6 +507,9 @@ Regenerate it after updating LOVE20 viewer contracts, core or extension hooks, o
 - `v_love20_tkm20_swap`
 - `v_love20_tusdt_swap`
 - `v_liquidity_tusdt_love20`
+- `v_life20_tusdt_swap`
+- `v_liquidity_tusdt_life20`
+- `v_tusdt_crosschain`
 - `v_mint_gov_reward`
 - `v_mint_action_reward`
 - `v_claim_reward`

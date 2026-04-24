@@ -24,3 +24,4 @@
 - Round offset: Core deployment staggers `originBlocks` so submit and vote start at `T0`, join and random at `T0 + phaseBlocks`, and verify at `T0 + 2 * phaseBlocks`. At the same wall-clock block, different contracts can therefore report different round numbers while still referring to the same rolling pipeline.
 - Extension action: An action whose whitelist points to an extension contract instead of regular user addresses.
 - Chain group: A LOVE20-related ERC721 identity system used by chain-group extensions.
+- Default group: An address-level default `groupId` stored by `GroupDefaults`; it is only valid while the address still owns that group NFT.

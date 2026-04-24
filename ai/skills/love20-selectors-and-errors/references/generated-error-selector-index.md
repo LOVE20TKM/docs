@@ -5,6 +5,7 @@ Selectors are computed from `script/abi/**/*Errors.json` and messages come from 
 
 | Selector | Error | Signature | Contracts | Frontend Message |
 | --- | --- | --- | --- | --- |
+| 0x001afc01 | DefaultGroupIdNotSet | DefaultGroupIdNotSet() | IGroupDefaults | 当前未设置默认NFT |
 | 0x003b2682 | AlreadyJoined | AlreadyJoined() | IGroupJoin, IJoin | 已加入，不能重复加入 |
 | 0x00d023bb | RoundExceedsJoinRound | RoundExceedsJoinRound(uint256) | IExtensionCenter | 轮次超过加入轮次 |
 | 0x045670bc | TrialAccountAlreadyAdded | TrialAccountAlreadyAdded() | IGroupJoin | 体验地址已存在，不能重复添加 |
@@ -21,7 +22,7 @@ Selectors are computed from `script/abi/**/*Errors.json` and messages come from 
 | 0x0cab3901 | AccountAlreadyJoined | AccountAlreadyJoined() | IExtensionCenter | 账户已加入，不能重复加入 |
 | 0x0d3d9acc | HolderIndexOutOfBounds | HolderIndexOutOfBounds(uint256) | ILOVE20Group | 持有者索引超出范围 |
 | 0x0dc149f0 | AlreadyInitialized | AlreadyInitialized() | IGroupJoin, ILOVE20Join, ILOVE20Launch, ILOVE20Mint, ILOVE20Random, ILOVE20Stake, ILOVE20Submit, ILOVE20Token, ILOVE20TokenFactory, ILOVE20Verify, ILOVE20Vote | 已初始化，无需再次初始化 |
-| 0x0f974c0a | GroupNameEmpty | GroupNameEmpty() | ILOVE20Group | 链群名称不能为空 |
+| 0x0f974c0a | GroupNameEmpty | GroupNameEmpty() | ILOVE20Group | NFT名称不能为空 |
 | 0x118fd7b8 | AlreadyVerified | AlreadyVerified() | IGroupVerify | 已验证，不能重复验证 |
 | 0x152b2af8 | CannotJoinInactiveGroup | CannotJoinInactiveGroup() | IGroupJoin | 无法加入未激活的链群 |
 | 0x159ba83f | ExtensionActionIdMismatch | ExtensionActionIdMismatch(uint256,uint256) | IExtensionCenter | 扩展行动ID不匹配 |
@@ -39,6 +40,7 @@ Selectors are computed from `script/abi/**/*Errors.json` and messages come from 
 | 0x2c5211c6 | InvalidAmount | InvalidAmount() | ILOVE20TokenFactory | InvalidAmount |
 | 0x2fcd1a0f | AmountBelowMinimum | AmountBelowMinimum() | IGroupJoin | 数量低于最小值 |
 | 0x34ad25cc | LaunchNotEnded | LaunchNotEnded() | ILOVE20Launch | 公平发射尚未结束 |
+| 0x353caec0 | SenderNotGroupOwner | SenderNotGroupOwner() | IGroupDefaults | 只有NFT持有人可以设置默认NFT |
 | 0x368e710a | InvalidGroupId | InvalidGroupId() | IGroupJoin | 无效的链群ID |
 | 0x3b290c8a | ZeroRatio | ZeroRatio() | IGroupRecipients | 二次分配比例不能为零，请修改 |
 | 0x3e0673a5 | NoGovVotes | NoGovVotes() | IGroupManager | 没有治理票 |
@@ -70,6 +72,7 @@ Selectors are computed from `script/abi/**/*Errors.json` and messages come from 
 | 0x670ff944 | InvalidParentToken | InvalidParentToken() | ILOVE20Launch | 无效的父代币 |
 | 0x687a2e3f | TrialAccountZero | TrialAccountZero() | IGroupJoin | 体验地址不能为空 |
 | 0x694832c9 | RoundNotReadyToMint | RoundNotReadyToMint() | ILOVE20Mint | 该轮次还不能铸造激励 |
+| 0x6a003ec3 | GroupNotExist | GroupNotExist() | IGroupDefaults | NFT不存在 |
 | 0x6a25ec6f | LaunchAlreadyEnded | LaunchAlreadyEnded() | ILOVE20Launch | 公平发射已结束 |
 | 0x6d363c45 | NoRewardAvailable | NoRewardAvailable() | ILOVE20Mint | 没有激励可用 |
 | 0x6dd5833e | ActionIdNotFound | ActionIdNotFound() | IExtension | 行动ID没有找到 |
@@ -89,11 +92,12 @@ Selectors are computed from `script/abi/**/*Errors.json` and messages come from 
 | 0x9148e78e | NotRegisteredExtensionInFactory | NotRegisteredExtensionInFactory() | IGroupJoin, IGroupManager, IGroupVerify | 工厂中未注册的扩展 |
 | 0x92acdb29 | ExtensionNotInitialized | ExtensionNotInitialized() | IGroupJoin, IGroupVerify | 扩展未初始化 |
 | 0x92c44259 | InvalidStartIndex | InvalidStartIndex() | IGroupVerify | 无效的起始索引 |
+| 0x9526fdba | DefaultGroupIdAlreadySet | DefaultGroupIdAlreadySet(uint256) | IGroupDefaults | 该NFT已是当前默认NFT |
 | 0x965cd536 | NotEnoughWaitingBlocks | NotEnoughWaitingBlocks(uint256,uint256) | ITokenJoin | 等待区块数不足，请耐心等待 |
 | 0x970d9702 | PromisedWaitingPhasesMustBeGreaterOrEqualThanBefore | PromisedWaitingPhasesMustBeGreaterOrEqualThanBefore() | ILOVE20Stake | 承诺等待的阶段数必须大于或等于之前的阶段数 |
 | 0x97198fa6 | UnstakeAlreadyRequested | UnstakeAlreadyRequested() | ILOVE20Stake | 已申请解除质押，还未过解锁期或未取走资产，不能再次质押 |
 | 0x99b9530a | ScoresExceedVotesNum | ScoresExceedVotesNum() | ILOVE20Verify | 验证得分超过投票数量 |
-| 0x9a208e05 | GroupNameAlreadyExists | GroupNameAlreadyExists(uint256) | ILOVE20Group | 链群名称已存在 |
+| 0x9a208e05 | GroupNameAlreadyExists | GroupNameAlreadyExists(uint256) | ILOVE20Group | NFT名称已存在 |
 | 0x9ad318ff | ExceedsActionMaxJoinAmount | ExceedsActionMaxJoinAmount() | IGroupJoin | 超过行动最大参与代币量，不能加入 |
 | 0x9b50a4dc | UniswapLpMintedIsZero | UniswapLpMintedIsZero() | ILOVE20SLToken | Uniswap LP铸造数量为零 |
 | 0x9fb13b87 | OnlyOneSubmitPerRound | OnlyOneSubmitPerRound() | ILOVE20Submit | 每个轮次，1个地址只能提交1个行动 |

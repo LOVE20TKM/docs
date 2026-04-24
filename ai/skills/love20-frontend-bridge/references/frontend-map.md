@@ -20,7 +20,7 @@
 - `src/hooks/composite`
   Higher-level read models such as `useActionDetailData`, `useMyGovData`, and liquidity or reward page adapters.
 - `src/hooks/extension`
-  Extension detection, `ExtensionCenter` reads, extension reward hooks, and plugin-specific composite logic for LP, group action, and group service flows.
+  Extension detection, `ExtensionCenter` reads, default group hooks, extension reward hooks, and plugin-specific composite logic for LP, group action, and group service flows.
 - `src/config/extensionConfig.ts`
   Trusted factory registry and extension-specific tab definitions.
 - `src/errors`
@@ -44,6 +44,12 @@
   `src/pages/dex/*`, `src/pages/stake/*`
 - Extensions and groups:
   `src/pages/extension/*`, `src/pages/group/*`
+- Default group identity:
+  `src/hooks/extension/base/contracts/useGroupDefaults.ts`,
+  `src/components/Extension/Base/Group/MyGroups.tsx`,
+  `src/components/Extension/Base/Group/GroupTransfer.tsx`,
+  `src/components/WalletButton/index.tsx`,
+  `src/components/Token/Transfer.tsx`
 
 ## Environment-sensitive areas
 
@@ -51,5 +57,7 @@
   Control contract addresses and environment-specific feature flags.
 - `NEXT_PUBLIC_CONTRACT_ADDRESS_EXTENSION_*`
   The effective extension feature gates. If a factory address is absent, that extension type is not registered in `extensionConfig.ts`.
+- `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`
+  Enables default group identity reads and writes through `useGroupDefaults`.
 - `NEXT_PUBLIC_TOKEN_PREFIX`
   Only sets a local `isTestEnv` hint in `extensionConfig.ts`; it is not the actual gate used to decide whether extension UI is registered.

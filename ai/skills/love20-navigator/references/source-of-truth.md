@@ -12,6 +12,7 @@
    `extension/src/*.sol`
    `extension-lp/src/*.sol`
    `extension-group/src/*.sol`
+   `group/src/interfaces/*.sol`
    `group/src/*.sol`
    For timing questions, start with:
    `core/src/interfaces/IPhase.sol`

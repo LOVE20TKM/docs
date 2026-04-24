@@ -1,6 +1,6 @@
 ---
 name: love20-state-and-events
-description: "Inspect LOVE20 chain state, viewer reads, frontend query hooks, and indexed event history across core, periphery, interface, and script repos. Use when asked where a token, round, action, account, reward, or event timeline is read from, which contract or hook powers a page, how to query historical events, whether an address participated in an action, or why current state and indexed history disagree."
+description: "Inspect LOVE20 chain state, viewer reads, frontend query hooks, and indexed event history across core, periphery, interface, and script repos. Use when asked where a token, round, action, account, default group identity, reward, or event timeline is read from, which contract or hook powers a page, how to query historical events, whether an address participated in an action, or why current state and indexed history disagree."
 ---
 
 # LOVE20 State and Events

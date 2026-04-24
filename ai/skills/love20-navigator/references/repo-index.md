@@ -142,6 +142,12 @@
   Group NFT design and mint cost rules.
 - `group/src/LOVE20Group.sol`
   ERC721 implementation.
+- `group/src/GroupDefaults.sol`
+  Address-to-default-`groupId` registry used for default group identity and frontend context.
+- `group/src/interfaces/IGroupDefaults.sol`
+  Default group read, write, event, and error surface.
+- `group/docs/地址关联规则.md`
+  Default group semantics, transfer behavior, and common failure cases.
 
 ## Frontend repo
 

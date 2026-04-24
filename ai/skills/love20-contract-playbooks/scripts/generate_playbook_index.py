@@ -74,6 +74,10 @@ CORE_WRITE_INTERFACES = [
     "ILOVE20Token.sol",
 ]
 
+GROUP_OPERATION_INTERFACES = [
+    "IGroupDefaults.sol",
+]
+
 
 def collapse_ws(value: str) -> str:
     return " ".join(value.replace("\n", " ").split())
@@ -178,6 +182,35 @@ def render_core_write_surfaces(
     return lines
 
 
+def render_interface_surfaces(
+    title: str, interface_dir: Path, file_names: list[str], repo_root: Path, display_name: str
+) -> list[str]:
+    lines = [f"## {title}", ""]
+    for file_name in file_names:
+        path = interface_dir / file_name
+        functions = [
+            item
+            for item in parse_functions(path.read_text())
+            if not item["name"].startswith("_")
+        ]
+        reads = [item for item in functions if item["kind"] == "read"]
+        writes = [item for item in functions if item["kind"] == "write"]
+
+        lines.append(f"### {path.stem}")
+        lines.append("")
+        lines.append(f"- File: `{repo_path(path, repo_root, display_name)}`")
+        if reads:
+            lines.append("- Reads:")
+            for function in reads:
+                lines.append(f"  - `{format_signature(function)}`")
+        if writes:
+            lines.append("- Writes:")
+            for function in writes:
+                lines.append(f"  - `{format_signature(function)}`")
+        lines.append("")
+    return lines
+
+
 def render_scripts(cast_dir: Path) -> list[str]:
     grouped: dict[str, list[Path]] = {category: [] for category in SCRIPT_CATEGORY_ORDER}
     for path in sorted(cast_dir.glob("*.sh")):
@@ -201,6 +234,7 @@ def main() -> None:
     docs_root = Path(__file__).resolve().parents[4]
     periphery_root = resolve_repo(docs_root.parent, "periphery")
     core_root = resolve_repo(docs_root.parent, "core")
+    group_root = resolve_repo(docs_root.parent, "group")
     script_root = resolve_repo(docs_root.parent, "script")
     output_path = docs_root / "ai" / "skills" / "love20-contract-playbooks" / "references" / "generated-playbook-index.md"
 
@@ -213,6 +247,15 @@ def main() -> None:
     ]
     lines.extend(render_periphery_contracts(periphery_root / "src", periphery_root))
     lines.extend(render_core_write_surfaces(core_root / "src" / "interfaces", core_root))
+    lines.extend(
+        render_interface_surfaces(
+            "Group Operation Surfaces",
+            group_root / "src" / "interfaces",
+            GROUP_OPERATION_INTERFACES,
+            group_root,
+            "group",
+        )
+    )
     lines.extend(render_scripts(script_root / "script" / "cast"))
 
     output_path.write_text("\n".join(lines).rstrip() + "\n")

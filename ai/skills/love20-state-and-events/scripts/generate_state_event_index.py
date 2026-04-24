@@ -14,7 +14,7 @@ EXPORT_HOOK_RE = re.compile(
     re.MULTILINE,
 )
 FUNCTION_NAME_RE = re.compile(r"functionName:\s*'([A-Za-z0-9_]+)'")
-READ_CALL_RE = re.compile(r"\buseReadContracts?\b")
+READ_CALL_RE = re.compile(r"\b(?:useUniversalReadContracts?|useReadContracts?)\b")
 CREATE_VIEW_RE = re.compile(r"CREATE VIEW\s+([A-Za-z0-9_]+)\s+AS", re.IGNORECASE)
 CREATE_TABLE_RE = re.compile(
     r"CREATE TABLE IF NOT EXISTS\s+([A-Za-z0-9_]+)", re.IGNORECASE

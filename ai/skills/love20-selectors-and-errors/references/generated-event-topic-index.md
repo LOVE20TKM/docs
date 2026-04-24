@@ -14,6 +14,7 @@ Topic0 values are computed from `script/abi/**/*Events.json` using keccak.
 | 0x108b92088a71bee20d3a80081f73cc78d067bc26dd14d7a04593a5d6a2c85135 | Unstake | Unstake(address,uint256,address,uint256,uint256,uint256,uint256) | ILOVE20Stake | tokenAddress, round, account |
 | 0x120fa5956f98e84e02afa17d313655f548292531d6bb26b5efcd9ca5997003bf | MintActionReward | MintActionReward(address,uint256,uint256,address,uint256) | ILOVE20Mint | tokenAddress, actionId, account |
 | 0x16afc13af061e8ff8427a73c9bd09b28979a291a49d5568ffe9d2edee94a2064 | CreateExtension | CreateExtension(address,address) | IExtensionFactory | extension, tokenAddress |
+| 0x179c79005d58f66f42b75ec6c76b0d84a56f1e891276292829da5e2a509653f3 | ClearDefaultGroupId | ClearDefaultGroupId(address,uint256) | IGroupDefaults | account, prevGroupId |
 | 0x1934107c15c038151a1e59cc446e6cf10b60967de3f796c8bac9ee673c866aa2 | StakeToken | StakeToken(address,uint256,address,uint256,uint256,uint256,uint256,uint256) | ILOVE20Stake | tokenAddress, round, account |
 | 0x21351a77bb62b63b7d80b08791961058c53040fa2f2561064df1b79fea06b26a | DistrustVote | DistrustVote(address,uint256,uint256,address,address,uint256,string) | IGroupVerify | tokenAddress, actionId, groupOwner |
 | 0x2ff46b28cd16740b4bb431c556195ba7ee859036ed04f912596d87a5b183ef01 | ActionSubmit | ActionSubmit(address,uint256,address,uint256) | ILOVE20Submit | tokenAddress, submitter, actionId |
@@ -62,6 +63,7 @@ Topic0 values are computed from `script/abi/**/*Events.json` using keccak.
 | 0xe37fea01e65dea7d589abafc4bd0d5282a09ddce3e9ea971ed3399d776a1a296 | Join | Join(address,uint256,uint256,address,uint256) | ILOVE20Join, ITokenJoin | tokenAddress, actionId, account |
 | 0xea1b99131ca79df127faa5c4d9a55dd791329864188b9d825029de6153ec2328 | UpdateRandomSeed | UpdateRandomSeed(uint256,uint256,uint256,address,uint256) | ILOVE20Random | round, verifierAddress |
 | 0xeecb7dfd059b30a7f4cb461b0ce12710bb42292b9a993704e6fed78f76062424 | UpdateGroupInfo | UpdateGroupInfo(address,uint256,uint256,uint256,string,uint256,uint256,uint256,uint256) | IGroupManager | tokenAddress, actionId, groupId |
+| 0xefcdf68f0edbb6b3387c75c0caaf7430b0e80668d4a91287a9d1547286dc9266 | SetDefaultGroupId | SetDefaultGroupId(address,uint256) | IGroupDefaults | account, groupId |
 | 0xf7aaa15db110de9035eed4b512a32816091bad38a1a1f85b857eb54f62254e45 | DeactivateGroup | DeactivateGroup(address,uint256,uint256,uint256,address,uint256) | IGroupManager | tokenAddress, actionId, groupId |
 | 0xf863998bfc1dd1f0dabbe7cc2e9c4b7064439e9cd135011bce4418a2f7e76028 | DistributeRecipient | DistributeRecipient(address,uint256,uint256,uint256,address,address,uint256) | IGroupService | tokenAddress, actionId, groupId |
 | 0xfb9d66c34fa43208534a846ef789547e25046760500fdf53af4204cbe4e16c89 | Initialize | Initialize(address,uint256) | IExtension | tokenAddress, actionId |

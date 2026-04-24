@@ -148,6 +148,24 @@
 - Main reads:
   `canVerify`, `groupIdsByVerifier`, `originScoreByAccount`, `accountScore`, `groupScore`, `totalGroupScore`
 
+## Manage default group identity
+
+- Group helper contract:
+  `group/src/GroupDefaults.sol`
+- Interface:
+  `group/src/interfaces/IGroupDefaults.sol`
+- Main writes:
+  `setDefaultGroupId(groupId)`, `clearDefaultGroupId()`
+- Default execution form:
+  direct `cast send` to `GroupDefaults`
+- Main reads:
+  `GROUP_ADDRESS`, `defaultGroupIdOf`, `defaultGroupsOf`
+- Critical prerequisites:
+  the caller must currently own the `LOVE20Group` NFT for `groupId`; `defaultGroupIdOf(account)` returns `0` if the stored group was never set, cleared, or became invalid after NFT transfer.
+- Frontend env and hook:
+  `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`,
+  `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`
+
 ## Mint rewards
 
 - Core contract:

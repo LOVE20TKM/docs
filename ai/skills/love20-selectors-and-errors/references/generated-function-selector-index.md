@@ -189,6 +189,7 @@ The source selector catalog is `interface/docs/function-selectors.json`.
 | 0x37160bf2 | LOVE20MintViewer | govRewardsByAccountByRounds | govRewardsByAccountByRounds(address,address,uint256,uint256) |
 | 0x37a0fe57 | GroupManager | groupInfo | groupInfo(address,uint256) |
 | 0x37faf95f | GroupManager | tokenAddressesByGroupIdAtIndex | tokenAddressesByGroupIdAtIndex(uint256,uint256) |
+| 0x381d521c | GroupDefaults | defaultGroupsOf | defaultGroupsOf(address[]) |
 | 0x38d76f4c | LOVE20Vote | votesNumByAccountByActionId | votesNumByAccountByActionId(address,uint256,address,uint256) |
 | 0x38ed1739 | UniswapV2Router | swapExactTokensForTokens | swapExactTokensForTokens(uint256,uint256,address[],address,uint256) |
 | 0x3945105f | LOVE20RoundViewer | verifiedAddressesByAction | verifiedAddressesByAction(address,uint256,uint256) |
@@ -547,6 +548,7 @@ The source selector catalog is `interface/docs/function-selectors.json`.
 | 0xae169a50 | IReward | claimReward | claimReward(uint256) |
 | 0xaf3fefe5 | LOVE20Launch | launchedChildTokensCount | launchedChildTokensCount(address) |
 | 0xaf593462 | ExtensionGroupActionFactory | GROUP_ADDRESS | GROUP_ADDRESS() |
+| 0xaf593462 | GroupDefaults | GROUP_ADDRESS | GROUP_ADDRESS() |
 | 0xaf8e6cbb | LOVE20Mint | ROUND_REWARD_GOV_PER_THOUSAND | ROUND_REWARD_GOV_PER_THOUSAND() |
 | 0xb0c21cdc | LOVE20Join | verificationInfoUpdateRoundsCount | verificationInfoUpdateRoundsCount(address,address,uint256,string) |
 | 0xb2398720 | LOVE20Mint | MAX_GOV_BOOST_REWARD_MULTIPLIER | MAX_GOV_BOOST_REWARD_MULTIPLIER() |
@@ -614,6 +616,7 @@ The source selector catalog is `interface/docs/function-selectors.json`.
 | 0xc7576148 | GroupJoin | gActionIdsByTokenAddressByAccountCount | gActionIdsByTokenAddressByAccountCount(address,address) |
 | 0xc7ef6560 | LOVE20Mint | actionRewardByActionIdByAccount | actionRewardByActionIdByAccount(address,uint256,uint256,address) |
 | 0xc8166a35 | ExtensionCenter | setExtensionDelegate | setExtensionDelegate(address) |
+| 0xc85050aa | GroupDefaults | clearDefaultGroupId | clearDefaultGroupId() |
 | 0xc87b56dd | LOVE20Group | tokenURI | tokenURI(uint256) |
 | 0xc8829af9 | LOVE20Verify | abstentionScoreWithReward | abstentionScoreWithReward(address,uint256) |
 | 0xc94315ad | GroupVerify | groupIdsByVerifierAtIndex | groupIdsByVerifierAtIndex(address,uint256,address,uint256) |
@@ -630,6 +633,7 @@ The source selector catalog is `interface/docs/function-selectors.json`.
 | 0xcf756fdf | LOVE20Join | initialize | initialize(address,address,address,uint256) |
 | 0xd06ca61f | UniswapV2Router | getAmountsOut | getAmountsOut(uint256,address[]) |
 | 0xd0e30db0 | WETH9 | deposit | deposit() |
+| 0xd16b41c2 | GroupDefaults | setDefaultGroupId | setDefaultGroupId(uint256) |
 | 0xd21220a7 | UniswapV2Pair | token1 | token1() |
 | 0xd2e2d5c2 | GroupJoin | gAccountsByTokenAddressByGroupId | gAccountsByTokenAddressByGroupId(address,uint256) |
 | 0xd34567be | LOVE20Join | accountToIndex | accountToIndex(address,uint256,address) |
@@ -694,6 +698,7 @@ The source selector catalog is `interface/docs/function-selectors.json`.
 | 0xe4a30116 | LOVE20Stake | initialize | initialize(uint256,uint256) |
 | 0xe516f819 | ExtensionCenter | factory | factory(address,uint256) |
 | 0xe5229267 | LOVE20Vote | maxVotesNum | maxVotesNum(address,address) |
+| 0xe5377664 | GroupDefaults | defaultGroupIdOf | defaultGroupIdOf(address) |
 | 0xe571f871 | GroupJoin | trialAccountsWaitingRemove | trialAccountsWaitingRemove(address,uint256,address[]) |
 | 0xe5add031 | LOVE20Join | actionIdsByAccountCount | actionIdsByAccountCount(address,address) |
 | 0xe6a43905 | UniswapV2Factory | getPair | getPair(address,address) |
