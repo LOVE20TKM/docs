@@ -25,7 +25,7 @@
 - Design doc:
   `extension-group/docs/链群行动扩展协议.md`
 - Main files:
-  `ExtensionGroupAction.sol`, `ExtensionGroupActionFactory.sol`, `GroupManager.sol`, `GroupJoin.sol`, `GroupVerify.sol`, `GroupNotice.sol`
+  `ExtensionGroupAction.sol`, `ExtensionGroupActionFactory.sol`, `GroupManager.sol`, `GroupJoin.sol`, `GroupVerify.sol`
 - Purpose:
   Let participants join actions through chain groups that are activated by group NFT owners.
 - Special mechanics:

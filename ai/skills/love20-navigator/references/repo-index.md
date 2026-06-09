@@ -92,8 +92,6 @@
   Chain-group action extension design and flow notes.
 - `extension-group/docs/链群服务扩展协议.md`
   Chain-group service extension design and reward notes.
-- `extension-group/docs/链群公告协议.md`
-  Chain-group notice and announcement flow notes.
 
 ### Chain-group action line
 
@@ -123,16 +121,12 @@
   Chain-group join state and participation flow.
 - `extension-group/src/GroupVerify.sol`
   Chain-group verification flow and verifier-side logic.
-- `extension-group/src/GroupNotice.sol`
-  Group notice and announcement surface.
 - `extension-group/src/interface/IGroupJoin.sol`
   Chain-group join interface.
 - `extension-group/src/interface/IGroupVerify.sol`
   Chain-group verify interface.
 - `extension-group/src/interface/IGroupManager.sol`
   Chain-group manager interface.
-- `extension-group/src/interface/IGroupNotice.sol`
-  Chain-group notice interface.
 - `extension-group/src/interface/IGroupRecipients.sol`
   Chain-group recipients interface.
 

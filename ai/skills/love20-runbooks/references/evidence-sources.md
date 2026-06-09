@@ -46,7 +46,7 @@ Split the failure first:
 - Concrete chain-group extension failure (`extension-group`)
   Check `extension-group/test/ExtensionGroupAction*.t.sol` for chain-group action extension and factory issues.
   Check `extension-group/test/ExtensionGroupService*.t.sol` for service extension and reward-routing issues.
-  Check `extension-group/test/GroupJoin*.t.sol`, `GroupManager.t.sol`, `GroupNotice.t.sol`, `GroupRecipients.t.sol`, and `GroupVerify*.t.sol` for chain-group participation, management, notices, recipients, and verify flows.
+  Check `extension-group/test/GroupJoin*.t.sol`, `GroupManager.t.sol`, `GroupRecipients.t.sol`, and `GroupVerify*.t.sol` for chain-group participation, management, recipients, and verify flows.
 - Group NFT failure (`group`)
   Check `group/test/LOVE20Group.t.sol` and `UnicodeWhitespaceTest.t.sol` for naming, uniqueness, holder-index, and Unicode whitespace failures.
 
