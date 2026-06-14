@@ -17,7 +17,7 @@
 
 1. `docs/whitepaper/*`
    设计意图和术语
-2. `core`、`extension`、`extension-lp`、`extension-group`、`group`
+2. `core`、`extension`、`extension-lp`、`extension-group`、`group`、`group-chat`
    已部署且不可篡改的合约行为真值
 3. `periphery`、`script`、`interface`
    adapter、read model、execution layer

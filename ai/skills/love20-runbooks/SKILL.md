@@ -1,6 +1,6 @@
 ---
 name: love20-runbooks
-description: "Troubleshoot LOVE20 protocol, contract, extension, group, and frontend failures by mapping a symptom to the fastest evidence sources and next checks. Use when a LOVE20 launch, contribute, claim, stake, submit, vote, join, verify, mint, extension registration, group mint, default group identity, event sync, or frontend transaction flow does not behave as expected."
+description: "Troubleshoot LOVE20 protocol, contract, extension, group, group-chat, and frontend failures by mapping a symptom to the fastest evidence sources and next checks. Use when a LOVE20 launch, contribute, claim, stake, submit, vote, join, verify, mint, extension registration, group mint, default group identity, group chat activation or posting, event sync, or frontend transaction flow does not behave as expected."
 ---
 
 # LOVE20 Runbooks
@@ -9,7 +9,7 @@ Use this skill when the user already has a symptom and needs the shortest path t
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -18,6 +18,7 @@ Use this skill when the user already has a symptom and needs the shortest path t
    - contract revert or raw selector
    - phase or state mismatch
    - extension or group-specific failure
+   - group-chat activation, posting, source, ban, or plugin failure
    - frontend message, timeout, or RPC failure
    - missing logs or inconsistent historical state
 2. Read exactly one runbook first:
@@ -32,7 +33,7 @@ Use this skill when the user already has a symptom and needs the shortest path t
 ## Working Rules
 
 - Prefer evidence over intuition. Start from the user-visible symptom, then verify phase, balances, allowances, and round/action state.
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority rule sources when the failure could come from deployed immutable contracts.
+- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority rule sources when the failure could come from deployed immutable contracts.
 - Use tests as behavioral witnesses when docs are ambiguous. The test repos already encode many expected revert paths and timing constraints.
 - Distinguish protocol truth from convenience layers:
   - core contracts define state and rules
@@ -45,6 +46,7 @@ Use this skill when the user already has a symptom and needs the shortest path t
   - missing approval or insufficient balance
   - stale frontend state or RPC failure
   - extension/group registration mismatch
+  - group-chat owner, sender identity, source, ban, plugin, or round mismatch
   - log indexing not being refreshed
 
 ## Guardrails

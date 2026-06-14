@@ -9,7 +9,7 @@ Use this skill to trace a LOVE20 screen or component down to the contract and da
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -46,7 +46,7 @@ Use this skill to trace a LOVE20 screen or component down to the contract and da
 ## Guardrails
 
 - Treat periphery viewer hooks as aggregated read adapters, not protocol truth.
-- Treat deployed contract repos `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the final authority when a frontend trace must be reconciled with real on-chain behavior.
+- Treat deployed contract repos `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the final authority when a frontend trace must be reconciled with real on-chain behavior.
 - Distinguish page routing in `src/pages` from reusable components in `src/components`.
 - Follow extension flows through the action participation adapter when an action can be either base LOVE20 or extension-backed.
 - Use error maps in `src/errors` when explaining frontend failure states.

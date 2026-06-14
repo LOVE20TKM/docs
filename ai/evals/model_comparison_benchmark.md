@@ -20,7 +20,7 @@
 3. `执行`
    是否能把问题回答成具体的交互手册、状态读取路径或排查步骤。
 4. `守边界`
-   是否知道 `docs` 是设计意图，`core`、`extension`、`extension-lp`、`extension-group`、`group` 才是链上行为真值。
+   是否知道 `docs` 是设计意图，`core`、`extension`、`extension-lp`、`extension-group`、`group`、`group-chat` 才是链上行为真值。
 
 ## 2. 实验分组
 

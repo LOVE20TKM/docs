@@ -1,6 +1,6 @@
 ---
 name: love20-selectors-and-errors
-description: "Decode LOVE20 function selectors, custom error selectors, event topics, and frontend error mappings across interface, script, core, periphery, extension, and group repos. Use when asked what a 4-byte selector or topic means, which contract emitted an event, which custom error a revert corresponds to, how the frontend turns raw errors into Chinese messages, or how to trace ABI signatures back to LOVE20 code."
+description: "Decode LOVE20 function selectors, custom error selectors, event topics, and frontend error mappings across interface, script, core, periphery, extension, group, and group-chat repos. Use when asked what a 4-byte selector or topic means, which contract emitted an event, which custom error a revert corresponds to, how the frontend turns raw errors into Chinese messages, or how to trace ABI signatures back to LOVE20 code."
 ---
 
 # LOVE20 Selectors and Errors
@@ -9,7 +9,7 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -35,10 +35,10 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
 
 ## Working Rules
 
-- Treat `interface/docs/function-selectors.json` as the generated function-selector catalog for frontend ABI modules across core, extension, extension-group, and group contracts.
+- Treat `interface/docs/function-selectors.json` as the generated function-selector catalog for frontend ABI modules across core, extension, extension-group, group, and group-chat contracts when those ABIs have been mirrored into the frontend.
 - Treat `script/abi/**/*Errors.json` as the repo-neutral ABI mirror used for custom error decoding.
 - Treat `script/abi/**/*Events.json` as the repo-neutral ABI mirror used for topic decoding.
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the final authority when you need to confirm where a selector, error, or event is originally declared for deployed immutable contracts.
+- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the final authority when you need to confirm where a selector, error, or event is originally declared for deployed immutable contracts.
 - Treat `interface/src/errors/contractErrorParser.ts` and `unifiedErrorMap.ts` as the frontend decoding layer, not the origin of the ABI itself.
 - When multiple contracts share the same selector because they share a signature, say so explicitly and list the candidate contracts.
 
@@ -46,6 +46,7 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
 
 - Distinguish function selectors, custom error selectors, and event topic0 values. They are all keccak-derived but used differently.
 - If a selector is missing from `function-selectors.json` for a contract that clearly exists in `interface/src/abis`, treat the generated catalog as stale and regenerate it before concluding the selector is absent.
+- If a group-chat selector or topic is missing from frontend or script-generated catalogs, check `group-chat/src/interfaces/IGroupChat.sol` before concluding it is absent.
 - For errors, separate:
   - raw selector and signature
   - frontend message mapping

@@ -39,7 +39,7 @@
 
 ## Usage guidance
 
-- Treat deployed contract repos (`core`, `extension`, `extension-lp`, `extension-group`, `group`) as the primary behavior source.
+- Treat deployed contract repos (`core`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`) as the primary behavior source.
 - Use core interfaces when you need the canonical write surface or exact protocol state variables.
 - Default to direct `cast call` / `cast send` against the canonical interface.
 - Introduce hub functions only after showing the direct target contract path, and only when the helper materially simplifies the user flow.

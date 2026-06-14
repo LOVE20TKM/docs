@@ -8,7 +8,7 @@
    - frontend Chinese message
    - missing event or stale page state
 2. Confirm which layer failed:
-   - deployed contract repo (`core`, `extension`, `extension-lp`, `extension-group`, `group`)
+   - deployed contract repo (`core`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`)
    - hub or periphery wrapper
    - frontend parser or RPC
    - log indexing pipeline
@@ -49,6 +49,9 @@ Split the failure first:
   Check `extension-group/test/GroupJoin*.t.sol`, `GroupManager.t.sol`, `GroupRecipients.t.sol`, and `GroupVerify*.t.sol` for chain-group participation, management, recipients, and verify flows.
 - Group NFT failure (`group`)
   Check `group/test/LOVE20Group.t.sol` and `UnicodeWhitespaceTest.t.sol` for naming, uniqueness, holder-index, and Unicode whitespace failures.
+- Group-chat failure (`group-chat`)
+  Check `group-chat/test/GroupChatLifecycle.t.sol`, `GroupChatMessages.t.sol`, `GroupChatDefaultSender.t.sol`, and `GroupChatPlugins.t.sol` for activation, posting, default sender, mention, quote, source, ban, and plugin failures.
+  Check `group-chat/test/Manager.t.sol` and `TypedManagers.t.sol` when a typed decentralized chat manager owns the chat.
 
 ### Missing history, unexpected event timeline, or stale analytics
 
@@ -63,7 +66,8 @@ Split the failure first:
 - Source of truth for LP extension behavior: `extension-lp`
 - Source of truth for chain-group extension behavior: `extension-group`
 - Source of truth for chain-group NFT behavior: `group`
+- Source of truth for public on-chain group chat behavior: `group-chat`
 - Source of truth for wrapper behavior: `periphery`
 - Source of truth for frontend translation: `interface/src/errors`
 - Source of truth for replayable log history: `script/script/log`
-- Best behavioral witnesses for extension and group edge cases: `extension/test`, `extension-group/test`, `group/test`
+- Best behavioral witnesses for extension, group, and group-chat edge cases: `extension/test`, `extension-group/test`, `group/test`, `group-chat/test`

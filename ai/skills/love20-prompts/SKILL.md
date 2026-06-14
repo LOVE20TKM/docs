@@ -9,7 +9,7 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -36,7 +36,7 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
 - Ask for file paths, contract names, function names, or script paths instead of generic descriptions.
 - Prefer prompts that force the agent to separate:
   - protocol intent from docs
-  - actual behavior from deployed contract repos (`core`, `extension`, `extension-lp`, `extension-group`, `group`)
+  - actual behavior from deployed contract repos (`core`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`)
   - convenience wrappers from core rules
   - current state from indexed history
 - For prompts aimed at junior or generic agents, force a triage step that classifies:

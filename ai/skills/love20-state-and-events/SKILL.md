@@ -1,6 +1,6 @@
 ---
 name: love20-state-and-events
-description: "Inspect LOVE20 chain state, viewer reads, frontend query hooks, and indexed event history across core, periphery, interface, and script repos. Use when asked where a token, round, action, account, default group identity, reward, or event timeline is read from, which contract or hook powers a page, how to query historical events, whether an address participated in an action, or why current state and indexed history disagree."
+description: "Inspect LOVE20 chain state, viewer reads, frontend query hooks, and indexed event history across core, periphery, interface, script, and group-chat repos. Use when asked where a token, round, action, account, default group identity, chat message, reward, or event timeline is read from, which contract or hook powers a page, how to query historical events, whether an address participated in an action, or why current state and indexed history disagree."
 ---
 
 # LOVE20 State and Events
@@ -9,7 +9,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -42,7 +42,7 @@ Use this skill for read-path discovery and state inspection, not for write-flow 
 
 ## Working Rules
 
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority truth sources for current on-chain state.
+- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority truth sources for current on-chain state.
 - Prefer direct chain state for "what is true now" questions.
 - Prefer indexed events and SQL views for "what happened over time" questions.
 - Treat periphery viewers, frontend hooks, and SQL tables/views as read models layered on top of deployed contracts.

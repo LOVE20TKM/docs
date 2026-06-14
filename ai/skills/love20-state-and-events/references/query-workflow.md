@@ -5,7 +5,7 @@
 Use this split before opening files:
 
 - Current protocol truth:
-  read deployed contract repos first: `core`, `extension`, `extension-lp`, `extension-group`, `group`.
+  read deployed contract repos first: `core`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - Frontend data source:
   read the direct wagmi hook or composite hook after you know the contract surface.
 - Historical timeline or analytics:

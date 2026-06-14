@@ -120,3 +120,34 @@ Frontend bridges:
 Use historical indexing when:
 
 - you need account transfer flow, mint history, reward claim history, or liquidity/swap timeline
+
+## Group Chat
+
+Use this playbook when the question is about chat activation, posting eligibility, messages, mentions, quote references, sender identities, or chat rounds.
+
+Use these surfaces first:
+
+- `group-chat/src/interfaces/IGroupChat.sol` for the read and event surface.
+- `group-chat/src/GroupChat.sol` for implemented behavior.
+- `group-chat/script/network/thinkium70001_public/address.group.chat.params` for public-network deployed addresses.
+- `group/src/interfaces/IGroupDefaults.sol` only when the question depends on `postAsDefaultSender` or default sender identity.
+- `group` repo owner/delegate surfaces only when management authority depends on current owner or delegate identity.
+
+Main reads:
+
+- `chatInfo(groupId)` and `chatInfos(groupIds)` for activation, owner, posting flag, rule slots, and first activation metadata.
+- `canPost(groupId, senderId, senderAddress)` for lightweight eligibility precheck and reason code.
+- `messagesCount(groupId)`, `message(groupId, messageId)`, and `messages(groupId, offset, limit, reverse)` for message retrieval.
+- `messagesByRound`, `messagesBySender`, `messagesByMention`, and `messagesByMentionAll` for indexed message slices.
+- `roundInfo`, `roundInfos`, `rounds`, and `currentRound` for GroupChat-local round state.
+- `senderIds`, `groupIds`, and their count reads for discovery.
+
+Use logs when:
+
+- you need discovery or notification signals from `PostMessage`, `MentionSenderId`, `MentionAll`, `Activate`, rule-slot events, or `FailAfterPostPlugin`.
+
+Guardrails:
+
+- Do not treat `senderId` as an address; it is the speaking `GroupNFT.tokenId`.
+- Do not borrow a core contract's `currentRound()` unless you are explicitly comparing round alignment; use GroupChat's own `currentRound()` for chat message rounds.
+- Do not conclude that a user cannot post from default group state alone; `postAsDefaultSender` resolves a sender identity first, then uses the same `post` checks.

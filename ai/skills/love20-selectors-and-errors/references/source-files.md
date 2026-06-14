@@ -5,7 +5,7 @@
 - `interface/scripts/generateFunctionSelectors.ts`
   Frontend generator that computes the selector catalog from ABI TypeScript modules.
 - `interface/docs/function-selectors.json`
-  Generated selector output used for reverse lookup. When current, it should include the ABI modules in `interface/src/abis`, including extension and group contracts.
+  Generated selector output used for reverse lookup. When current, it should include the ABI modules in `interface/src/abis`, including extension, group, and group-chat contracts that have been mirrored into the frontend.
 - `interface/src/abis`
   ABI TypeScript source modules that feed selector generation.
 
@@ -28,6 +28,8 @@
   Custom error ABI subsets.
 - `*Events.json`
   Event ABI subsets.
+- `group-chat/src/interfaces/IGroupChat.sol`
+  Primary ABI, event, and error source for GroupChat when generated mirrors do not yet include group-chat.
 
 ## Event topic calculation
 
@@ -39,5 +41,6 @@
 - Use the frontend-generated files when debugging what the UI is already using.
 - If a selector is missing for a contract that already exists in `interface/src/abis`, refresh the frontend-generated catalog before assuming the selector is unavailable.
 - Use the script ABI JSON files when you need a repo-neutral ABI mirror that spans core, extension, and group contracts.
-- Use `core`, `extension`, `extension-lp`, `extension-group`, and `group` source files when you need the final declaration site for deployed immutable contracts.
+- Use `group-chat/src/interfaces/*.sol` directly when decoding group-chat selectors, errors, or events that have not yet been mirrored into frontend or script ABI catalogs.
+- Use `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` source files when you need the final declaration site for deployed immutable contracts.
 - If selectors conflict across multiple contracts, use transaction calldata context, contract address, or frontend hook path to disambiguate.

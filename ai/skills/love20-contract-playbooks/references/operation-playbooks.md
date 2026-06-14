@@ -166,6 +166,35 @@
   `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`,
   `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`
 
+## Manage group chats and post messages
+
+- Group-chat contract:
+  `group-chat/src/GroupChat.sol`
+- Interface:
+  `group-chat/src/interfaces/IGroupChat.sol`
+- Public-network address file:
+  `group-chat/script/network/thinkium70001_public/address.group.chat.params`
+- Main lifecycle writes:
+  `activateChat(groupId, scopeSource, banSource, beforePostPlugin, afterPostPlugin)`,
+  `setPostingAllowed(groupId, postingAllowed)`,
+  `setScopeSource(groupId, sourceAddress)`,
+  `setBanSource(groupId, sourceAddress)`,
+  `setBeforePostPlugin(groupId, pluginAddress)`,
+  `setAfterPostPlugin(groupId, pluginAddress)`
+- Main posting writes:
+  `post(groupId, senderId, content, mentionedSenderIds, mentionAll, quotedMessageId)`,
+  `postAsDefaultSender(groupId, content, mentionedSenderIds, mentionAll, quotedMessageId)`
+- Default execution form:
+  direct `cast send` to `GroupChat`
+- Main reads:
+  `chatInfo`, `chatInfos`, `canPost`, `messagesCount`, `message`, `messages`,
+  `messagesByRound`, `messagesBySender`, `messagesByMention`, `messagesByMentionAll`,
+  `senderIds`, `groupIds`, `currentRound`, `roundInfo`, `roundInfos`
+- Critical prerequisites:
+  `groupId` and `senderId` must exist as Group NFTs; `activateChat` requires the current `groupId` owner; management writes require owner or valid delegate; posting requires the `senderAddress` to own `senderId`; `postAsDefaultSender` requires a valid `GroupDefaults` default identity.
+- Confirmation reads:
+  after activation or rule updates, read `chatInfo(groupId)`; after posting, read `message(groupId, messageId)` or pull the latest page with `messages(groupId, offset, limit, reverse)`.
+
 ## Mint rewards
 
 - Core contract:

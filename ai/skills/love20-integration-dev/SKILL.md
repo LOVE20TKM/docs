@@ -9,7 +9,7 @@ Use this skill when the task is to make multiple LOVE20 layers work together end
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -17,7 +17,7 @@ Use this skill when the task is to make multiple LOVE20 layers work together end
 1. Read `references/integration-workflow.md`.
 2. Read `references/sync-points.md`.
 3. Identify the behavior-owning repo first:
-   - `core`, `extension`, `extension-lp`, `extension-group`, or `group`
+   - `core`, `extension`, `extension-lp`, `extension-group`, `group`, or `group-chat`
 4. Map the downstream adapters that must stay in sync:
    - `periphery` viewers or hub
    - `script` ABI, cast, log, and network files

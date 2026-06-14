@@ -23,6 +23,7 @@ LOVE20 是一个开源的去中心化社群铸币协议。旨在让每一个人�
 - [链群 NFT](https://love20tkm.github.io/group/)
 - [LP 扩展协议](https://love20tkm.github.io/extension-lp/)
 - [链群扩展协议](https://love20tkm.github.io/extension-group/)
+- [群聊协议](https://github.com/LOVE20TKM/group-chat)
 
 ## 合约代码
 
@@ -32,6 +33,7 @@ LOVE20 是一个开源的去中心化社群铸币协议。旨在让每一个人�
 - [扩展协议框架](https://github.com/LOVE20TKM/extension)
 - [LP 扩展协议](https://github.com/LOVE20TKM/extension-lp)
 - [链群扩展协议](https://github.com/LOVE20TKM/extension-group)
+- [群聊协议](https://github.com/LOVE20TKM/group-chat)
 
 ## 客户端代码
 

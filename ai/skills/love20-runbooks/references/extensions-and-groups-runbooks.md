@@ -93,3 +93,25 @@ Evidence:
   - `SenderNotGroupOwner`
   - `DefaultGroupIdAlreadySet`
   - `DefaultGroupIdNotSet`
+
+## Group chat activation or posting fails
+
+Check these first:
+
+- Confirm the public-network `GroupChat` address from `group-chat/script/network/thinkium70001_public/address.group.chat.params`.
+- Confirm `groupId` exists in the Group NFT contract and the caller is the current owner for `activateChat`.
+- Confirm `chatInfo(groupId).activated == true` and `postingAllowed == true` before posting.
+- Confirm `senderId` exists and `msg.sender` currently owns that sender NFT.
+- If using `postAsDefaultSender`, confirm `GroupDefaults.defaultGroupIdOf(account)` returns a valid sender NFT owned by the account.
+- For non-owner/non-delegate posters, confirm `scopeSource.canPost` and `banSource.isBanned` outcomes separately.
+- If `mentionAll == true`, confirm the sender is chat owner, valid delegate, or admin.
+- If quoting, confirm `quotedMessageId` is in `1..messagesCount(groupId)`.
+- If the failure appears only after message write, inspect `afterPostPlugin`; after-post failures should emit `FailAfterPostPlugin` rather than rollback the message.
+
+Evidence:
+
+- `group-chat/test/GroupChatLifecycle.t.sol` covers activation, owner/delegate management, and posting switches.
+- `group-chat/test/GroupChatMessages.t.sol` covers content length, mentions, quote validation, message ids, and paging behavior.
+- `group-chat/test/GroupChatDefaultSender.t.sol` covers default sender posting.
+- `group-chat/test/GroupChatPlugins.t.sol` covers source, ban, before-post, and after-post behavior.
+- `group-chat/test/GroupMemberScope.t.sol`, `GroupJoinScopeSource.t.sol`, `AdminBanSource.t.sol`, and `GovVotedBanSource.t.sol` cover common source and ban modules.

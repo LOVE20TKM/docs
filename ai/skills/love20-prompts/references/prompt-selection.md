@@ -38,7 +38,7 @@
 - Conflict rule:
   when docs and code disagree, state both and say which is behavior truth.
 - Source-of-truth rule:
-  treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority code sources for deployed immutable behavior; treat `periphery`, `script`, and `interface` as adapters or execution layers unless the task is explicitly about them.
+  treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority code sources for deployed immutable behavior; treat `periphery`, `script`, and `interface` as adapters or execution layers unless the task is explicitly about them.
 
 ## When to split one prompt into several
 

@@ -1,6 +1,6 @@
 ---
 name: love20-navigator
-description: "Navigate LOVE20 documentation and related repositories across docs, core, periphery, script, extension, extension-lp, extension-group, group, and interface. Use when asked what a LOVE20 concept means, how phase and round concepts should be interpreted, which repo or file is authoritative, how protocol terms map to code, where to start reading, or how to find the correct LOVE20 source quickly."
+description: "Navigate LOVE20 documentation and related repositories across docs, core, periphery, script, extension, extension-lp, extension-group, group, group-chat, and interface. Use when asked what a LOVE20 concept means, how phase and round concepts should be interpreted, which repo or file is authoritative, how protocol terms map to code, where to start reading, or how to find the correct LOVE20 source quickly."
 ---
 
 # LOVE20 Navigator
@@ -9,7 +9,7 @@ Use this skill to choose the right LOVE20 source before answering in detail.
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -24,7 +24,7 @@ Use this skill to choose the right LOVE20 source before answering in detail.
 Before routing, classify the request on these axes:
 
 1. Intent: explain, operate, inspect state, decode, debug, develop, integrate, validate, release, or update docs.
-2. Surface: base LOVE20, extension, extension-lp, extension-group, group, or frontend adapter.
+2. Surface: base LOVE20, extension, extension-lp, extension-group, group, group-chat, or frontend adapter.
    If the user says only `action` or `行动`, assume it may span base and extension surfaces until a narrower scope is explicit.
 3. Timing: business round in the whitepaper, or contract-local `currentRound()` on a named contract.
 4. Authority: design intent, deployed contract behavior, adapter behavior, or indexed history.
@@ -46,17 +46,19 @@ If any axis is ambiguous, say which assumption you are making before routing dee
 - Continue with `docs/ai/skills/love20-runbooks/SKILL.md` for troubleshooting, failure classification, shortest debug path, or "what should I check first" requests.
 - Continue with `docs/ai/skills/love20-test-and-release/SKILL.md` for test planning, regression scope, deployment checks, release signoff, or post-release verification.
 - Continue with `docs/ai/skills/love20-prompts/SKILL.md` when the user wants to rewrite, split, or tighten a LOVE20 prompt for another AI agent.
+- For group-chat protocol questions, start with `group-chat/README.md`, `group-chat/docs/requirements.md`, `group-chat/docs/spec/core-protocol.md`, and `group-chat/docs/spec/posting-query.md`; use `group-chat/src/interfaces/IGroupChat.sol` and `group-chat/src/GroupChat.sol` as the contract behavior source.
 - For "what phase is this" or "how is round computed" questions, start with `docs/ai/skills/love20-core-protocol/SKILL.md`, then use `docs/ai/skills/love20-state-and-events/SKILL.md` if the issue is about viewer data or indexed history.
 
 ## Guardrails
 
 - Treat `docs/whitepaper/*.md` as design intent and terminology.
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` source files as the highest-priority on-chain behavior sources because they correspond to deployed immutable contracts.
+- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` source files as the highest-priority on-chain behavior sources because they correspond to deployed immutable contracts.
 - Treat periphery, scripts, and frontend code as adapters around the core protocol, not the primary behavioral source.
 - Prefer normal source files over `core/src/merged/*.sol`.
 - If a question says only "round" or "phase", force the distinction between business round and contract-local round before continuing.
 - If a question says only `action` or `行动`, do not route as if it were a base-core action by default. Include extension and group repos in the initial search space unless the user explicitly narrows the scope.
 - If a question says only "join" or "claim", determine whether the write surface is base LOVE20, extension, or group helper before routing to an interaction skill.
+- Distinguish `group-chat` from `group` and `extension-group`: `group-chat` defines public on-chain chat state and posting rules, `group` defines the Group NFT and default/delegate identity layer, and `extension-group` defines chain-group action/service extension behavior.
 - When docs and code diverge, state the divergence explicitly and separate documented design from implemented behavior.
 
 ## References

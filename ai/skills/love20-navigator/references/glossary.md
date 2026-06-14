@@ -25,3 +25,8 @@
 - Extension action: An action whose whitelist points to an extension contract instead of regular user addresses.
 - Chain group: A LOVE20-related ERC721 identity system used by chain-group extensions.
 - Default group: An address-level default `groupId` stored by `GroupDefaults`; it is only valid while the address still owns that group NFT.
+- Group Chat: A public on-chain chat protocol where one `GroupNFT.tokenId` maps to one chat space and messages are appended on-chain.
+- Chat groupId: In `group-chat`, the chat identifier; it is the same numeric id as the corresponding `GroupNFT.tokenId`.
+- senderId: In `group-chat`, the `GroupNFT.tokenId` used as the speaking identity. It is not an address; address values must be named explicitly as `senderAddress`, `owner`, or similar.
+- GroupChat rule slots: The per-chat external rule addresses `scopeSource`, `banSource`, `beforePostPlugin`, and `afterPostPlugin`.
+- GroupChat typed manager: A manager contract that creates and owns a decentralized chat type, such as token community, token governor, token action, or token action governor chat.

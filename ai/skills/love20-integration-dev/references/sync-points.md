@@ -10,6 +10,7 @@
   `extension-group/script/network/<network>/address.extension.group.params`,
   `group/script/network/<network>/address.group.params`,
   `group/script/network/<network>/address.group.defaults.params`,
+  `group-chat/script/network/<network>/address.group.chat.params`,
   `periphery/script/network/<network>/address.params`,
   `periphery/script/network/<network>/address.core.params`
 - The `script` repo may mirror or consume addresses for interaction and export flows:
@@ -19,6 +20,10 @@
   `script/script/network/<network>/address.extension.group.params`,
   `script/script/network/<network>/address.group.params`,
   `script/script/network/<network>/contracts.json`
+- For group-chat, the current `script` repo handoff is the contract catalog and ABI mirror, not a separate `address.group.chat.params` file:
+  `script/script/network/<network>/contracts.json`,
+  `script/abi/GroupChat.sol/GroupChat.json`,
+  related group-chat manager, source, admin, member, and ban-list ABI folders under `script/abi`
 - Frontend env targets live in:
   `interface/.env.development`,
   `interface/.env.test`,

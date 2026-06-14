@@ -143,6 +143,43 @@
 - `group/docs/地址关联规则.md`
   Default group semantics, transfer behavior, and common failure cases.
 
+## Group-chat repo
+
+- `group-chat/README.md`
+  High-level public on-chain group chat protocol overview and status.
+- `group-chat/docs/requirements.md`
+  Group-chat documentation entry point, authority boundaries, current contract family, and review routing.
+- `group-chat/docs/spec/core-protocol.md`
+  Core GroupChat protocol rules: activation, owner/delegate permissions, rule slots, source/plugin call order, NFT transfer semantics, and zero-value behavior.
+- `group-chat/docs/spec/posting-query.md`
+  Posting identity, content validation, mention and quote rules, round calculation, pagination, message indexes, and sync strategy.
+- `group-chat/docs/spec/abi-events-errors.md`
+  ABI grouping, event ordering, structs, and error categories.
+- `group-chat/docs/chat-types.md`
+  Supported chat types: token community, token governor, token action, token action governor, and chain-group service-provider managed chats.
+- `group-chat/docs/deployment.md`
+  Deployment scripts, required parameters, deployed artifact fields, verify flow, and post-deploy checks.
+- `group-chat/src/interfaces/IGroupChat.sol`
+  Main GroupChat interface, structs, events, errors, reads, and writes.
+- `group-chat/src/GroupChat.sol`
+  Core GroupChat implementation.
+- `group-chat/src/GroupAdmin.sol`
+  Owner/delegate/admin management support for owner-admin managed chat modules.
+- `group-chat/src/GroupBanList.sol`
+  Shared manual blacklist storage used by admin ban sources.
+- `group-chat/src/GroupMember.sol`
+  Shared member NFT list used by chain-group managed chat scope sources.
+- `group-chat/src/managers/*.sol`
+  Typed decentralized chat managers for token and action chat types.
+- `group-chat/src/sources/scope/*.sol`
+  Scope sources that decide who can post.
+- `group-chat/src/sources/ban/*.sol`
+  Ban sources that decide who is rejected after scope checks.
+- `group-chat/script/network/thinkium70001_public/address.group.chat.params`
+  Public-network deployed GroupChat, source, member, admin, ban, and manager addresses.
+- `group-chat/script/network/thinkium70001_public/group.chat.params`
+  Public-network deployment parameters such as ExtensionCenter, GroupJoin, limits, and ban thresholds.
+
 ## Frontend repo
 
 - `interface/src/pages`

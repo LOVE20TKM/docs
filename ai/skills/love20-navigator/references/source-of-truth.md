@@ -14,20 +14,29 @@
    `extension-group/src/*.sol`
    `group/src/interfaces/*.sol`
    `group/src/*.sol`
+   `group-chat/src/interfaces/*.sol`
+   `group-chat/src/interfaces/**/*.sol`
+   `group-chat/src/*.sol`
+   `group-chat/src/managers/*.sol`
+   `group-chat/src/sources/**/*.sol`
    For timing questions, start with:
    `core/src/interfaces/IPhase.sol`
    `docs/ai/skills/love20-core-protocol/references/governance-lifecycle.md`
-3. Read and write adapters around deployed contracts:
+3. Deployed network address and parameter files:
+   `group-chat/script/network/thinkium70001_public/address.group.chat.params`
+   `group-chat/script/network/thinkium70001_public/group.chat.params`
+4. Read and write adapters around deployed contracts:
    `periphery/src/*.sol`
-4. Executable interaction examples:
+5. Executable interaction examples:
    `script/script/cast/*.sh`
-5. Frontend integration:
+6. Frontend integration:
    `interface/src`
 
 ## Conflict handling
 
 - Use docs for protocol intent, motivations, and formulas that explain why a rule exists.
-- Use `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority code repositories when the question is about immutable deployed contract behavior.
+- Use `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority code repositories when the question is about immutable deployed contract behavior.
+- For group-chat public deployment addresses and immutable deployment parameters, use `group-chat/script/network/thinkium70001_public/address.group.chat.params` and `group-chat/script/network/thinkium70001_public/group.chat.params`.
 - Treat `periphery`, `script`, and `interface` as adapters, helpers, or execution examples around those deployed contracts.
 - For `phase` versus `round`, separate:
   - protocol timing semantics from `IPhase.sol` and lifecycle docs

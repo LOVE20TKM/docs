@@ -1,6 +1,6 @@
 ---
 name: love20-contract-playbooks
-description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, request unlock, withdraw staked assets, submit actions, vote, join, verify, mint rewards, burn for parent token, manage default group identity, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
+description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, request unlock, withdraw staked assets, submit actions, vote, join, verify, mint rewards, burn for parent token, manage default group identity, activate or post to group chats, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
 ---
 
 # LOVE20 Contract Playbooks
@@ -9,7 +9,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -33,6 +33,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
    - group join or trial join: `GroupJoin`
    - group verification or distrust flow: `GroupVerify`
    - default group identity: `GroupDefaults`
+   - group chat activation, rule slots, posting, and message reads: `GroupChat`
 4. Determine whether the action is base or extension-backed before using any join or reward function.
 5. Read timing from the target contract you will call. Do not borrow `currentRound()` from a different phase contract.
 6. Collect prerequisites before suggesting the write:
@@ -40,7 +41,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 
 ## Working Rules
 
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, and `group` as the highest-priority contract-code sources when the requested operation targets deployed immutable contracts.
+- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority contract-code sources when the requested operation targets deployed immutable contracts.
 - Distinguish core contracts from periphery helpers. Core contracts define the protocol; periphery contracts reduce call friction.
 - Prefer direct `cast call` / `cast send` guidance against the target interface or contract.
 - Prefer existing scripts in `script/script/cast` over inventing new command sequences, but treat them as executable examples of `cast call` / `cast send`, not as the primary protocol surface.

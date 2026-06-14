@@ -22,7 +22,7 @@ Requirements:
 - cite the exact doc files and code files you used
 - name the core contracts and key functions
 - if docs and code conflict, state the conflict explicitly and treat code as behavior truth
-- when deployed immutable behavior is involved, prioritize `core`, `extension`, `extension-lp`, `extension-group`, and `group` over `periphery`, `script`, or `interface`
+- when deployed immutable behavior is involved, prioritize `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` over `periphery`, `script`, or `interface`
 - keep the answer concise and structured for an engineer
 ```
 
