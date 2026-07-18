@@ -1,5 +1,7 @@
 # Data Loading Map
 
+Paths with an explicit repo prefix use `interface-test`, the active frontend source. Use `interface` only when tracing the released production build.
+
 ## Aggregated read path
 
 - `useLOVE20RoundViewer.ts`
@@ -24,17 +26,17 @@
 
 ## Composite read models
 
-- `interface/src/hooks/composite/useActionDetailData.ts`
+- `interface-test/src/hooks/composite/useActionDetailData.ts`
   Starts from submit and join base data, then switches to `useActionParticipationAdapter` when the action may be extension-backed.
-- `interface/src/hooks/extension/base/composite/useActionParticipationAdapter.ts`
+- `interface-test/src/hooks/extension/base/composite/useActionParticipationAdapter.ts`
   Detects whether an action is extension-backed through `useExtensionByActionInfoWithCache` and switches to extension-specific read paths.
-- `interface/src/hooks/extension/base/composite/useExtensionParticipationData.ts`
+- `interface-test/src/hooks/extension/base/composite/useExtensionParticipationData.ts`
   Reads `ExtensionCenter.accountsCount`, `ExtensionCenter.isAccountJoined`, and the extension contract's `joinedAmount`.
-- `interface/src/hooks/extension/plugins/group/composite/useGetInfoForJoin.ts`
+- `interface-test/src/hooks/extension/plugins/group/composite/useGetInfoForJoin.ts`
   Group-action join adapter that combines base join round, vote status, balances, allowance, and extension verification info for the group join flow.
-- `interface/src/hooks/extension/base/contracts/useIReward.ts`
+- `interface-test/src/hooks/extension/base/contracts/useIReward.ts`
   Generic extension reward reads and reward-claim writes for contracts implementing `IReward`.
-- `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`
+- `interface-test/src/hooks/extension/base/contracts/useGroupDefaults.ts`
   Reads `defaultGroupIdOf` and `defaultGroupsOf`, writes `setDefaultGroupId` and `clearDefaultGroupId`, and invalidates default group queries after writes.
 - Other composite hooks build page-specific state on top of viewer contracts and direct hooks.
 
@@ -53,7 +55,7 @@
 
 ## Extension UI bridge
 
-- `interface/docs/extension.md`
+- `interface-test/docs/extension.md`
   Notes on factory deploy screens, common action UI, and extension plugin components.
 - `src/config/extensionConfig.ts`
   Maps factory addresses to extension type, display name, and action-detail tabs.

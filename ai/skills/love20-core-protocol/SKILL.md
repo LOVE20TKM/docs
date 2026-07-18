@@ -1,16 +1,11 @@
 ---
 name: love20-core-protocol
-description: "Explain LOVE20 core protocol mechanics and map them to the core contracts and whitepaper. Use when asked about fair launch, parent and child token rules, SL and ST staking, SL 解锁期 or unlock period, 申请解锁, 取回质押资产, governance rounds, action submission, voting, joining, random verification, reward minting, or how LOVE20 rules are implemented on-chain."
+description: "Explain LOVE20 core mechanics and map them to the whitepaper and contracts. Use for fair launch, parent-child tokens, SL or ST staking, 解锁期, 申请解锁, 取回质押资产, governance rounds, action flow, verification, and reward minting."
 ---
 
 # LOVE20 Core Protocol
 
 Use this skill to explain LOVE20 as a state machine backed by focused core contracts.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -18,7 +13,7 @@ Use this skill to explain LOVE20 as a state machine backed by focused core contr
 2. Read `references/governance-lifecycle.md` when the question spans multiple phases or rounds.
 3. Read `references/core-contract-map.md` to map concepts to files and interfaces.
 4. Read `references/core-data-structures.md` when structs, return shapes, or storage-facing payloads matter.
-5. Read `references/generated-interface-index.md` when you need a refreshed function inventory.
+5. Read `references/generated-interface-index.md` when you need a refreshed function inventory. Regenerate it with `python3 ai/skills/love20-core-protocol/scripts/generate_interface_index.py` after core interfaces change.
 6. Open only the interfaces and implementations needed for the answer.
 
 ## Mandatory Triage
@@ -67,12 +62,3 @@ When answering, prefer this order:
 3. Rule owner: name the contract or interface that enforces the behavior.
 4. Dependency sentence: note any dependent contracts such as `Vote`, `Join`, `Random`, `Verify`, or `Mint`.
 5. Exception sentence: mention extension or group exceptions when they materially change the base rule.
-
-## References
-
-- `references/protocol-overview.md`
-- `references/governance-lifecycle.md`
-- `references/core-contract-map.md`
-- `references/core-data-structures.md`
-- `references/generated-interface-index.md`
-- `scripts/generate_interface_index.py`

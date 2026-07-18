@@ -1,16 +1,11 @@
 ---
 name: love20-runbooks
-description: "Troubleshoot LOVE20 protocol, contract, extension, group, group-chat, and frontend failures by mapping a symptom to the fastest evidence sources and next checks. Use when a LOVE20 launch, contribute, claim, stake, submit, vote, join, verify, mint, extension registration, group mint, default group identity, group chat activation or posting, event sync, or frontend transaction flow does not behave as expected."
+description: "Troubleshoot LOVE20 launch, contribute, claim, stake, submit, vote, join, verify, mint, extension registration, group mint, default group identity, group-chat activation or posting, frontend transaction, event-sync, and indexed-history failures."
 ---
 
 # LOVE20 Runbooks
 
 Use this skill when the user already has a symptom and needs the shortest path to root cause.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -33,12 +28,12 @@ Use this skill when the user already has a symptom and needs the shortest path t
 ## Working Rules
 
 - Prefer evidence over intuition. Start from the user-visible symptom, then verify phase, balances, allowances, and round/action state.
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority rule sources when the failure could come from deployed immutable contracts.
+- Treat contract source as the highest-priority rule source for the deployed instance. During the group-chat pilot, also check whether the frontend and scripts point to the latest redeployment.
 - Use tests as behavioral witnesses when docs are ambiguous. The test repos already encode many expected revert paths and timing constraints.
 - Distinguish protocol truth from convenience layers:
   - core contracts define state and rules
   - periphery and hub contracts wrap user flows
-  - interface code translates raw failures into UX text
+  - `interface-test` translates active-test failures into UX text; `interface` reflects the released production parser
   - script/log tooling reconstructs historical events
 - Call out whether the failure is caused by:
   - bad input
@@ -60,11 +55,3 @@ Use this skill when the user already has a symptom and needs the shortest path t
 - When a failure may come from hub/periphery wrappers, still confirm the underlying core contract and phase rule.
 - For group or extension issues, check token/action/address binding mismatches before checking UI code.
 - Do not stop at wrapper, parser, or script symptoms when the failure can be confirmed against a deployed contract repo.
-
-## References
-
-- `references/evidence-sources.md`
-- `references/launch-and-stake-runbooks.md`
-- `references/action-and-mint-runbooks.md`
-- `references/extensions-and-groups-runbooks.md`
-- `references/frontend-and-network-runbooks.md`

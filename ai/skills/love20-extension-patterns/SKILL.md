@@ -1,16 +1,11 @@
 ---
 name: love20-extension-patterns
-description: "Explain and design LOVE20 extensions, extension factories, and whitelist-based reward flows. Use when asked how the extension framework works, how to build a new extension, how ExtensionCenter should be used, how LP or chain-group extensions behave, or how extension actions map back into LOVE20 rewards."
+description: "Explain and design LOVE20 extensions, factories, and whitelist reward flows. Use for extension framework choices, ExtensionCenter, LP or chain-group behavior, join models, and mapping extension rewards back to LOVE20 actions."
 ---
 
 # LOVE20 Extension Patterns
 
 Use this skill to understand or design LOVE20 extension contracts without losing the connection to the underlying action reward flow.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -58,8 +53,3 @@ When explaining an extension, include:
 3. User-facing join or reward surface.
 4. Registry dependencies such as `ExtensionCenter`, factory, or group manager.
 5. How rewards ultimately depend on the underlying LOVE20 action.
-
-## References
-
-- `references/extension-framework.md`
-- `references/extension-examples.md`

@@ -74,23 +74,30 @@
 
 ## Frontend
 
-- Repo: `interface`
+- Repo: `interface-test`
 - High-value commands from `package.json`:
   `yarn generate:abi`,
   `yarn generate:env`,
   `yarn generate:selectors`,
   `yarn generate:errors`,
   `yarn build`,
-  `yarn test`
-- Use `yarn test` only with the understanding that this repo treats build as the test gate.
+  `yarn test`,
+  `yarn public-test`
+- Group-chat-specific checks when that surface changes:
+  `yarn verify:group-chat`,
+  `yarn verify:group-chat:rpc`,
+  `yarn verify:group-chat:fork`,
+  `yarn e2e:group-chat:public-test`
+- Develop and validate only in `interface-test`. Do not edit `interface` directly.
+- Formal publication is a separate manual step: `yarn release:test-to-interface-main`.
 
-## Alternate frontend or env sandbox
+## Group chat
 
-- Repo: `interface-test`
-- High-value commands:
-  `yarn build`,
-  `yarn dev`
-- Use this repo only when the task explicitly targets it or its env templates.
+- Repo: `group-chat`
+- Typical command: `forge test`
+- Use `group-chat/docs/tests.md` to select the smallest relevant suites.
+- During the community pilot, the deployed instance is immutable but the suite may be redeployed after testing without preserving historical compatibility.
+- A redeployment is incomplete until new addresses and ABIs are reflected in `script` and `interface-test`.
 
 ## Scripts and logs
 

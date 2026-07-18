@@ -17,6 +17,7 @@
   `extension-lp/script/deploy/*`,
   `extension-group/script/deploy/*`,
   `group/script/deploy/*`,
+  `group-chat/script/deploy/*`,
   `periphery/script/deploy/*`
 - Canonical repo-local network files:
   `core/script/network/<network>/address.params`,
@@ -24,6 +25,8 @@
   `extension-lp/script/network/<network>/address.extension.lp.params`,
   `extension-group/script/network/<network>/address.extension.group.params`,
   `group/script/network/<network>/address.group.params`,
+  `group-chat/script/network/<network>/address.group.chat.params`,
+  `group-chat/script/network/<network>/group.chat.params`,
   `periphery/script/network/<network>/address.params`,
   `periphery/script/network/<network>/address.core.params`
 - `script` repo network files are mirrors or consumers for interaction and export flows:
@@ -39,6 +42,19 @@
 - If the frontend changed, verify the corresponding route or component path with the correct `.env*` file.
 - If the feature depends on history or exported state, refresh:
   `script/script/log/one_click_process.sh`
+
+## Frontend release
+
+- Finish frontend development and validation in `interface-test`.
+- Require a clean `test` branch and passing `yarn test` plus the relevant smoke path.
+- When formal publication is explicitly requested, run `yarn release:test-to-interface-main`; do not patch `interface` manually.
+- After release, verify the production route separately from the `interface-test` acceptance path.
+
+## Group-chat pilot redeployment
+
+- Do not add migration or backward-compatibility work for the current community pilot unless explicitly requested.
+- Treat each deployed contract instance as immutable.
+- After replacement deployment, synchronize the complete address and ABI set to `script` and `interface-test`, then rerun group-chat verification.
 
 ## Signoff expectations
 

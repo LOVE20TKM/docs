@@ -1,16 +1,11 @@
 ---
 name: love20-selectors-and-errors
-description: "Decode LOVE20 function selectors, custom error selectors, event topics, and frontend error mappings across interface, script, core, periphery, extension, group, and group-chat repos. Use when asked what a 4-byte selector or topic means, which contract emitted an event, which custom error a revert corresponds to, how the frontend turns raw errors into Chinese messages, or how to trace ABI signatures back to LOVE20 code."
+description: "Decode LOVE20 function selectors, custom errors, event topics, and frontend error mappings. Use to identify a 4-byte value or topic, candidate contracts, declaration files, ABI signatures, or the Chinese message produced by the frontend parser."
 ---
 
 # LOVE20 Selectors and Errors
 
 Use this skill for debugging and reverse lookup tasks around selectors, topics, and error decoding.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -21,6 +16,7 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
    - `references/generated-error-selector-index.md`
    - `references/generated-event-topic-index.md`
 4. Open the matching ABI, interface, or frontend parser file only after you know the likely contract or symbol.
+5. Regenerate the indexes with `python3 ai/skills/love20-selectors-and-errors/scripts/generate_selector_indexes.py` after frontend selector, error-map, or script ABI sources change.
 
 ## Decode Decision Tree
 
@@ -35,17 +31,17 @@ Use this skill for debugging and reverse lookup tasks around selectors, topics, 
 
 ## Working Rules
 
-- Treat `interface/docs/function-selectors.json` as the generated function-selector catalog for frontend ABI modules across core, extension, extension-group, group, and group-chat contracts when those ABIs have been mirrored into the frontend.
+- Treat `interface-test/docs/function-selectors.json` as the active frontend selector catalog across core, extension, group, and group-chat ABI modules.
 - Treat `script/abi/**/*Errors.json` as the repo-neutral ABI mirror used for custom error decoding.
 - Treat `script/abi/**/*Events.json` as the repo-neutral ABI mirror used for topic decoding.
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the final authority when you need to confirm where a selector, error, or event is originally declared for deployed immutable contracts.
-- Treat `interface/src/errors/contractErrorParser.ts` and `unifiedErrorMap.ts` as the frontend decoding layer, not the origin of the ABI itself.
+- Treat contract source as the final declaration authority for the deployed instance. For group-chat, confirm that the address belongs to the latest pilot deployment before decoding against its ABI.
+- Treat `interface-test/src/errors/contractErrorParser.ts` and `unifiedErrorMap.ts` as the active frontend decoding layer, not the origin of the ABI itself.
 - When multiple contracts share the same selector because they share a signature, say so explicitly and list the candidate contracts.
 
 ## Guardrails
 
 - Distinguish function selectors, custom error selectors, and event topic0 values. They are all keccak-derived but used differently.
-- If a selector is missing from `function-selectors.json` for a contract that clearly exists in `interface/src/abis`, treat the generated catalog as stale and regenerate it before concluding the selector is absent.
+- If a selector is missing for a contract that exists in `interface-test/src/abis`, regenerate the catalog before concluding the selector is absent.
 - If a group-chat selector or topic is missing from frontend or script-generated catalogs, check `group-chat/src/interfaces/IGroupChat.sol` before concluding it is absent.
 - For errors, separate:
   - raw selector and signature
@@ -63,12 +59,3 @@ When answering, list:
 3. Candidate contracts.
 4. Final declaration file or ABI source.
 5. Frontend message mapping only if the question is UI-facing.
-
-## References
-
-- `references/decoding-workflow.md`
-- `references/source-files.md`
-- `references/generated-function-selector-index.md`
-- `references/generated-error-selector-index.md`
-- `references/generated-event-topic-index.md`
-- `scripts/generate_selector_indexes.py`

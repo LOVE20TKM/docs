@@ -3,11 +3,11 @@
 “链上交易失败，流动性不足，请稍后重试” 这种中文提示，要倒查三层：
 
 1. frontend parser heuristic
-   - `interface/src/errors/contractErrorParser.ts`
+   - `interface-test/src/errors/contractErrorParser.ts`
 2. unified selector / name map
-   - `interface/src/errors/unifiedErrorMap.ts`
+   - `interface-test/src/errors/unifiedErrorMap.ts`
 3. 中文文案来源
-   - `interface/src/errors/errorMessages.ts`
+   - `interface-test/src/errors/errorMessages.ts`
 
 回答这类问题时，不要直接说“这是哪个合约抛的”。
 更准确的说法是：

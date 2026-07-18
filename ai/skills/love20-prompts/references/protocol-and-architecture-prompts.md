@@ -22,7 +22,8 @@ Requirements:
 - cite the exact doc files and code files you used
 - name the core contracts and key functions
 - if docs and code conflict, state the conflict explicitly and treat code as behavior truth
-- when deployed immutable behavior is involved, prioritize `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` over `periphery`, `script`, or `interface`
+- prioritize the behavior-owning contract repo over `periphery`, `script`, `interface-test`, or `interface`
+- for group-chat pilot work, distinguish an immutable deployed instance from the ability to replace the suite without historical compatibility after testing
 - keep the answer concise and structured for an engineer
 ```
 

@@ -9,7 +9,7 @@
 3. script 日志与导出层
    如果这个字段要进入历史、统计或导出结果，就要同步 `script/script/log/one_click_process.sh` 相关流程，而不是只看当前链上 state。
 4. frontend 读取层
-   把 viewer 变化接到 `interface/src/hooks/contracts/*Viewer.ts`，再接到 composite hook 或页面。
+   把 viewer 变化接到 `interface-test/src/hooks/contracts/*Viewer.ts`，再接到 composite hook 或页面。
 
 集成检查清单：
 
@@ -24,3 +24,5 @@
 2. viewer read
 3. log export 或 export query
 4. 前端最终渲染
+
+前端 hook 和页面只改 `interface-test`；验证通过后才单独执行手动发布。

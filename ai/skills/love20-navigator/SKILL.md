@@ -1,6 +1,6 @@
 ---
 name: love20-navigator
-description: "Navigate LOVE20 documentation and related repositories across docs, core, periphery, script, extension, extension-lp, extension-group, group, group-chat, and interface. Use when asked what a LOVE20 concept means, how phase and round concepts should be interpreted, which repo or file is authoritative, how protocol terms map to code, where to start reading, or how to find the correct LOVE20 source quickly."
+description: "Navigate LOVE20 docs and repositories to the authoritative source. Use to locate concepts, phase or round semantics, protocol-to-code mappings, frontend truth, and the right repo or file before deeper explanation or implementation."
 ---
 
 # LOVE20 Navigator
@@ -9,7 +9,8 @@ Use this skill to choose the right LOVE20 source before answering in detail.
 
 ## Path Convention
 
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
+- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface-test`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
+- Use `interface-test` for active frontend development and testing. Use `interface` only for released production behavior.
 - If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
@@ -52,7 +53,7 @@ If any axis is ambiguous, say which assumption you are making before routing dee
 ## Guardrails
 
 - Treat `docs/whitepaper/*.md` as design intent and terminology.
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` source files as the highest-priority on-chain behavior sources because they correspond to deployed immutable contracts.
+- Treat contract source as the highest-priority behavior source for each deployed instance. During the group-chat community pilot, the current instance is immutable but the suite may be redeployed after testing without historical compatibility.
 - Treat periphery, scripts, and frontend code as adapters around the core protocol, not the primary behavioral source.
 - Prefer normal source files over `core/src/merged/*.sol`.
 - If a question says only "round" or "phase", force the distinction between business round and contract-local round before continuing.
@@ -60,9 +61,3 @@ If any axis is ambiguous, say which assumption you are making before routing dee
 - If a question says only "join" or "claim", determine whether the write surface is base LOVE20, extension, or group helper before routing to an interaction skill.
 - Distinguish `group-chat` from `group` and `extension-group`: `group-chat` defines public on-chain chat state and posting rules, `group` defines the Group NFT and default/delegate identity layer, and `extension-group` defines chain-group action/service extension behavior.
 - When docs and code diverge, state the divergence explicitly and separate documented design from implemented behavior.
-
-## References
-
-- `references/source-of-truth.md`
-- `references/repo-index.md`
-- `references/glossary.md`

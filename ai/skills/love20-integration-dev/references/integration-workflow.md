@@ -12,6 +12,8 @@
   `extension-group/src/*`
 - Group NFT or helper behavior:
   `group/*` when the issue depends on group ownership, holder semantics, or default group identity
+- Group-chat behavior:
+  `group-chat/*`; during the community pilot, treat one deployed instance as immutable but allow a new suite deployment without historical compatibility after testing
 
 ## Downstream layers that usually need to stay in sync
 
@@ -42,16 +44,16 @@
   `script/script/log/export.sh`,
   `script/script/log/export_query.py`
 - Frontend ABI and env surfaces:
-  `interface/scripts/generateAbiTs.ts`,
-  `interface/scripts/generate-env.js`,
-  `interface/src/abis/*`,
-  `interface/.env.*`
+  `interface-test/scripts/generateAbiTs.ts`,
+  `interface-test/scripts/generate-env.js`,
+  `interface-test/src/abis/*`,
+  `interface-test/.env.*`
 - Frontend hook and registration surfaces:
-  `interface/src/hooks/contracts/*`,
-  `interface/src/hooks/extension/*`,
-  `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`,
-  `interface/src/config/extensionConfig.ts`,
-  `interface/docs/extension.md`
+  `interface-test/src/hooks/contracts/*`,
+  `interface-test/src/hooks/extension/*`,
+  `interface-test/src/hooks/extension/base/contracts/useGroupDefaults.ts`,
+  `interface-test/src/config/extensionConfig.ts`,
+  `interface-test/docs/extension.md`
 
 ## Preferred order
 
@@ -60,12 +62,13 @@
 3. Update script or ABI consumers.
 4. Update frontend hooks, env, and registration surfaces.
 5. Verify with one write path and one downstream read path.
+6. Keep frontend work in `interface-test`; publish to `interface` manually with `yarn release:test-to-interface-main` only after verification and only when release is requested.
 
 ## High-value verification combinations
 
 - Contract write -> `script/script/cast/*_query.sh`
 - Contract write -> periphery viewer read
 - Deploy script -> repo-local `*/script/network/<network>/*.params`
-- Extension factory registration -> `interface/src/config/extensionConfig.ts` plus `.env*`
+- Extension factory registration -> `interface-test/src/config/extensionConfig.ts` plus `.env*`
 - GroupDefaults deployment -> `group/script/network/<network>/address.group.defaults.params` plus `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`
 - Event-emitting write -> `script/script/log/one_click_process.sh` export output

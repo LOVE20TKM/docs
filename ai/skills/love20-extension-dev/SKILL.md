@@ -1,16 +1,11 @@
 ---
 name: love20-extension-dev
-description: "Implement LOVE20 extension or derivative protocol contracts, factories, tests, and integration wiring. Use when asked to build a new extension, scaffold a derivative protocol, add or modify a factory, write extension tests, wire ExtensionCenter registration, or carry an extension change through contract, script, and frontend handoff."
+description: "Implement LOVE20 extension contracts, factories, tests, and integration wiring. Use to build or modify an extension or derivative protocol, wire ExtensionCenter, update deploy scripts, and hand off contract changes to scripts or frontend."
 ---
 
 # LOVE20 Extension Development
 
 Use this skill when the task is to ship an extension or derivative protocol change, not just explain how the extension framework works.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -62,8 +57,3 @@ When answering or executing, keep this shape:
 3. Contract and factory changes.
 4. Test plan and acceptance checks.
 5. Deploy, frontend handoff, or integration notes if needed.
-
-## References
-
-- `references/dev-workflow.md`
-- `references/contract-and-test-checklist.md`

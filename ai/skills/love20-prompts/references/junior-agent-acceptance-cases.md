@@ -7,7 +7,7 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
 - Fail the answer if it talks about `round` or `phase` without clarifying business round vs contract-local `currentRound()` when timing matters.
 - Fail the answer if it talks about `join`, `claim`, or `verify` without first deciding whether the surface is base LOVE20, extension, or group.
 - Fail the answer if it interprets an unqualified `action` or `行动` as base-core only without stating that narrowing or checking extension and group paths first.
-- Fail the answer if it treats `periphery`, `script`, or `interface` as immutable behavior truth when deployed contract repos are relevant.
+- Fail the answer if it treats `periphery`, `script`, `interface-test`, or `interface` as on-chain behavior truth when contract source is relevant.
 - Prefer small targeted evals. Run only the cases that match the changed skill or prompt.
 
 ## Case A1: Round Translation
@@ -74,13 +74,13 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
 - Ask:
   `acting/join 页面怎么判断走普通行动还是扩展行动？`
 - Must include:
-  - route entry `interface/src/pages/acting/join.tsx`
+  - route entry `interface-test/src/pages/acting/join.tsx`
   - `useActionInfo`
   - `useExtensionByActionInfoWithCache`
   - extension branch to `ExtensionActionJoinPanel`, base branch to normal join components
 - Minimum sources:
-  - `interface/src/pages/acting/join.tsx`
-  - `interface/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`
+  - `interface-test/src/pages/acting/join.tsx`
+  - `interface-test/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`
 - Fail if:
   - it traces only core hooks and misses the extension branch
 
@@ -94,7 +94,7 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
   - group variants can additionally involve `GroupJoin`
 - Minimum sources:
   - `extension/src/interface/IExtensionCenter.sol`
-  - `interface/src/hooks/extension/base/composite/useExtensionParticipationData.ts`
+  - `interface-test/src/hooks/extension/base/composite/useExtensionParticipationData.ts`
   - `extension-group/src/GroupJoin.sol`
 - Fail if:
   - it claims `LOVE20Join.amountByActionId` and `numOfAccounts` are universal for all actions
@@ -105,10 +105,10 @@ Use these cases after updating LOVE20 skills, docs, or reusable prompts for anot
   `为什么某个 GroupJoin 或 ExtensionCenter 的 selector 在旧索引里查不到？`
 - Must include:
   - generated selector catalogs can be stale
-  - `interface/docs/function-selectors.json` should include extension and group ABI modules when regenerated
+  - `interface-test/docs/function-selectors.json` should include extension and group ABI modules when regenerated
   - the agent should regenerate before concluding the selector is absent
 - Minimum sources:
-  - `interface/scripts/generateFunctionSelectors.ts`
+  - `interface-test/scripts/generateFunctionSelectors.ts`
   - `docs/ai/skills/love20-selectors-and-errors/SKILL.md`
 - Fail if:
   - it concludes "不存在这个 selector" without checking generator freshness

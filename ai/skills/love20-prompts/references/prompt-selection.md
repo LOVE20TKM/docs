@@ -38,7 +38,7 @@
 - Conflict rule:
   when docs and code disagree, state both and say which is behavior truth.
 - Source-of-truth rule:
-  treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority code sources for deployed immutable behavior; treat `periphery`, `script`, and `interface` as adapters or execution layers unless the task is explicitly about them.
+  treat contract source as behavior truth for the named deployed instance; treat `periphery`, `script`, `interface-test`, and `interface` as adapters unless explicitly targeted. During the group-chat pilot, allow replacement deployment without historical compatibility.
 
 ## When to split one prompt into several
 

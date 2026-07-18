@@ -1,16 +1,11 @@
 ---
 name: love20-prompts
-description: "Frame LOVE20 requests into precise prompts and response contracts for protocol explanation, contract interaction, state inspection, troubleshooting, selector decoding, code review, and docs or skill updates. Use when a LOVE20 ask is underspecified, when you want a reusable prompt for another AI agent, or when a broad task should be split into smaller prompts with the right evidence requirements and companion skills."
+description: "Turn underspecified LOVE20 requests into precise prompts and response contracts. Use to frame protocol, interaction, state, debugging, review, or docs tasks, or to split a broad request for another agent with the right evidence and companion skills."
 ---
 
 # LOVE20 Prompts
 
 Use this skill to turn a vague LOVE20 request into a prompt that is specific enough for another agent to execute correctly.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -46,7 +41,7 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
   - protocol truth vs adapter behavior
 - If the prompt uses unqualified `action` or `行动`, explicitly say that the term includes extension-backed and group-backed actions unless the task is intentionally scoped to base/core only.
 - When validating another agent after a LOVE20 docs or skill update, reuse the acceptance cases in `references/junior-agent-acceptance-cases.md` instead of inventing new eval questions every time.
-- When the task could touch immutable on-chain behavior, require the prompt to treat `periphery`, `script`, and `interface` as adapters, examples, or read models rather than the final behavior authority.
+- When the task touches on-chain behavior, require contract source as authority and treat `periphery`, `script`, `interface-test`, and `interface` as adapters or read models.
 
 ## Guardrails
 
@@ -57,11 +52,3 @@ Use this skill to turn a vague LOVE20 request into a prompt that is specific eno
   token, symbol, actionId, round, account, or network.
 - For review prompts, require findings first and force the agent to cite files and lines.
 - For docs or skill update prompts, require the agent to validate and mention what was regenerated.
-
-## References
-
-- `references/prompt-selection.md`
-- `references/protocol-and-architecture-prompts.md`
-- `references/interaction-state-and-debug-prompts.md`
-- `references/review-and-doc-sync-prompts.md`
-- `references/junior-agent-acceptance-cases.md`

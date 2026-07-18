@@ -20,3 +20,5 @@
 2. viewer read
 3. export 或 log query
 4. 前端渲染
+
+前端改动落在 `interface-test`，不直接修改 `interface`。

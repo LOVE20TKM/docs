@@ -11,8 +11,8 @@
    - `periphery/src/LOVE20RoundViewer.sol`
    - 关键函数：`govData(address tokenAddress)`
 3. 页面 hook 再往上追
-   - `interface/src/hooks/contracts/useLOVE20RoundViewer.ts`
-   - `interface/src/hooks/composite/useMyGovData.ts`
+   - `interface-test/src/hooks/contracts/useLOVE20RoundViewer.ts`
+   - `interface-test/src/hooks/composite/useMyGovData.ts`
 
 这里要特别区分：
 

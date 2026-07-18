@@ -3,12 +3,12 @@
 `stake LP` 页面链路建议按这条顺序追：
 
 1. route / page / component
-   - `interface/src/pages/stake/*`
+   - `interface-test/src/pages/stake/*`
    - 对应 stake 组件
 2. composite read hook
-   - `interface/src/hooks/composite/useStakeLpPageData.ts`
+   - `interface-test/src/hooks/composite/useStakeLpPageData.ts`
 3. direct contract hooks
-   - `interface/src/hooks/contracts/useLOVE20TokenViewer.ts`
+   - `interface-test/src/hooks/contracts/useLOVE20TokenViewer.ts`
    - 以及 stake / hub 相关 write hooks
 4. write target contracts
    - helper path：`periphery/src/LOVE20Hub.sol` -> `stakeLiquidity`

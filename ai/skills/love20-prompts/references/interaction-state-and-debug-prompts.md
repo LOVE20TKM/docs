@@ -87,7 +87,7 @@ Deliver:
 - the concrete state reads that would confirm or falsify each likely cause
 
 Requirements:
-- trace the final root cause back to the deployed contract repo when the failure concerns immutable on-chain behavior
+- trace the final root cause back to the behavior-owning contract repo; for group-chat, first confirm the latest pilot deployment address
 - separate wrapper, parser, or indexing symptoms from contract-level causes
 ```
 

@@ -139,7 +139,7 @@
       "selected_skills": [
         "love20-extension-dev"
       ],
-      "response_file": "docs/ai/evals/runs/demo-three-states.extension-dev-new-token-join-flow.response.md",
+      "response_file": "docs/ai/evals/runs/demo-walkthrough.extension-dev-new-token-join-flow.response.md",
       "cited_files": [
         "docs/ai/skills/love20-extension-dev/references/dev-workflow.md",
         "docs/ai/skills/love20-extension-dev/references/contract-and-test-checklist.md",
@@ -171,7 +171,7 @@
       "selected_skills": [
         "love20-extension-dev"
       ],
-      "response_file": "docs/ai/evals/runs/demo-three-states.extension-dev-group-write-surface.response.md",
+      "response_file": "docs/ai/evals/runs/demo-walkthrough.extension-dev-group-write-surface.response.md",
       "cited_files": [
         "docs/ai/skills/love20-extension-dev/references/dev-workflow.md",
         "docs/ai/skills/love20-extension-dev/references/contract-and-test-checklist.md",
@@ -180,8 +180,8 @@
         "extension-group/test/ExtensionGroupService.t.sol",
         "extension-group/test/integration/GroupServiceFlow.t.sol",
         "extension-group/script/deploy/06_deploy_group_service_factory.sh",
-        "interface/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts",
-        "interface/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts"
+        "interface-test/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts",
+        "interface-test/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts"
       ],
       "judgement": {
         "must_cover": {
@@ -203,7 +203,7 @@
         "docs/ai/skills/love20-frontend-bridge/references/frontend-map.md",
         "docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md",
         "periphery/src/LOVE20TokenViewer.sol",
-        "interface/src/hooks/contracts/useLOVE20TokenViewer.ts"
+        "interface-test/src/hooks/contracts/useLOVE20TokenViewer.ts"
       ],
       "judgement": {
         "must_cover": {
@@ -220,23 +220,23 @@
       "selected_skills": [
         "love20-frontend-dev"
       ],
-      "response_file": "docs/ai/evals/runs/demo-three-states.frontend-dev-new-extension-plugin.response.md",
+      "response_file": "docs/ai/evals/runs/demo-walkthrough.frontend-dev-new-extension-plugin.response.md",
       "cited_files": [
         "docs/ai/skills/love20-frontend-dev/references/dev-workflow.md",
         "docs/ai/skills/love20-frontend-dev/references/read-write-and-registration.md",
-        "interface/docs/extension.md",
-        "interface/src/abis/ExtensionLp.ts",
-        "interface/src/abis/ExtensionLpFactory.ts",
-        "interface/src/hooks/extension/plugins/lp/contracts/useExtensionLp.ts",
-        "interface/src/hooks/extension/plugins/lp/contracts/useExtensionLpFactory.ts",
-        "interface/src/hooks/extension/plugins/lp/composite/useExtensionParams.ts",
-        "interface/src/components/Extension/Plugins/Lp/LpDeploy.tsx",
-        "interface/src/components/Extension/Plugins/Lp/LpJoinPanel.tsx",
-        "interface/src/components/Extension/Plugins/Lp/LpMyParticipation.tsx",
-        "interface/src/config/extensionConfig.ts",
-        "interface/.env.development",
-        "interface/src/components/Extension/Base/Center/ExtensionDeploy.tsx",
-        "interface/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx"
+        "interface-test/docs/extension.md",
+        "interface-test/src/abis/ExtensionLp.ts",
+        "interface-test/src/abis/ExtensionLpFactory.ts",
+        "interface-test/src/hooks/extension/plugins/lp/contracts/useExtensionLp.ts",
+        "interface-test/src/hooks/extension/plugins/lp/contracts/useExtensionLpFactory.ts",
+        "interface-test/src/hooks/extension/plugins/lp/composite/useExtensionParams.ts",
+        "interface-test/src/components/Extension/Plugins/Lp/LpDeploy.tsx",
+        "interface-test/src/components/Extension/Plugins/Lp/LpJoinPanel.tsx",
+        "interface-test/src/components/Extension/Plugins/Lp/LpMyParticipation.tsx",
+        "interface-test/src/config/extensionConfig.ts",
+        "interface-test/.env.development",
+        "interface-test/src/components/Extension/Base/Center/ExtensionDeploy.tsx",
+        "interface-test/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx"
       ],
       "judgement": {
         "must_cover": {
@@ -253,15 +253,15 @@
       "selected_skills": [
         "love20-frontend-dev"
       ],
-      "response_file": "docs/ai/evals/runs/demo-three-states.frontend-dev-new-write-page.response.md",
+      "response_file": "docs/ai/evals/runs/demo-walkthrough.frontend-dev-new-write-page.response.md",
       "cited_files": [
         "docs/ai/skills/love20-frontend-dev/references/dev-workflow.md",
         "docs/ai/skills/love20-frontend-dev/references/read-write-and-registration.md",
-        "interface/src/lib/universalTransaction.ts",
-        "interface/src/hooks/contracts/useLOVE20Join.ts",
-        "interface/src/pages/acting/join.tsx",
-        "interface/src/abis/LOVE20Join.ts",
-        "interface/package.json"
+        "interface-test/src/lib/universalTransaction.ts",
+        "interface-test/src/hooks/contracts/useLOVE20Join.ts",
+        "interface-test/src/pages/acting/join.tsx",
+        "interface-test/src/abis/LOVE20Join.ts",
+        "interface-test/package.json"
       ],
       "judgement": {
         "must_cover": {
@@ -288,8 +288,8 @@
         "script/abi/ILp.sol/ILp.json",
         "script/abi/ILpFactory.sol/ILpFactory.json",
         "script/script/cast/join_query.sh",
-        "interface/docs/extension.md",
-        "interface/src/config/extensionConfig.ts"
+        "interface-test/docs/extension.md",
+        "interface-test/src/config/extensionConfig.ts"
       ],
       "judgement": {
         "must_cover": {
@@ -312,7 +312,7 @@
         "docs/ai/skills/love20-integration-dev/references/sync-points.md",
         "periphery/src/LOVE20RoundViewer.sol",
         "script/script/log/one_click_process.sh",
-        "interface/src/hooks/contracts/useLOVE20RoundViewer.ts"
+        "interface-test/src/hooks/contracts/useLOVE20RoundViewer.ts"
       ],
       "judgement": {
         "must_cover": {
@@ -333,7 +333,7 @@
       "cited_files": [
         "docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md",
         "docs/ai/skills/love20-contract-playbooks/references/periphery-and-viewers.md",
-        "interface/src/hooks/composite/useStakeLpPageData.ts",
+        "interface-test/src/hooks/composite/useStakeLpPageData.ts",
         "periphery/src/LOVE20Hub.sol"
       ],
       "judgement": {
@@ -444,8 +444,8 @@
         "extension-lp/test/ExtensionLp.t.sol",
         "extension-lp/test/integration/Flow.t.sol",
         "extension-lp/script/network/thinkium70001_public/address.extension.lp.params",
-        "interface/src/config/extensionConfig.ts",
-        "interface/package.json"
+        "interface-test/src/config/extensionConfig.ts",
+        "interface-test/package.json"
       ],
       "judgement": {
         "must_cover": {
@@ -534,8 +534,8 @@
       "cited_files": [
         "docs/ai/skills/love20-selectors-and-errors/references/generated-error-selector-index.md",
         "docs/ai/skills/love20-selectors-and-errors/references/decoding-workflow.md",
-        "interface/src/errors/contractErrorParser.ts",
-        "interface/src/errors/unifiedErrorMap.ts"
+        "interface-test/src/errors/contractErrorParser.ts",
+        "interface-test/src/errors/unifiedErrorMap.ts"
       ],
       "judgement": {
         "must_cover": {
@@ -555,9 +555,9 @@
       "response_file": "docs/ai/evals/runs/demo-three-states.case12.selector-ui-pass.md",
       "cited_files": [
         "docs/ai/skills/love20-selectors-and-errors/references/source-files.md",
-        "interface/src/errors/contractErrorParser.ts",
-        "interface/src/errors/unifiedErrorMap.ts",
-        "interface/src/errors/errorMessages.ts"
+        "interface-test/src/errors/contractErrorParser.ts",
+        "interface-test/src/errors/unifiedErrorMap.ts",
+        "interface-test/src/errors/errorMessages.ts"
       ],
       "judgement": {
         "must_cover": {
@@ -579,7 +579,7 @@
         "docs/ai/skills/love20-state-and-events/references/entity-lookup-playbooks.md",
         "docs/ai/skills/love20-state-and-events/references/generated-state-event-index.md",
         "periphery/src/LOVE20RoundViewer.sol",
-        "interface/src/hooks/composite/useMyGovData.ts"
+        "interface-test/src/hooks/composite/useMyGovData.ts"
       ],
       "judgement": {
         "must_cover": {

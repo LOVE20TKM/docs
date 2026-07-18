@@ -6,7 +6,7 @@
 
 - `extension-lp` 先跑 `extension-lp/test/ExtensionLp.t.sol`
 - 如果奖励或轮次公式动了，再补 `extension-lp/test/integration/Flow.t.sol`
-- `interface` 如果 ABI 变了先生成，再至少 `yarn build`
+- `interface-test` 如果 ABI 变了先生成，再运行 `yarn test`
 
 发布前：
 
@@ -18,6 +18,7 @@
 
 - 至少一条 query 或 viewer read
 - 至少一条前端 route smoke path
+- 正式发布时另行运行 `yarn release:test-to-interface-main`，不直接修改 `interface`
 
 残余风险必须明说：
 

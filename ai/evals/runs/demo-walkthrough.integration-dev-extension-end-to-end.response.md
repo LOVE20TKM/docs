@@ -11,7 +11,7 @@
 3. script 交互层
    如果 ABI 或交互入口变化，同步 `script/abi/*` 和需要复用的 `script/script/cast/*`。
 4. frontend 层
-   同步 `interface/src/abis/*`、`.env*`、`interface/src/config/extensionConfig.ts`；如果这是新扩展类型，再按 `interface/docs/extension.md` 接到 deploy、public tabs、join panel、my participation 这几处共享注册面。
+   同步 `interface-test/src/abis/*`、`.env*`、`interface-test/src/config/extensionConfig.ts`；如果这是新扩展类型，再按 `interface-test/docs/extension.md` 接到 deploy、public tabs、join panel、my participation 这几处共享注册面。
 
 必须对齐的 sync points：
 
@@ -25,3 +25,4 @@
 1. 先完成一次 deploy 或 factory create
 2. 用 query 脚本或 viewer 确认链上状态已经可读
 3. 再打开对应前端页面，确认 route 能识别该 factory 或 extension，并能读到同一份状态
+4. 前端改动只在 `interface-test` 验证；正式发布另行确认后运行 `yarn release:test-to-interface-main`

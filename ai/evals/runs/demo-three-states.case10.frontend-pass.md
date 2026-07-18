@@ -3,15 +3,15 @@
 如果要追 LOVE20 页面上某个 token 统计卡片的数据来源，建议按这条链看：
 
 1. frontend route / component
-   - `interface/src/pages`
-   - `interface/src/components`
+   - `interface-test/src/pages`
+   - `interface-test/src/components`
 2. direct contract hook
-   - `interface/src/hooks/contracts/useLOVE20TokenViewer.ts`
+   - `interface-test/src/hooks/contracts/useLOVE20TokenViewer.ts`
 3. viewer 合约读面
    - `periphery/src/LOVE20TokenViewer.sol`
    - 重点函数：`tokenStatistics(address tokenAddress)`、`tokenDetail(address tokenAddress)`
 4. ABI 和环境绑定
-   - `interface/src/abis/*.ts`
+   - `interface-test/src/abis/*.ts`
    - `.env.development*` / `.env.production` / `.env.test`
 
 更具体地说：
@@ -27,6 +27,6 @@
 - frontend hook chain：
   `useLOVE20TokenViewer.ts` -> `useTokenStatistics`
 - ABI / env binding：
-  ABI 在 `interface/src/abis`，地址和环境切换受 `.env.*` 控制
+  ABI 在 `interface-test/src/abis`，地址和环境切换受 `.env.*` 控制
 
 如果继续追“这个统计数字的链上真值是什么”，再回到 `core` 合约，而不是把 frontend 聚合层当最终 authority。

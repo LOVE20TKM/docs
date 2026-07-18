@@ -45,7 +45,7 @@
    `extension-group/script/DeployGroupServiceFactory.s.sol`,
    or the nearest existing script.
 6. Add or update focused unit and integration tests.
-7. If the change must be usable in the dApp, hand off to `interface/docs/extension.md` and the extension plugin files in `interface/src/components/Extension` and `interface/src/hooks/extension`.
+7. If the change must be usable in the dApp, hand off to `interface-test/docs/extension.md` and the extension plugin files in `interface-test/src/components/Extension` and `interface-test/src/hooks/extension`.
 
 ## File clusters to keep in sync
 

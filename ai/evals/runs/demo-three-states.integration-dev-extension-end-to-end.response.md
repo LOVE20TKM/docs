@@ -11,10 +11,11 @@
 3. script/ABI
    同步 `script/abi/*` 和需要的 `script/script/cast/*` 入口。
 4. frontend
-   同步 `interface/src/abis/*`、`.env*`、`interface/src/config/extensionConfig.ts`，如果是新扩展类型，再按 `interface/docs/extension.md` 挂到共享扩展 UI。
+   同步 `interface-test/src/abis/*`、`.env*`、`interface-test/src/config/extensionConfig.ts`，如果是新扩展类型，再按 `interface-test/docs/extension.md` 挂到共享扩展 UI。
 
 最小验证链路：
 
 1. deploy 或 create 一次
 2. 用 query 脚本或 viewer 读一次
 3. 打开对应前端页面确认 factory 或 extension 已被识别
+4. `interface-test` 验证通过后，只有正式发布时才运行 `yarn release:test-to-interface-main`

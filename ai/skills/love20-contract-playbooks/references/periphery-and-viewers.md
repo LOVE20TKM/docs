@@ -19,7 +19,7 @@
 - Purpose:
   Aggregate token catalog, parent-child token lists, launch detail, and pair detail reads.
 - Frontend hook example:
-  `interface/src/hooks/contracts/useLOVE20TokenViewer.ts`
+  `interface-test/src/hooks/contracts/useLOVE20TokenViewer.ts`
 
 ## LOVE20RoundViewer
 
@@ -28,7 +28,7 @@
 - Purpose:
   Aggregate per-round action, vote, join, verify, and account-state reads.
 - Frontend hook example:
-  `interface/src/hooks/contracts/useLOVE20RoundViewer.ts`
+  `interface-test/src/hooks/contracts/useLOVE20RoundViewer.ts`
 
 ## LOVE20MintViewer
 

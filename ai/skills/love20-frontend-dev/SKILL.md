@@ -1,16 +1,11 @@
 ---
 name: love20-frontend-dev
-description: "Implement or modify LOVE20 frontend pages, components, hooks, ABIs, extension registration, and transaction flows. Use when asked to build a new LOVE20 UI feature, wire a new extension or derivative protocol into the dApp, add routes or hooks, update env-configured addresses, or carry a frontend change through read and write verification."
+description: "Implement LOVE20 frontend pages, components, hooks, ABIs, registration, and transaction flows in interface-test. Use for new UI features, routes, extension plugins, env addresses, or read/write verification before release to interface."
 ---
 
 # LOVE20 Frontend Development
 
 Use this skill when the task is to build or modify LOVE20 frontend behavior, not just trace an existing page.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -39,7 +34,8 @@ If the first step is understanding an existing flow, pair this skill with `love2
 - Route writes through hooks that use `useUniversalTransaction`.
 - Keep extension registration in sync across env, `src/config/extensionConfig.ts`, deploy UI, public tabs, join panel, and my-participation surfaces.
 - Keep ABI source, contract hook, and configured address changes aligned in one pass.
-- Treat `interface` as the adapter layer. When frontend expectations and contract behavior disagree, reconcile against the deployed contract repo.
+- Make frontend changes only in `interface-test`. Treat `interface` as the released production target, not a development workspace.
+- When frontend expectations and contract behavior disagree, reconcile against the behavior-owning contract repo.
 
 ## Guardrails
 
@@ -48,6 +44,7 @@ If the first step is understanding an existing flow, pair this skill with `love2
 - Do not add UI-only validation that contradicts contract behavior.
 - Do not stop at a component rename when the hook, ABI, and invalidation path also need changes.
 - Do not call a frontend task complete without naming the build command or acceptance path used to verify it.
+- Do not edit `interface` directly. After `interface-test` passes, release manually with `yarn release:test-to-interface-main` only when publication is explicitly in scope.
 
 ## Response Contract
 
@@ -58,8 +55,3 @@ When answering or executing, keep this shape:
 3. Read path and write path changes.
 4. ABI, address, and extension-registration updates.
 5. Build and acceptance checks.
-
-## References
-
-- `references/dev-workflow.md`
-- `references/read-write-and-registration.md`

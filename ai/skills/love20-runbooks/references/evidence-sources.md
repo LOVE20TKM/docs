@@ -18,8 +18,9 @@
 
 ### Raw revert or custom error
 
-- Check `interface/src/errors/contractErrorParser.ts` for frontend heuristics and selector extraction.
-- Check `interface/src/errors/unifiedErrorMap.ts` and `errorMessages.ts` for the final UI mapping.
+- Identify whether the symptom came from `interface-test` or the released `interface` build. The paths below default to active development in `interface-test`.
+- Check `interface-test/src/errors/contractErrorParser.ts` for frontend heuristics and selector extraction.
+- Check `interface-test/src/errors/unifiedErrorMap.ts` and `errorMessages.ts` for the final UI mapping.
 - If the input is only a selector or topic, switch to `love20-selectors-and-errors`.
 
 ### Wrong phase, wrong round, or action/state mismatch
@@ -52,6 +53,7 @@ Split the failure first:
 - Group-chat failure (`group-chat`)
   Check `group-chat/test/GroupChatLifecycle.t.sol`, `GroupChatMessages.t.sol`, `GroupChatDefaultSender.t.sol`, and `GroupChatPlugins.t.sol` for activation, posting, default sender, mention, quote, source, ban, and plugin failures.
   Check `group-chat/test/Manager.t.sol` and `TypedManagers.t.sol` when a typed decentralized chat manager owns the chat.
+  During the community pilot, confirm that `script` and `interface-test` use the latest deployment addresses before diagnosing contract logic.
 
 ### Missing history, unexpected event timeline, or stale analytics
 
@@ -68,6 +70,6 @@ Split the failure first:
 - Source of truth for chain-group NFT behavior: `group`
 - Source of truth for public on-chain group chat behavior: `group-chat`
 - Source of truth for wrapper behavior: `periphery`
-- Source of truth for frontend translation: `interface/src/errors`
+- Source of truth for active-test frontend translation: `interface-test/src/errors`; use `interface/src/errors` for the released production build
 - Source of truth for replayable log history: `script/script/log`
 - Best behavioral witnesses for extension, group, and group-chat edge cases: `extension/test`, `extension-group/test`, `group/test`, `group-chat/test`

@@ -164,7 +164,7 @@
   the caller must currently own the `LOVE20Group` NFT for `groupId`; `defaultGroupIdOf(account)` returns `0` if the stored group was never set, cleared, or became invalid after NFT transfer.
 - Frontend env and hook:
   `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`,
-  `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`
+  `interface-test/src/hooks/extension/base/contracts/useGroupDefaults.ts`
 
 ## Manage group chats and post messages
 

@@ -6,7 +6,7 @@
    `docs/whitepaper/LOVE20协议设计.md`
    `docs/whitepaper/LOVE20宣言与设计原则.md`
    `docs/whitepaper/FAQ.md`
-2. Immutable deployed-contract repos and on-chain behavior:
+2. Contract repos and on-chain behavior for each deployed instance:
    `core/src/interfaces/*.sol`
    `core/src/*.sol`
    `extension/src/*.sol`
@@ -29,15 +29,18 @@
    `periphery/src/*.sol`
 5. Executable interaction examples:
    `script/script/cast/*.sh`
-6. Frontend integration:
+6. Active frontend development and public-test integration:
+   `interface-test/src`
+7. Released production frontend:
    `interface/src`
 
 ## Conflict handling
 
 - Use docs for protocol intent, motivations, and formulas that explain why a rule exists.
-- Use `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority code repositories when the question is about immutable deployed contract behavior.
-- For group-chat public deployment addresses and immutable deployment parameters, use `group-chat/script/network/thinkium70001_public/address.group.chat.params` and `group-chat/script/network/thinkium70001_public/group.chat.params`.
-- Treat `periphery`, `script`, and `interface` as adapters, helpers, or execution examples around those deployed contracts.
+- Use contract source as the highest-priority behavior truth for the deployed instance being inspected.
+- During the group-chat community pilot, treat the current instance and constructor parameters as immutable, but allow the complete suite to be redeployed after testing without preserving historical compatibility.
+- For the current group-chat deployment addresses and parameters, use `group-chat/script/network/thinkium70001_public/address.group.chat.params` and `group-chat/script/network/thinkium70001_public/group.chat.params`.
+- Treat `periphery`, `script`, `interface-test`, and `interface` as adapters, helpers, or execution examples. Use `interface-test` for active work and `interface` only for released production behavior.
 - For `phase` versus `round`, separate:
   - protocol timing semantics from `IPhase.sol` and lifecycle docs
   - viewer or indexed read semantics from periphery, frontend hooks, and event SQL

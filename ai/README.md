@@ -18,9 +18,9 @@
 1. `docs/whitepaper/*`
    设计意图和术语
 2. `core`、`extension`、`extension-lp`、`extension-group`、`group`、`group-chat`
-   已部署且不可篡改的合约行为真值
-3. `periphery`、`script`、`interface`
-   adapter、read model、execution layer
+   每个已部署实例的合约行为真值；group-chat 当前社区首轮测试结束后可整套重新部署，无需历史兼容
+3. `periphery`、`script`、`interface-test`、`interface`
+   adapter、read model、execution layer；前端开发与测试只在 `interface-test`，`interface` 是手动发布目标
 
 ## 入口
 

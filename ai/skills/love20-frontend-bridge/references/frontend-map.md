@@ -1,8 +1,10 @@
 # Frontend Map
 
+Use `interface-test` for active development and public-test behavior. For an incident on the released production dApp, follow the same paths under `interface` and state that target explicitly.
+
 ## Trace order
 
-1. Start from the route in `interface/src/pages`.
+1. Start from the route in `interface-test/src/pages`.
 2. Open the page's feature component in `src/components`.
 3. If the page can render extension-backed actions, open `src/hooks/extension/**/composite` and the extension base components first.
 4. Open core composite hooks in `src/hooks/composite`.

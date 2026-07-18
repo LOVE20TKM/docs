@@ -4,14 +4,15 @@
 
 Check these first:
 
-- Open `interface/src/errors/contractErrorParser.ts`.
+- Confirm whether the error came from `interface-test` or the released `interface` build. The paths below default to `interface-test`.
+- Open `interface-test/src/errors/contractErrorParser.ts`.
 - Determine whether the message came from:
   - gas heuristic
   - timeout heuristic
   - RPC heuristic
   - user-cancel detection
   - selector or name lookup
-- Then open `interface/src/errors/unifiedErrorMap.ts` or `errorMessages.ts` only if the parser points there.
+- Then open `interface-test/src/errors/unifiedErrorMap.ts` or `errorMessages.ts` only if the parser points there.
 
 Common buckets already encoded in the parser:
 
@@ -52,6 +53,7 @@ Evidence:
 Check these first:
 
 - Confirm the contract address set for the network is current.
+- For group-chat during the community pilot, compare against the latest replacement deployment before investigating historical compatibility.
 - Confirm `originBlocks`, `to_block`, and RPC URL are correct.
 - Confirm the log processor dependencies are installed.
 - Confirm the batch processor finished and block metadata supplement ran.

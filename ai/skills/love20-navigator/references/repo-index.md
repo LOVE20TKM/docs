@@ -180,17 +180,24 @@
 - `group-chat/script/network/thinkium70001_public/group.chat.params`
   Public-network deployment parameters such as ExtensionCenter, GroupJoin, limits, and ban thresholds.
 
-## Frontend repo
+## Active frontend repo
 
-- `interface/src/pages`
+- `interface-test/src/pages`
   Route-level screens.
-- `interface/src/components`
+- `interface-test/src/components`
   Reusable UI and feature components.
-- `interface/src/hooks/contracts`
+- `interface-test/src/hooks/contracts`
   Direct wagmi contract hooks.
-- `interface/src/hooks/composite`
+- `interface-test/src/hooks/composite`
   Aggregated frontend data logic.
-- `interface/src/hooks/extension`
+- `interface-test/src/hooks/extension`
   Extension-aware contract hooks and composite adapters for LP, group action, and group service flows.
-- `interface/src/config/extensionConfig.ts`
+- `interface-test/src/config/extensionConfig.ts`
   Extension factory registry for UI.
+
+All frontend changes and tests happen in `interface-test`. After validation, publish manually with `yarn release:test-to-interface-main`; do not edit `interface` directly.
+
+## Released frontend repo
+
+- `interface/src`
+  Production code after manual release from `interface-test`; use it only when investigating released behavior.

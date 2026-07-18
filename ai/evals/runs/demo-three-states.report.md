@@ -2,7 +2,7 @@
 
 - Run file: `docs/ai/evals/runs/demo-three-states.json`
 - Run name: `demo-three-states`
-- Total benchmark cases: 26
+- Total benchmark cases: 28
 - Cases in run: 26
 - Complete cases: 25
 - Passed cases: 24
@@ -121,7 +121,7 @@
 
 - `id`: `extension-dev-new-token-join-flow`
 - Selected skills: `love20-extension-dev`
-- Response file: `docs/ai/evals/runs/demo-three-states.extension-dev-new-token-join-flow.response.md`
+- Response file: `docs/ai/evals/runs/demo-walkthrough.extension-dev-new-token-join-flow.response.md`
 - Cited files:
   - ok: `docs/ai/skills/love20-extension-dev/references/dev-workflow.md`
   - ok: `docs/ai/skills/love20-extension-dev/references/contract-and-test-checklist.md`
@@ -143,7 +143,7 @@
 
 - `id`: `extension-dev-group-write-surface`
 - Selected skills: `love20-extension-dev`
-- Response file: `docs/ai/evals/runs/demo-three-states.extension-dev-group-write-surface.response.md`
+- Response file: `docs/ai/evals/runs/demo-walkthrough.extension-dev-group-write-surface.response.md`
 - Cited files:
   - ok: `docs/ai/skills/love20-extension-dev/references/dev-workflow.md`
   - ok: `docs/ai/skills/love20-extension-dev/references/contract-and-test-checklist.md`
@@ -152,8 +152,8 @@
   - ok: `extension-group/test/ExtensionGroupService.t.sol`
   - ok: `extension-group/test/integration/GroupServiceFlow.t.sol`
   - ok: `extension-group/script/deploy/06_deploy_group_service_factory.sh`
-  - ok: `interface/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts`
-  - ok: `interface/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts`
+  - ok: `interface-test/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts`
+  - ok: `interface-test/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts`
 - Manual notes: demo PASS case for group extension write surface
 
 ### Trace a token stats UI card to its data source
@@ -165,45 +165,45 @@
   - ok: `docs/ai/skills/love20-frontend-bridge/references/frontend-map.md`
   - ok: `docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md`
   - ok: `periphery/src/LOVE20TokenViewer.sol`
-  - ok: `interface/src/hooks/contracts/useLOVE20TokenViewer.ts`
+  - ok: `interface-test/src/hooks/contracts/useLOVE20TokenViewer.ts`
 - Manual notes: demo PASS case for frontend trace
 
 ### Implement a new extension plugin in the dApp
 
 - `id`: `frontend-dev-new-extension-plugin`
 - Selected skills: `love20-frontend-dev`
-- Response file: `docs/ai/evals/runs/demo-three-states.frontend-dev-new-extension-plugin.response.md`
+- Response file: `docs/ai/evals/runs/demo-walkthrough.frontend-dev-new-extension-plugin.response.md`
 - Cited files:
   - ok: `docs/ai/skills/love20-frontend-dev/references/dev-workflow.md`
   - ok: `docs/ai/skills/love20-frontend-dev/references/read-write-and-registration.md`
-  - ok: `interface/docs/extension.md`
-  - ok: `interface/src/abis/ExtensionLp.ts`
-  - ok: `interface/src/abis/ExtensionLpFactory.ts`
-  - ok: `interface/src/hooks/extension/plugins/lp/contracts/useExtensionLp.ts`
-  - ok: `interface/src/hooks/extension/plugins/lp/contracts/useExtensionLpFactory.ts`
-  - ok: `interface/src/hooks/extension/plugins/lp/composite/useExtensionParams.ts`
-  - ok: `interface/src/components/Extension/Plugins/Lp/LpDeploy.tsx`
-  - ok: `interface/src/components/Extension/Plugins/Lp/LpJoinPanel.tsx`
-  - ok: `interface/src/components/Extension/Plugins/Lp/LpMyParticipation.tsx`
-  - ok: `interface/src/config/extensionConfig.ts`
-  - ok: `interface/.env.development`
-  - ok: `interface/src/components/Extension/Base/Center/ExtensionDeploy.tsx`
-  - ok: `interface/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`
+  - ok: `interface-test/docs/extension.md`
+  - ok: `interface-test/src/abis/ExtensionLp.ts`
+  - ok: `interface-test/src/abis/ExtensionLpFactory.ts`
+  - ok: `interface-test/src/hooks/extension/plugins/lp/contracts/useExtensionLp.ts`
+  - ok: `interface-test/src/hooks/extension/plugins/lp/contracts/useExtensionLpFactory.ts`
+  - ok: `interface-test/src/hooks/extension/plugins/lp/composite/useExtensionParams.ts`
+  - ok: `interface-test/src/components/Extension/Plugins/Lp/LpDeploy.tsx`
+  - ok: `interface-test/src/components/Extension/Plugins/Lp/LpJoinPanel.tsx`
+  - ok: `interface-test/src/components/Extension/Plugins/Lp/LpMyParticipation.tsx`
+  - ok: `interface-test/src/config/extensionConfig.ts`
+  - ok: `interface-test/.env.development`
+  - ok: `interface-test/src/components/Extension/Base/Center/ExtensionDeploy.tsx`
+  - ok: `interface-test/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`
 - Manual notes: demo PASS case for frontend extension plugin wiring
 
 ### Add a new frontend write flow
 
 - `id`: `frontend-dev-new-write-page`
 - Selected skills: `love20-frontend-dev`
-- Response file: `docs/ai/evals/runs/demo-three-states.frontend-dev-new-write-page.response.md`
+- Response file: `docs/ai/evals/runs/demo-walkthrough.frontend-dev-new-write-page.response.md`
 - Cited files:
   - ok: `docs/ai/skills/love20-frontend-dev/references/dev-workflow.md`
   - ok: `docs/ai/skills/love20-frontend-dev/references/read-write-and-registration.md`
-  - ok: `interface/src/lib/universalTransaction.ts`
-  - ok: `interface/src/hooks/contracts/useLOVE20Join.ts`
-  - ok: `interface/src/pages/acting/join.tsx`
-  - ok: `interface/src/abis/LOVE20Join.ts`
-  - ok: `interface/package.json`
+  - ok: `interface-test/src/lib/universalTransaction.ts`
+  - ok: `interface-test/src/hooks/contracts/useLOVE20Join.ts`
+  - ok: `interface-test/src/pages/acting/join.tsx`
+  - ok: `interface-test/src/abis/LOVE20Join.ts`
+  - ok: `interface-test/package.json`
 - Manual notes: demo PASS case for frontend write flow
 
 ### Wire a new extension end to end
@@ -220,8 +220,8 @@
   - ok: `script/abi/ILp.sol/ILp.json`
   - ok: `script/abi/ILpFactory.sol/ILpFactory.json`
   - ok: `script/script/cast/join_query.sh`
-  - ok: `interface/docs/extension.md`
-  - ok: `interface/src/config/extensionConfig.ts`
+  - ok: `interface-test/docs/extension.md`
+  - ok: `interface-test/src/config/extensionConfig.ts`
 - Manual notes: demo PASS case for integration walkthrough
 
 ### Sync a new read surface across viewers and logs
@@ -234,7 +234,7 @@
   - ok: `docs/ai/skills/love20-integration-dev/references/sync-points.md`
   - ok: `periphery/src/LOVE20RoundViewer.sol`
   - ok: `script/script/log/one_click_process.sh`
-  - ok: `interface/src/hooks/contracts/useLOVE20RoundViewer.ts`
+  - ok: `interface-test/src/hooks/contracts/useLOVE20RoundViewer.ts`
 - Manual notes: demo PASS case for integration read-path sync
 
 ### Trace the stake-LP page flow from UI to contract
@@ -245,7 +245,7 @@
 - Cited files:
   - ok: `docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md`
   - ok: `docs/ai/skills/love20-contract-playbooks/references/periphery-and-viewers.md`
-  - ok: `interface/src/hooks/composite/useStakeLpPageData.ts`
+  - ok: `interface-test/src/hooks/composite/useStakeLpPageData.ts`
   - ok: `periphery/src/LOVE20Hub.sol`
 - Manual notes: demo PASS case for stake LP frontend trace
 
@@ -306,8 +306,8 @@
   - ok: `extension-lp/test/ExtensionLp.t.sol`
   - ok: `extension-lp/test/integration/Flow.t.sol`
   - ok: `extension-lp/script/network/thinkium70001_public/address.extension.lp.params`
-  - ok: `interface/src/config/extensionConfig.ts`
-  - ok: `interface/package.json`
+  - ok: `interface-test/src/config/extensionConfig.ts`
+  - ok: `interface-test/package.json`
 - Manual notes: demo PASS case for extension release matrix
 
 ### Plan release checks for a core plus viewer rollout
@@ -356,8 +356,8 @@
 - Cited files:
   - ok: `docs/ai/skills/love20-selectors-and-errors/references/generated-error-selector-index.md`
   - ok: `docs/ai/skills/love20-selectors-and-errors/references/decoding-workflow.md`
-  - ok: `interface/src/errors/contractErrorParser.ts`
-  - ok: `interface/src/errors/unifiedErrorMap.ts`
+  - ok: `interface-test/src/errors/contractErrorParser.ts`
+  - ok: `interface-test/src/errors/unifiedErrorMap.ts`
 - Manual notes: demo PASS case for selector decoding
 
 ### Map a Chinese UI error message back to source
@@ -367,9 +367,9 @@
 - Response file: `docs/ai/evals/runs/demo-three-states.case12.selector-ui-pass.md`
 - Cited files:
   - ok: `docs/ai/skills/love20-selectors-and-errors/references/source-files.md`
-  - ok: `interface/src/errors/contractErrorParser.ts`
-  - ok: `interface/src/errors/unifiedErrorMap.ts`
-  - ok: `interface/src/errors/errorMessages.ts`
+  - ok: `interface-test/src/errors/contractErrorParser.ts`
+  - ok: `interface-test/src/errors/unifiedErrorMap.ts`
+  - ok: `interface-test/src/errors/errorMessages.ts`
 - Manual notes: demo PASS case for Chinese error mapping
 
 ### Find the current govData read path
@@ -381,7 +381,7 @@
   - ok: `docs/ai/skills/love20-state-and-events/references/entity-lookup-playbooks.md`
   - ok: `docs/ai/skills/love20-state-and-events/references/generated-state-event-index.md`
   - ok: `periphery/src/LOVE20RoundViewer.sol`
-  - ok: `interface/src/hooks/composite/useMyGovData.ts`
+  - ok: `interface-test/src/hooks/composite/useMyGovData.ts`
 - Manual notes: demo PASS case for state read path
 
 ### Find indexed queries for reward and flow history

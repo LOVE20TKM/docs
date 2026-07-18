@@ -1,23 +1,18 @@
 ---
 name: love20-frontend-bridge
-description: "Trace LOVE20 frontend behavior to pages, components, hooks, ABIs, viewer contracts, and environment configuration. Use when asked how a LOVE20 UI action works, which contract a page calls, where data is aggregated in the frontend, how extension pages are registered, how default group identity is shown, or how wagmi hooks map to LOVE20 contracts."
+description: "Trace LOVE20 frontend behavior from pages and components through hooks, ABIs, viewers, and env configuration. Use to explain UI reads or writes, extension registration, group identity display, or wagmi-to-contract mappings."
 ---
 
 # LOVE20 Frontend Bridge
 
 Use this skill to trace a LOVE20 screen or component down to the contract and data-loading layer.
 
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
-
 ## Workflow
 
 1. Read `references/frontend-map.md`.
 2. Read `references/data-loading-map.md`.
 3. Start from the page route, then descend into components, extension-aware adapters, composite hooks, contract hooks, ABI modules, and configs.
-4. Open `interface/docs/extension.md` when the task involves extension UI plugins.
+4. Open `interface-test/docs/extension.md` when the task involves extension UI plugins.
 
 ## Trace Decision Tree
 
@@ -60,8 +55,3 @@ When answering, keep this shape:
 3. ABI and configured contract address source.
 4. Extension or env conditions that change the path.
 5. Protocol-truth caveat if the frontend path differs from deployed contract behavior.
-
-## References
-
-- `references/frontend-map.md`
-- `references/data-loading-map.md`

@@ -162,7 +162,7 @@ python3 ai/scripts/run_skill_benchmarks.py <run-name> --overwrite-response
 - 回答里要体现 source-of-truth hierarchy
 - 优先引用 deployed contract repos：
   `core`、`extension`、`extension-lp`、`extension-group`、`group`、`group-chat`
-- `periphery`、`script`、`interface` 默认作为 adapter / read model / example
+- `periphery`、`script`、`interface-test`、`interface` 默认作为 adapter / read model / example；前端开发证据优先引用 `interface-test`
 - 回答文件名建议体现 case 编号和状态：
   - `.pass.md`
   - `.review.md`

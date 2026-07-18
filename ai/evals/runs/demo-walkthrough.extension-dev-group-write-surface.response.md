@@ -7,7 +7,7 @@
 2. tests
    先补 `extension-group/test/ExtensionGroupService.t.sol`；如果这个写入口会影响 group-service 的多步流程，再补 `extension-group/test/integration/GroupServiceFlow.t.sol`。
 3. frontend handoff
-   如果 dApp 要调用这个新写入口，至少同步 `interface/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts`；如果还要改聚合读，再看 `interface/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts`。
+   如果 dApp 要调用这个新写入口，至少同步 `interface-test/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts`；如果还要改聚合读，再看 `interface-test/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts`。
 4. deploy 或公开入口
    如果这个写入口依赖 factory 或部署参数暴露，再同步 `extension-group/script/deploy/06_deploy_group_service_factory.sh`。
 
@@ -17,8 +17,8 @@
 - `extension-group/src/interface/IGroupService.sol`
 - `extension-group/test/ExtensionGroupService.t.sol`
 - `extension-group/test/integration/GroupServiceFlow.t.sol`
-- `interface/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts`
-- `interface/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts`
+- `interface-test/src/hooks/extension/plugins/group-service/contracts/useExtensionGroupService.ts`
+- `interface-test/src/hooks/extension/plugins/group-service/composite/useExtensionParams.ts`
 - `extension-group/script/deploy/06_deploy_group_service_factory.sh`
 
 完成标准不是“合约改完”，而是：

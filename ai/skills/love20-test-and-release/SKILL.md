@@ -1,16 +1,11 @@
 ---
 name: love20-test-and-release
-description: "Plan and execute the minimum LOVE20 test, regression, deployment, and post-release verification matrix for core, extension, periphery, script, and frontend changes. Use when asked what to run before merging or deploying, how to validate a LOVE20 change end to end, how to prepare a release checklist, or how to sign off regressions after contract, frontend, or integration work."
+description: "Plan and run the minimum LOVE20 test, regression, deployment, and release matrix. Use to validate contract, extension, viewer, script, or interface-test changes before merge, public test, manual frontend release, or post-deploy signoff."
 ---
 
 # LOVE20 Test And Release
 
 Use this skill when the task is to decide, run, or report the checks needed before merge or deployment.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -50,7 +45,8 @@ If the work spans several repos, pair this skill with `love20-integration-dev`.
 - Do not say "release-ready" without naming concrete commands or file-based checks.
 - Do not stop at `forge build` or `yarn build` when the task changed write behavior.
 - Do not ignore env, address, or ABI synchronization in release guidance.
-- Do not treat `interface-test` as a substitute for validating the main `interface` app when the production dApp changed.
+- Develop and validate frontend changes in `interface-test`; do not edit `interface` directly.
+- Publish only after `interface-test` passes, using `yarn release:test-to-interface-main` when the user explicitly requests release.
 - Do not hide residual risk when a full deploy or public-test verification was not performed.
 
 ## Response Contract
@@ -62,8 +58,3 @@ When answering or executing, keep this shape:
 3. Pre-deploy requirements.
 4. Post-deploy verification.
 5. Residual risks or skipped checks.
-
-## References
-
-- `references/test-matrix.md`
-- `references/release-checklist.md`

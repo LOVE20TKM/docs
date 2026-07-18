@@ -14,8 +14,8 @@
 
 1. 先查 `docs/ai/skills/love20-selectors-and-errors/references/generated-error-selector-index.md`
 2. 再看 frontend 解码层：
-   - `interface/src/errors/contractErrorParser.ts`
-   - `interface/src/errors/unifiedErrorMap.ts`
+   - `interface-test/src/errors/contractErrorParser.ts`
+   - `interface-test/src/errors/unifiedErrorMap.ts`
 3. 再回到 ABI mirror 和 Solidity 原始声明
 
 前端中文翻译层面，这个错误目前对应的是：

@@ -62,6 +62,18 @@ Regenerate it after updating periphery helpers, core interfaces, or cast scripts
   - `tokenPairInfoWithAccount(address account, address tokenAddress)`
   - `tokenStatistics(address tokenAddress)`
 
+### UniswapV2Zap
+
+- File: `periphery/src/UniswapV2Zap.sol`
+- Reads:
+  - `quoteZapToken(address tokenA, address tokenB, uint256 amountAIn, uint256 amountBIn)`
+  - `quoteZapNativeToken(address token, uint256 amountTokenIn, uint256 amountNativeIn)`
+- Writes:
+  - `deposit()`
+  - `withdraw(uint256 wad)`
+  - `zapToken(ZapTokenParams calldata params)`
+  - `zapNativeToken(address token, uint256 amountTokenIn, uint256 amountTokenMin, uint256 amountNativeMin, uint256 liquidityMin, address to, uint256 deadline)`
+
 ## Core Write Surfaces
 
 ### ILOVE20Launch

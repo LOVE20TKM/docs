@@ -24,38 +24,39 @@
   `script/script/network/<network>/contracts.json`,
   `script/abi/GroupChat.sol/GroupChat.json`,
   related group-chat manager, source, admin, member, and ban-list ABI folders under `script/abi`
+- During the group-chat community pilot, a replacement deployment does not preserve historical compatibility. Treat the new address and ABI set as one atomic handoff across `group-chat`, `script`, and `interface-test`.
 - Frontend env targets live in:
-  `interface/.env.development`,
-  `interface/.env.test`,
-  `interface/.env.public_test`,
-  `interface/.env.production`
+  `interface-test/.env.development`,
+  `interface-test/.env.test`,
+  `interface-test/.env.public_test`,
+  `interface-test/.env.production`
 - Default group identity uses:
   `NEXT_PUBLIC_CONTRACT_ADDRESS_GROUP_DEFAULTS`
 
 ## ABI synchronization
 
 - Script-side ABI consumers read from `script/abi/*`.
-- Frontend ABI consumers read from `interface/src/abis/*`.
-- If the frontend surface changed, check whether `yarn generate:abi`, `yarn generate:selectors`, or `yarn generate:errors` is required in `interface`.
+- Frontend ABI consumers read from `interface-test/src/abis/*`.
+- If the frontend surface changed, run the required `yarn generate:abi`, `yarn generate:selectors`, or `yarn generate:errors` command in `interface-test`.
 
 ## Viewer and hook synchronization
 
 - Periphery viewers aggregate protocol state for frontend or script consumers.
 - Frontend read paths usually terminate in:
-  `interface/src/hooks/contracts/*`,
-  `interface/src/hooks/composite/*`,
-  `interface/src/hooks/extension/*`
+  `interface-test/src/hooks/contracts/*`,
+  `interface-test/src/hooks/composite/*`,
+  `interface-test/src/hooks/extension/*`
 - New extension UI usually also requires:
-  `interface/src/components/Extension/Base/Center/ExtensionDeploy.tsx`,
-  `interface/src/components/Extension/Base/Action/ExtensionPublicTabs.tsx`,
-  `interface/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`,
-  `interface/src/components/Extension/Base/Action/ExtensionMyParticipation.tsx`
+  `interface-test/src/components/Extension/Base/Center/ExtensionDeploy.tsx`,
+  `interface-test/src/components/Extension/Base/Action/ExtensionPublicTabs.tsx`,
+  `interface-test/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`,
+  `interface-test/src/components/Extension/Base/Action/ExtensionMyParticipation.tsx`
 - Default group UI and address-transfer context use:
-  `interface/src/hooks/extension/base/contracts/useGroupDefaults.ts`,
-  `interface/src/components/Extension/Base/Group/MyGroups.tsx`,
-  `interface/src/components/Extension/Base/Group/GroupTransfer.tsx`,
-  `interface/src/components/WalletButton/index.tsx`,
-  `interface/src/components/Token/Transfer.tsx`
+  `interface-test/src/hooks/extension/base/contracts/useGroupDefaults.ts`,
+  `interface-test/src/components/Extension/Base/Group/MyGroups.tsx`,
+  `interface-test/src/components/Extension/Base/Group/GroupTransfer.tsx`,
+  `interface-test/src/components/WalletButton/index.tsx`,
+  `interface-test/src/components/Token/Transfer.tsx`
 
 ## History and exported-data synchronization
 
@@ -74,3 +75,4 @@
 - One downstream read from cast script, viewer, or hook.
 - One user-visible proof:
   frontend render, exported log row, or query result.
+- If release is in scope, a separately confirmed `yarn release:test-to-interface-main` step after all `interface-test` checks pass.

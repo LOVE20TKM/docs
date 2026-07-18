@@ -1,16 +1,11 @@
 ---
 name: love20-contract-playbooks
-description: "Find the LOVE20 contracts, functions, viewers, and cast call/send templates needed for a concrete operation. Use when asked how to launch a token, contribute, claim, stake, request unlock, withdraw staked assets, submit actions, vote, join, verify, mint rewards, burn for parent token, manage default group identity, activate or post to group chats, inspect state with viewer contracts, or reuse the existing LOVE20 cast scripts."
+description: "Map concrete LOVE20 operations to contracts, functions, viewers, prerequisites, and cast templates. Use for launch, contribute, claim, stake, unlock, submit, vote, join, verify, mint, burn to parent, default group identity, group-chat activation or posting, viewer reads, and reusable interaction scripts."
 ---
 
 # LOVE20 Contract Playbooks
 
 Use this skill to turn a LOVE20 user flow into concrete contracts, functions, viewer reads, and reusable `cast call` / `cast send` templates.
-
-## Path Convention
-
-- Cross-repo references use canonical GitHub repo names: `docs`, `core`, `periphery`, `script`, `interface`, `extension`, `extension-lp`, `extension-group`, `group`, `group-chat`.
-- If local checkout names differ, map local aliases to these canonical names before following any path.
 
 ## Workflow
 
@@ -18,7 +13,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 2. Read `references/periphery-and-viewers.md` when convenience contracts or aggregated reads are involved.
 3. Read `references/cast-script-index.md` when the task should reuse existing `cast call` / `cast send` shell templates from `script`.
 4. Read `references/prerequisites-and-timing.md` when the task depends on phase restrictions, waiting periods, or approvals.
-5. Read `references/generated-playbook-index.md` when you need a refreshed contract or script inventory.
+5. Read `references/generated-playbook-index.md` when you need a refreshed contract or script inventory. Regenerate it with `python3 ai/skills/love20-contract-playbooks/scripts/generate_playbook_index.py` after its sources change.
 6. Open the relevant interface or script file before giving exact call guidance.
 
 ## Operation Decision Tree
@@ -41,7 +36,7 @@ Use this skill to turn a LOVE20 user flow into concrete contracts, functions, vi
 
 ## Working Rules
 
-- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority contract-code sources when the requested operation targets deployed immutable contracts.
+- Treat contract source as the highest-priority behavior source for the deployed instance. During the group-chat pilot, use the latest deployment addresses; the instance is immutable but the suite may be replaced without historical compatibility after testing.
 - Distinguish core contracts from periphery helpers. Core contracts define the protocol; periphery contracts reduce call friction.
 - Prefer direct `cast call` / `cast send` guidance against the target interface or contract.
 - Prefer existing scripts in `script/script/cast` over inventing new command sequences, but treat them as executable examples of `cast call` / `cast send`, not as the primary protocol surface.
@@ -71,12 +66,3 @@ For each suggested operation, always include:
 4. Required approvals or assets.
 5. Timing or eligibility preconditions.
 6. One confirmation read the agent should check after the write.
-
-## References
-
-- `references/operation-playbooks.md`
-- `references/periphery-and-viewers.md`
-- `references/cast-script-index.md`
-- `references/prerequisites-and-timing.md`
-- `references/generated-playbook-index.md`
-- `scripts/generate_playbook_index.py`

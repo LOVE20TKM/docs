@@ -1,25 +1,27 @@
 # Frontend Development Workflow
 
+Make all frontend changes in `interface-test`. Do not edit `interface`; it is the released production target.
+
 ## Core route and component clusters
 
 - Base pages:
-  `interface/src/pages/launch`,
-  `interface/src/pages/stake`,
-  `interface/src/pages/submit`,
-  `interface/src/pages/vote`,
-  `interface/src/pages/acting`,
-  `interface/src/pages/verify`,
-  `interface/src/pages/my`,
-  `interface/src/pages/dex`
+  `interface-test/src/pages/launch`,
+  `interface-test/src/pages/stake`,
+  `interface-test/src/pages/submit`,
+  `interface-test/src/pages/vote`,
+  `interface-test/src/pages/acting`,
+  `interface-test/src/pages/verify`,
+  `interface-test/src/pages/my`,
+  `interface-test/src/pages/dex`
 - Extension and group pages:
-  `interface/src/pages/extension/*`,
-  `interface/src/pages/group/*`
+  `interface-test/src/pages/extension/*`,
+  `interface-test/src/pages/group/*`
 - Shared extension UI:
-  `interface/src/components/Extension/Base/*`
+  `interface-test/src/components/Extension/Base/*`
 - Plugin-specific UI:
-  `interface/src/components/Extension/Plugins/Lp/*`,
-  `interface/src/components/Extension/Plugins/Group/*`,
-  `interface/src/components/Extension/Plugins/GroupService/*`
+  `interface-test/src/components/Extension/Plugins/Lp/*`,
+  `interface-test/src/components/Extension/Plugins/Group/*`,
+  `interface-test/src/components/Extension/Plugins/GroupService/*`
 
 ## Preferred implementation order
 
@@ -29,22 +31,23 @@
 4. Patch the page and component layer after the hook surface is stable.
 5. Update ABI and env-configured addresses when new functions or contracts are introduced.
 6. Verify build output and the smallest realistic acceptance path.
+7. If formal release is explicitly requested, run `yarn release:test-to-interface-main` only after the `interface-test` branch is clean and verified.
 
 ## High-value starting points
 
 - Extension registry and tab wiring:
-  `interface/src/config/extensionConfig.ts`
+  `interface-test/src/config/extensionConfig.ts`
 - Shared extension deploy UI:
-  `interface/src/components/Extension/Base/Center/ExtensionDeploy.tsx`
+  `interface-test/src/components/Extension/Base/Center/ExtensionDeploy.tsx`
 - Shared action surfaces:
-  `interface/src/components/Extension/Base/Action/ExtensionPublicTabs.tsx`,
-  `interface/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`,
-  `interface/src/components/Extension/Base/Action/ExtensionMyParticipation.tsx`
+  `interface-test/src/components/Extension/Base/Action/ExtensionPublicTabs.tsx`,
+  `interface-test/src/components/Extension/Base/Action/ExtensionActionJoinPanel.tsx`,
+  `interface-test/src/components/Extension/Base/Action/ExtensionMyParticipation.tsx`
 - Shared extension hooks:
-  `interface/src/hooks/extension/base/composite/*`,
-  `interface/src/hooks/extension/base/contracts/*`
+  `interface-test/src/hooks/extension/base/composite/*`,
+  `interface-test/src/hooks/extension/base/contracts/*`
 - Transaction wrapper:
-  `interface/src/lib/universalTransaction.ts`
+  `interface-test/src/lib/universalTransaction.ts`
 
 ## What a finished frontend change includes
 
@@ -53,3 +56,4 @@
 - config and env gating aligned
 - user-visible loading, error, and success path still coherent
 - build or acceptance verification recorded
+- manual release status recorded separately from development completion

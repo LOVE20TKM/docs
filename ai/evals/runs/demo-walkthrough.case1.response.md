@@ -22,4 +22,4 @@
 
 - `docs` 负责解释设计意图。
 - `core` 负责解释真实链上行为。
-- `periphery`、`script`、`interface` 只作为 adapter、样例或前端集成层，不应先于 `core`。
+- `periphery`、`script`、`interface-test`、`interface` 只作为 adapter、样例、活动测试前端或正式发布层，不应先于 `core`。
