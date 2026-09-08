@@ -7,26 +7,26 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 
 | Skill | Primary benchmark count |
 | --- | ---: |
-| `love20-contract-playbooks` | 2 |
-| `love20-core-protocol` | 3 |
-| `love20-extension-dev` | 2 |
-| `love20-extension-patterns` | 2 |
-| `love20-frontend-bridge` | 2 |
-| `love20-frontend-dev` | 2 |
-| `love20-integration-dev` | 2 |
-| `love20-navigator` | 2 |
-| `love20-prompts` | 2 |
-| `love20-runbooks` | 2 |
-| `love20-selectors-and-errors` | 2 |
-| `love20-state-and-events` | 3 |
-| `love20-test-and-release` | 2 |
+| `love20-tkm-contract-playbooks` | 2 |
+| `love20-tkm-core-protocol` | 3 |
+| `love20-tkm-extension-dev` | 2 |
+| `love20-tkm-extension-patterns` | 2 |
+| `love20-tkm-frontend-bridge` | 2 |
+| `love20-tkm-frontend-dev` | 2 |
+| `love20-tkm-integration-dev` | 2 |
+| `love20-tkm-navigator` | 2 |
+| `love20-tkm-prompts` | 2 |
+| `love20-tkm-runbooks` | 2 |
+| `love20-tkm-selectors-and-errors` | 2 |
+| `love20-tkm-state-and-events` | 3 |
+| `love20-tkm-test-and-release` | 2 |
 
-## love20-contract-playbooks
+## love20-tkm-contract-playbooks
 
 ### Build a concrete launch-token write playbook
 
 - `id`: `playbook-launch-child-token`
-- Secondary skills: `love20-core-protocol`
+- Secondary skills: `love20-tkm-core-protocol`
 - Expected output: operation playbook
 - Prompt:
 
@@ -40,7 +40,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Build a reward mint and burn playbook
 
 - `id`: `playbook-mint-and-burn-rewards`
-- Secondary skills: `love20-state-and-events`
+- Secondary skills: `love20-tkm-state-and-events`
 - Expected output: contract interaction checklist
 - Prompt:
 
@@ -52,12 +52,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - clear separation of reward paths
 
 
-## love20-core-protocol
+## love20-tkm-core-protocol
 
 ### Explain the three-stage governance lifecycle
 
 - `id`: `core-governance-lifecycle-explainer`
-- Secondary skills: `love20-navigator`
+- Secondary skills: `love20-tkm-navigator`
 - Expected output: mechanism explanation
 - Prompt:
 
@@ -71,7 +71,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Explain parent-child token relationship and burn path
 
 - `id`: `core-parent-child-token-behavior`
-- Secondary skills: `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-contract-playbooks`
 - Expected output: protocol explanation with caveats
 - Prompt:
 
@@ -85,7 +85,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Explain SL unlock period, exit flow, and vote impact
 
 - `id`: `core-sl-unlock-period-semantics`
-- Secondary skills: `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-contract-playbooks`
 - Expected output: mechanism explanation with operational mapping
 - Prompt:
 
@@ -97,12 +97,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - receipt-token balance caveat
 
 
-## love20-extension-dev
+## love20-tkm-extension-dev
 
 ### Plan a new token-join extension implementation
 
 - `id`: `extension-dev-new-token-join-flow`
-- Secondary skills: `love20-extension-patterns`, `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-extension-patterns`, `love20-tkm-contract-playbooks`
 - Expected output: implementation plan with file edits
 - Prompt:
 
@@ -116,7 +116,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Extend a group-based extension write surface
 
 - `id`: `extension-dev-group-write-surface`
-- Secondary skills: `love20-frontend-dev`
+- Secondary skills: `love20-tkm-frontend-dev`
 - Expected output: development walkthrough
 - Prompt:
 
@@ -128,12 +128,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - frontend handoff points
 
 
-## love20-extension-patterns
+## love20-tkm-extension-patterns
 
 ### Plan a new extension factory integration
 
 - `id`: `extension-new-factory-integration`
-- Secondary skills: `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-contract-playbooks`
 - Expected output: implementation map
 - Prompt:
 
@@ -147,7 +147,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Compare group and LP extension patterns
 
 - `id`: `extension-group-vs-lp-patterns`
-- Secondary skills: `love20-state-and-events`
+- Secondary skills: `love20-tkm-state-and-events`
 - Expected output: structured comparison
 - Prompt:
 
@@ -159,12 +159,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - extension files or examples
 
 
-## love20-frontend-bridge
+## love20-tkm-frontend-bridge
 
 ### Trace a token stats UI card to its data source
 
 - `id`: `frontend-trace-token-stat-card`
-- Secondary skills: `love20-state-and-events`
+- Secondary skills: `love20-tkm-state-and-events`
 - Expected output: frontend trace
 - Prompt:
 
@@ -178,7 +178,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Trace the stake-LP page flow from UI to contract
 
 - `id`: `frontend-trace-stake-lp-flow`
-- Secondary skills: `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-contract-playbooks`
 - Expected output: UI-to-contract walkthrough
 - Prompt:
 
@@ -190,12 +190,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - write target contracts
 
 
-## love20-frontend-dev
+## love20-tkm-frontend-dev
 
 ### Implement a new extension plugin in the dApp
 
 - `id`: `frontend-dev-new-extension-plugin`
-- Secondary skills: `love20-frontend-bridge`, `love20-extension-dev`
+- Secondary skills: `love20-tkm-frontend-bridge`, `love20-tkm-extension-dev`
 - Expected output: file-level implementation map
 - Prompt:
 
@@ -209,7 +209,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Add a new frontend write flow
 
 - `id`: `frontend-dev-new-write-page`
-- Secondary skills: `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-contract-playbooks`
 - Expected output: frontend development checklist
 - Prompt:
 
@@ -221,12 +221,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - build or acceptance verification
 
 
-## love20-integration-dev
+## love20-tkm-integration-dev
 
 ### Wire a new extension end to end
 
 - `id`: `integration-dev-extension-end-to-end`
-- Secondary skills: `love20-extension-dev`, `love20-frontend-dev`
+- Secondary skills: `love20-tkm-extension-dev`, `love20-tkm-frontend-dev`
 - Expected output: cross-repo integration plan
 - Prompt:
 
@@ -240,7 +240,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Sync a new read surface across viewers and logs
 
 - `id`: `integration-dev-viewer-and-log-sync`
-- Secondary skills: `love20-state-and-events`
+- Secondary skills: `love20-tkm-state-and-events`
 - Expected output: integration checklist
 - Prompt:
 
@@ -252,12 +252,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - frontend hook or env layer
 
 
-## love20-navigator
+## love20-tkm-navigator
 
 ### Locate source of truth for fair launch and claim delay
 
 - `id`: `navigator-fair-launch-source-of-truth`
-- Secondary skills: `love20-core-protocol`
+- Secondary skills: `love20-tkm-core-protocol`
 - Expected output: short navigation answer
 - Prompt:
 
@@ -271,7 +271,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Route an extension-related question to the right repos
 
 - `id`: `navigator-routing-for-extension-question`
-- Secondary skills: `love20-extension-patterns`
+- Secondary skills: `love20-tkm-extension-patterns`
 - Expected output: ordered navigation checklist
 - Prompt:
 
@@ -283,12 +283,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - clear distinction between docs and implementation
 
 
-## love20-prompts
+## love20-tkm-prompts
 
 ### Rewrite a vague state question into a precise prompt
 
 - `id`: `prompts-rewrite-vague-state-question`
-- Secondary skills: `love20-state-and-events`
+- Secondary skills: `love20-tkm-state-and-events`
 - Expected output: reusable prompt
 - Prompt:
 
@@ -302,7 +302,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Split a broad LOVE20 ask into smaller prompts
 
 - `id`: `prompts-split-broad-request`
-- Secondary skills: `love20-core-protocol`, `love20-contract-playbooks`, `love20-runbooks`
+- Secondary skills: `love20-tkm-core-protocol`, `love20-tkm-contract-playbooks`, `love20-tkm-runbooks`
 - Expected output: prompt set
 - Prompt:
 
@@ -314,12 +314,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - skill routing guidance
 
 
-## love20-runbooks
+## love20-tkm-runbooks
 
 ### Troubleshoot contribute-with-ETH invalid recipient failure
 
 - `id`: `runbook-eth-contribute-invalid-recipient`
-- Secondary skills: `love20-contract-playbooks`
+- Secondary skills: `love20-tkm-contract-playbooks`
 - Expected output: debug checklist
 - Prompt:
 
@@ -333,7 +333,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Troubleshoot group name invisible whitespace failure
 
 - `id`: `runbook-group-name-invisible-space`
-- Secondary skills: `love20-selectors-and-errors`
+- Secondary skills: `love20-tkm-selectors-and-errors`
 - Expected output: troubleshooting answer
 - Prompt:
 
@@ -345,12 +345,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - relevant test files
 
 
-## love20-selectors-and-errors
+## love20-tkm-selectors-and-errors
 
 ### Decode a custom error selector
 
 - `id`: `selectors-decode-custom-error`
-- Secondary skills: `love20-runbooks`
+- Secondary skills: `love20-tkm-runbooks`
 - Expected output: selector decoding answer
 - Prompt:
 
@@ -364,7 +364,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Map a Chinese UI error message back to source
 
 - `id`: `selectors-map-chinese-error-message`
-- Secondary skills: `love20-frontend-bridge`
+- Secondary skills: `love20-tkm-frontend-bridge`
 - Expected output: error mapping explanation
 - Prompt:
 
@@ -376,12 +376,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - ABI or contract scope
 
 
-## love20-state-and-events
+## love20-tkm-state-and-events
 
 ### Check whether an address participated in an extension-backed action
 
 - `id`: `state-extension-action-participation-check`
-- Secondary skills: `love20-extension-patterns`
+- Secondary skills: `love20-tkm-extension-patterns`
 - Expected output: state lookup playbook
 - Prompt:
 
@@ -396,7 +396,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Find the current govData read path
 
 - `id`: `state-govdata-read-path`
-- Secondary skills: `love20-frontend-bridge`
+- Secondary skills: `love20-tkm-frontend-bridge`
 - Expected output: state-source mapping
 - Prompt:
 
@@ -410,7 +410,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Find indexed queries for reward and flow history
 
 - `id`: `state-reward-and-flow-history`
-- Secondary skills: `love20-runbooks`
+- Secondary skills: `love20-tkm-runbooks`
 - Expected output: indexed-query answer
 - Prompt:
 
@@ -422,12 +422,12 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 - indexing caveats
 
 
-## love20-test-and-release
+## love20-tkm-test-and-release
 
 ### Choose the minimum checks for an extension change
 
 - `id`: `test-release-extension-change-matrix`
-- Secondary skills: `love20-extension-dev`
+- Secondary skills: `love20-tkm-extension-dev`
 - Expected output: test and release matrix
 - Prompt:
 
@@ -441,7 +441,7 @@ It is a human-readable view of the benchmark prompt source data in `ai/evals/lov
 ### Plan release checks for a core plus viewer rollout
 
 - `id`: `test-release-core-viewer-rollout`
-- Secondary skills: `love20-integration-dev`
+- Secondary skills: `love20-tkm-integration-dev`
 - Expected output: release checklist
 - Prompt:
 

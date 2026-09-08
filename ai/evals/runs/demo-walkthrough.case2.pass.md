@@ -2,7 +2,7 @@
 
 如果要回答“链群扩展的加入、验证、奖励分别在哪看”，建议按这个顺序导航：
 
-1. `docs/ai/skills/love20-navigator/references/repo-index.md`
+1. `docs/ai/skills/love20-tkm-navigator/references/repo-index.md`
    先确认 docs、extension framework、extension-group、group 的分层入口。
 2. `extension/README.md`
    先理解扩展框架、factory、`ExtensionCenter` 的位置。

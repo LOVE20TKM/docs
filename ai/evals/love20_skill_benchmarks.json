@@ -4,8 +4,8 @@
     {
       "id": "playbook-launch-child-token",
       "title": "Build a concrete launch-token write playbook",
-      "primary_skill": "love20-contract-playbooks",
-      "secondary_skills": ["love20-core-protocol"],
+      "primary_skill": "love20-tkm-contract-playbooks",
+      "secondary_skills": ["love20-tkm-core-protocol"],
       "expected_output": "operation playbook",
       "prompt": "我想让一个用户发起 LOVE20 子币公平发射。请给我精确的交互手册：需要哪些合约、函数、批准、前置条件、时间限制，以及能复用哪些 cast 脚本。",
       "must_cover": [
@@ -17,8 +17,8 @@
     {
       "id": "playbook-mint-and-burn-rewards",
       "title": "Build a reward mint and burn playbook",
-      "primary_skill": "love20-contract-playbooks",
-      "secondary_skills": ["love20-state-and-events"],
+      "primary_skill": "love20-tkm-contract-playbooks",
+      "secondary_skills": ["love20-tkm-state-and-events"],
       "expected_output": "contract interaction checklist",
       "prompt": "请给我 LOVE20 奖励相关的合约交互手册，覆盖 gov reward、action reward、claim reward、burn overflow 这些路径，并说明要先读哪些状态再发交易。",
       "must_cover": [
@@ -30,8 +30,8 @@
     {
       "id": "core-governance-lifecycle-explainer",
       "title": "Explain the three-stage governance lifecycle",
-      "primary_skill": "love20-core-protocol",
-      "secondary_skills": ["love20-navigator"],
+      "primary_skill": "love20-tkm-core-protocol",
+      "secondary_skills": ["love20-tkm-navigator"],
       "expected_output": "mechanism explanation",
       "prompt": "请解释 LOVE20 的三阶段治理生命周期，从 stake、submit、vote、join、verify、mint 一直到奖励兑现。要求同时说明协议意图和合约里的真实行为。",
       "must_cover": [
@@ -43,8 +43,8 @@
     {
       "id": "core-parent-child-token-behavior",
       "title": "Explain parent-child token relationship and burn path",
-      "primary_skill": "love20-core-protocol",
-      "secondary_skills": ["love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-core-protocol",
+      "secondary_skills": ["love20-tkm-contract-playbooks"],
       "expected_output": "protocol explanation with caveats",
       "prompt": "请解释 LOVE20 父子币关系、子币公平发射、以及 burn for parent token 这条路径。需要指出核心状态、主要接口和容易被文档误读的地方。",
       "must_cover": [
@@ -56,8 +56,8 @@
     {
       "id": "core-sl-unlock-period-semantics",
       "title": "Explain SL unlock period, exit flow, and vote impact",
-      "primary_skill": "love20-core-protocol",
-      "secondary_skills": ["love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-core-protocol",
+      "secondary_skills": ["love20-tkm-contract-playbooks"],
       "expected_output": "mechanism explanation with operational mapping",
       "prompt": "请解释 LOVE20 里的流动性质押解锁期：它怎样影响治理票数，申请解锁后何时能取回资产，receipt token 不足又会怎样影响治理与解锁？要求同时给出白皮书语义和链上对应接口或流程。",
       "must_cover": [
@@ -69,8 +69,8 @@
     {
       "id": "extension-new-factory-integration",
       "title": "Plan a new extension factory integration",
-      "primary_skill": "love20-extension-patterns",
-      "secondary_skills": ["love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-extension-patterns",
+      "secondary_skills": ["love20-tkm-contract-playbooks"],
       "expected_output": "implementation map",
       "prompt": "如果我要新增一种 LOVE20 扩展行动工厂，并接到 ExtensionCenter，需要补哪些接口、注册点、权限和绑定关系？请按实现顺序说明。",
       "must_cover": [
@@ -82,8 +82,8 @@
     {
       "id": "extension-group-vs-lp-patterns",
       "title": "Compare group and LP extension patterns",
-      "primary_skill": "love20-extension-patterns",
-      "secondary_skills": ["love20-state-and-events"],
+      "primary_skill": "love20-tkm-extension-patterns",
+      "secondary_skills": ["love20-tkm-state-and-events"],
       "expected_output": "structured comparison",
       "prompt": "请对比 LOVE20 的链群扩展和 LP 扩展：它们的 join token、验证方式、奖励路径、注册方式分别有什么不同？",
       "must_cover": [
@@ -95,8 +95,8 @@
     {
       "id": "extension-dev-new-token-join-flow",
       "title": "Plan a new token-join extension implementation",
-      "primary_skill": "love20-extension-dev",
-      "secondary_skills": ["love20-extension-patterns", "love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-extension-dev",
+      "secondary_skills": ["love20-tkm-extension-patterns", "love20-tkm-contract-playbooks"],
       "expected_output": "implementation plan with file edits",
       "prompt": "如果我要新增一个 LOVE20 扩展协议，要求用户质押某种 ERC20 参与行动并按自定义权重分配奖励，请按开发顺序告诉我该改哪些合约、工厂、测试和部署脚本，并指出最接近的现有实现。",
       "must_cover": [
@@ -108,8 +108,8 @@
     {
       "id": "extension-dev-group-write-surface",
       "title": "Extend a group-based extension write surface",
-      "primary_skill": "love20-extension-dev",
-      "secondary_skills": ["love20-frontend-dev"],
+      "primary_skill": "love20-tkm-extension-dev",
+      "secondary_skills": ["love20-tkm-frontend-dev"],
       "expected_output": "development walkthrough",
       "prompt": "我要给 LOVE20 链群服务扩展增加一个新的链上写入口。请说明应该从哪些合约、接口、测试和前端联调点入手，避免只停留在架构说明。",
       "must_cover": [
@@ -121,8 +121,8 @@
     {
       "id": "frontend-trace-token-stat-card",
       "title": "Trace a token stats UI card to its data source",
-      "primary_skill": "love20-frontend-bridge",
-      "secondary_skills": ["love20-state-and-events"],
+      "primary_skill": "love20-tkm-frontend-bridge",
+      "secondary_skills": ["love20-tkm-state-and-events"],
       "expected_output": "frontend trace",
       "prompt": "LOVE20 页面上某个 token 的统计卡片数据是从哪里来的？请从页面或 hook 一直追到 viewer/合约函数，并指出环境变量和 ABI 入口。",
       "must_cover": [
@@ -134,8 +134,8 @@
     {
       "id": "frontend-dev-new-extension-plugin",
       "title": "Implement a new extension plugin in the dApp",
-      "primary_skill": "love20-frontend-dev",
-      "secondary_skills": ["love20-frontend-bridge", "love20-extension-dev"],
+      "primary_skill": "love20-tkm-frontend-dev",
+      "secondary_skills": ["love20-tkm-frontend-bridge", "love20-tkm-extension-dev"],
       "expected_output": "file-level implementation map",
       "prompt": "如果我要把一种新的 LOVE20 扩展协议接入前端，需要补哪些页面、组件、hook、ABI、配置和环境变量？请按实际开发顺序给我文件级改动地图。",
       "must_cover": [
@@ -147,8 +147,8 @@
     {
       "id": "frontend-dev-new-write-page",
       "title": "Add a new frontend write flow",
-      "primary_skill": "love20-frontend-dev",
-      "secondary_skills": ["love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-frontend-dev",
+      "secondary_skills": ["love20-tkm-contract-playbooks"],
       "expected_output": "frontend development checklist",
       "prompt": "我要在 LOVE20 前端新增一个链上写操作页面，复用现有 wagmi 和 universal transaction 模式。请指出应该从哪个页面模板起步、写哪个 hook、如何接 ABI 和地址、最后怎么做 build 验证。",
       "must_cover": [
@@ -160,8 +160,8 @@
     {
       "id": "integration-dev-extension-end-to-end",
       "title": "Wire a new extension end to end",
-      "primary_skill": "love20-integration-dev",
-      "secondary_skills": ["love20-extension-dev", "love20-frontend-dev"],
+      "primary_skill": "love20-tkm-integration-dev",
+      "secondary_skills": ["love20-tkm-extension-dev", "love20-tkm-frontend-dev"],
       "expected_output": "cross-repo integration plan",
       "prompt": "一个新的 LOVE20 扩展协议合约已经写好了。现在要把它接到部署脚本、network 地址文件、script 交互、viewer 或前端里。请按跨仓库实际顺序给我 integration 方案，指出哪些文件必须保持同步。",
       "must_cover": [
@@ -173,8 +173,8 @@
     {
       "id": "integration-dev-viewer-and-log-sync",
       "title": "Sync a new read surface across viewers and logs",
-      "primary_skill": "love20-integration-dev",
-      "secondary_skills": ["love20-state-and-events"],
+      "primary_skill": "love20-tkm-integration-dev",
+      "secondary_skills": ["love20-tkm-state-and-events"],
       "expected_output": "integration checklist",
       "prompt": "如果 LOVE20 新增了一个需要前端展示的状态字段，除了改合约本身，还要怎样把 periphery viewer、script 日志导出、以及前端读取链路串起来？请给我集成检查清单。",
       "must_cover": [
@@ -186,8 +186,8 @@
     {
       "id": "state-extension-action-participation-check",
       "title": "Check whether an address participated in an extension-backed action",
-      "primary_skill": "love20-state-and-events",
-      "secondary_skills": ["love20-extension-patterns"],
+      "primary_skill": "love20-tkm-state-and-events",
+      "secondary_skills": ["love20-tkm-extension-patterns"],
       "expected_output": "state lookup playbook",
       "prompt": "如果我想判断某个地址是否真的参与了 LOVE20 某个行动，尤其这个行动可能是扩展行动，应该按什么顺序查？请区分 base action、普通扩展、链群扩展，并指出各自的 truth source。",
       "must_cover": [
@@ -200,8 +200,8 @@
     {
       "id": "frontend-trace-stake-lp-flow",
       "title": "Trace the stake-LP page flow from UI to contract",
-      "primary_skill": "love20-frontend-bridge",
-      "secondary_skills": ["love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-frontend-bridge",
+      "secondary_skills": ["love20-tkm-contract-playbooks"],
       "expected_output": "UI-to-contract walkthrough",
       "prompt": "请把 LOVE20 的 stake LP 页面交互链路讲清楚：页面读了什么状态、怎样检查 allowance、最后打到哪些 helper 或 core 合约。",
       "must_cover": [
@@ -213,8 +213,8 @@
     {
       "id": "navigator-fair-launch-source-of-truth",
       "title": "Locate source of truth for fair launch and claim delay",
-      "primary_skill": "love20-navigator",
-      "secondary_skills": ["love20-core-protocol"],
+      "primary_skill": "love20-tkm-navigator",
+      "secondary_skills": ["love20-tkm-core-protocol"],
       "expected_output": "short navigation answer",
       "prompt": "LOVE20 的公平发射和 claim delay 到底应该先看哪些文档、哪些仓库、哪些源码入口？请给我 source of truth 顺序，并指出核心实现文件。",
       "must_cover": [
@@ -226,8 +226,8 @@
     {
       "id": "navigator-routing-for-extension-question",
       "title": "Route an extension-related question to the right repos",
-      "primary_skill": "love20-navigator",
-      "secondary_skills": ["love20-extension-patterns"],
+      "primary_skill": "love20-tkm-navigator",
+      "secondary_skills": ["love20-tkm-extension-patterns"],
       "expected_output": "ordered navigation checklist",
       "prompt": "如果我要回答“链群扩展的加入、验证、奖励分别在哪看”，应该先读 LOVE20 哪些仓库和文档？请按阅读顺序给我导航。",
       "must_cover": [
@@ -239,8 +239,8 @@
     {
       "id": "prompts-rewrite-vague-state-question",
       "title": "Rewrite a vague state question into a precise prompt",
-      "primary_skill": "love20-prompts",
-      "secondary_skills": ["love20-state-and-events"],
+      "primary_skill": "love20-tkm-prompts",
+      "secondary_skills": ["love20-tkm-state-and-events"],
       "expected_output": "reusable prompt",
       "prompt": "帮我把这个模糊问题改写成适合另一个 AI Agent 的 prompt：‘帮我看看 LOVE20 页面上这个数是怎么来的。’要求 prompt 里明确该查哪些锚点、证据和输出格式。",
       "must_cover": [
@@ -252,11 +252,11 @@
     {
       "id": "prompts-split-broad-request",
       "title": "Split a broad LOVE20 ask into smaller prompts",
-      "primary_skill": "love20-prompts",
+      "primary_skill": "love20-tkm-prompts",
       "secondary_skills": [
-        "love20-core-protocol",
-        "love20-contract-playbooks",
-        "love20-runbooks"
+        "love20-tkm-core-protocol",
+        "love20-tkm-contract-playbooks",
+        "love20-tkm-runbooks"
       ],
       "expected_output": "prompt set",
       "prompt": "把这个大需求拆成 3 个更精确的 LOVE20 prompts：‘帮我理解这个协议、告诉我怎么交互、顺便排查页面为什么失败。’每个 prompt 都要说明适合搭配哪个 LOVE20 skill。",
@@ -269,8 +269,8 @@
     {
       "id": "test-release-extension-change-matrix",
       "title": "Choose the minimum checks for an extension change",
-      "primary_skill": "love20-test-and-release",
-      "secondary_skills": ["love20-extension-dev"],
+      "primary_skill": "love20-tkm-test-and-release",
+      "secondary_skills": ["love20-tkm-extension-dev"],
       "expected_output": "test and release matrix",
       "prompt": "如果我刚改了 LOVE20 的 extension-lp 合约和对应前端接入，合并前和发布前最少应该跑哪些测试、build、部署检查和上线后验证？请给我最小充分矩阵。",
       "must_cover": [
@@ -282,8 +282,8 @@
     {
       "id": "test-release-core-viewer-rollout",
       "title": "Plan release checks for a core plus viewer rollout",
-      "primary_skill": "love20-test-and-release",
-      "secondary_skills": ["love20-integration-dev"],
+      "primary_skill": "love20-tkm-test-and-release",
+      "secondary_skills": ["love20-tkm-integration-dev"],
       "expected_output": "release checklist",
       "prompt": "如果一次改动同时涉及 LOVE20 core 合约、periphery viewer、以及 script/network 地址文件，准备上 public test 之前和之后各要验证什么？请按发布顺序列出检查项和建议命令。",
       "must_cover": [
@@ -295,8 +295,8 @@
     {
       "id": "runbook-eth-contribute-invalid-recipient",
       "title": "Troubleshoot contribute-with-ETH invalid recipient failure",
-      "primary_skill": "love20-runbooks",
-      "secondary_skills": ["love20-contract-playbooks"],
+      "primary_skill": "love20-tkm-runbooks",
+      "secondary_skills": ["love20-tkm-contract-playbooks"],
       "expected_output": "debug checklist",
       "prompt": "LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 `Invalid recipient address`。请给我最短的排查路径和该先看的测试/合约文件。",
       "must_cover": [
@@ -308,8 +308,8 @@
     {
       "id": "runbook-group-name-invisible-space",
       "title": "Troubleshoot group name invisible whitespace failure",
-      "primary_skill": "love20-runbooks",
-      "secondary_skills": ["love20-selectors-and-errors"],
+      "primary_skill": "love20-tkm-runbooks",
+      "secondary_skills": ["love20-tkm-selectors-and-errors"],
       "expected_output": "troubleshooting answer",
       "prompt": "用户创建 LOVE20 链群时说“名字里明明没有空格”，但交易失败。请按最短路径帮我排查，重点看 Unicode whitespace 这类问题。",
       "must_cover": [
@@ -321,8 +321,8 @@
     {
       "id": "selectors-decode-custom-error",
       "title": "Decode a custom error selector",
-      "primary_skill": "love20-selectors-and-errors",
-      "secondary_skills": ["love20-runbooks"],
+      "primary_skill": "love20-tkm-selectors-and-errors",
+      "secondary_skills": ["love20-tkm-runbooks"],
       "expected_output": "selector decoding answer",
       "prompt": "我有一个 LOVE20 回滚选择器 `0xa748da06`。请告诉我它对应什么错误、可能来自哪些合约、前端会怎么翻译它。",
       "must_cover": [
@@ -334,8 +334,8 @@
     {
       "id": "selectors-map-chinese-error-message",
       "title": "Map a Chinese UI error message back to source",
-      "primary_skill": "love20-selectors-and-errors",
-      "secondary_skills": ["love20-frontend-bridge"],
+      "primary_skill": "love20-tkm-selectors-and-errors",
+      "secondary_skills": ["love20-tkm-frontend-bridge"],
       "expected_output": "error mapping explanation",
       "prompt": "LOVE20 前端报了“链上交易失败，流动性不足，请稍后重试”这种中文消息。请倒查它来自 parser 的哪条规则、哪类原始错误、以及相关 ABI/合约范围。",
       "must_cover": [
@@ -347,8 +347,8 @@
     {
       "id": "state-govdata-read-path",
       "title": "Find the current govData read path",
-      "primary_skill": "love20-state-and-events",
-      "secondary_skills": ["love20-frontend-bridge"],
+      "primary_skill": "love20-tkm-state-and-events",
+      "secondary_skills": ["love20-tkm-frontend-bridge"],
       "expected_output": "state-source mapping",
       "prompt": "我想查 LOVE20 当前某个 token 的 govData 在哪里读、前端哪个 hook 会用到、页面上的治理占比是怎么拼出来的。",
       "must_cover": [
@@ -360,8 +360,8 @@
     {
       "id": "state-reward-and-flow-history",
       "title": "Find indexed queries for reward and flow history",
-      "primary_skill": "love20-state-and-events",
-      "secondary_skills": ["love20-runbooks"],
+      "primary_skill": "love20-tkm-state-and-events",
+      "secondary_skills": ["love20-tkm-runbooks"],
       "expected_output": "indexed-query answer",
       "prompt": "我想看 LOVE20 最近 30 轮的奖励地址数和 TUSDT 流入流出走势，应该用哪些 SQLite views 和 stat SQL？如果页面和链上状态对不上，又该怎么解释？",
       "must_cover": [

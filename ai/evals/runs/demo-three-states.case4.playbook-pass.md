@@ -12,7 +12,7 @@
    - `launchInfo`
    - `tokenAddressBySymbol`
 3. 再确认时序和限制
-   - `docs/ai/skills/love20-contract-playbooks/references/prerequisites-and-timing.md`
+   - `docs/ai/skills/love20-tkm-contract-playbooks/references/prerequisites-and-timing.md`
    - 重点是 launch eligibility、child-launch quota、claim delay、contribute/withdraw waiting blocks
 4. 执行时默认用 `cast send`
    - 不推荐先从 helper 封装开始理解

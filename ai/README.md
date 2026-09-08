@@ -22,6 +22,12 @@
 3. `periphery`、`script`、`interface-test`、`interface`
    adapter、read model、execution layer；前端开发与测试只在 `interface-test`，`interface` 是手动发布目标
 
+## 技能范围
+
+当前目录位于 `LOVE20TKM/docs`，这里的技能只服务 `LOVE20TKM / Thinkium`。涉及链上实现时，回答首句标明：`当前协议：LOVE20TKM / Thinkium`。
+
+BSC 版本以后在 `LOVE20BSC` 自己的 docs/skills 中维护；不要把当前 TKM 合约、ABI、地址、脚本或前端配置当作 BSC 的实现依据。
+
 ## 入口
 
 - [AI skills 目录](/ai/skills)

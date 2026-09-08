@@ -1,0 +1,76 @@
+---
+name: love20-tkm-state-and-events
+description: "Inspect LOVE20 chain state, viewer reads, frontend hooks, and indexed history. Use to trace token, round, action, account, group identity, chat, reward, or timeline data, verify participation, or explain why current state and indexed history differ."
+---
+
+# LOVE20 State and Events
+
+Use this skill for read-path discovery and state inspection, not for write-flow playbooks.
+
+## Workflow
+
+1. Read `references/query-workflow.md` first.
+2. If the question is keyed by a token, round, action, or account, or asks whether address `X` participated in action `Y`, read `references/entity-lookup-playbooks.md`.
+3. If the question is about logs, timelines, SQL, or analytics mismatch, read `references/event-and-indexing.md`.
+4. Read `references/generated-state-event-index.md` when you need a refreshed inventory of viewer functions, frontend hooks, SQL tables, views, or stat queries. Regenerate it with `python3 ai/skills/love20-tkm-state-and-events/scripts/generate_state_event_index.py` after those sources change.
+5. Open the exact contract, hook, script, or SQL file only after you know which read surface should answer the question.
+
+## Read Decision Tree
+
+1. Decide whether the user wants current truth or historical timeline.
+2. Decide whether the entity is base LOVE20 or extension or group scoped.
+   If the user says only `action` or `行动`, default to an action universe that includes extension-backed and group-backed actions.
+3. If the question is "did this account participate in this action", classify the participation owner first:
+   - `LOVE20Join` for base actions
+   - extension contract plus `ExtensionCenter` for generic, LP, or service extensions
+   - `GroupJoin` for chain-group join state
+4. Choose the narrowest truth source:
+   - direct contract state for current truth
+   - viewer contracts for aggregated current reads
+   - frontend hooks only when tracing UI data flow
+   - SQL views and logs for history
+5. If a round is mentioned, decide whether it is:
+   - event payload round
+   - block-derived `log_round`
+   - contract-local `currentRound()`
+6. For extension-backed actions, check `ExtensionCenter`, extension contracts, or `GroupJoin` before assuming `LOVE20Join` owns the state.
+
+## Working Rules
+
+- Treat `core`, `extension`, `extension-lp`, `extension-group`, `group`, and `group-chat` as the highest-priority truth sources for current on-chain state.
+- Prefer direct chain state for "what is true now" questions.
+- Prefer indexed events and SQL views for "what happened over time" questions.
+- Treat periphery viewers, frontend hooks, and SQL tables/views as read models layered on top of deployed contracts.
+- Use periphery viewer contracts for aggregated protocol reads after identifying the underlying deployed-contract truth source.
+- Use frontend hook files only after you identify the underlying contract surface.
+- When a page or API can involve extension-backed actions, inspect `interface-test/src/hooks/extension/**` and `ExtensionCenter` before assuming the data comes from `LOVE20Join` or a periphery viewer.
+- Treat unqualified `action` or `行动` as base-plus-extension scope unless the user explicitly says core-only or base-only.
+- For "did address X join or participate in action Y" questions, name the participation owner before checking totals or per-account state.
+- When the user asks "where does the page get this data", bridge all three layers:
+  - contract or viewer function
+  - direct hook or composite hook
+  - page or component usage
+
+## Guardrails
+
+- Do not infer historical event order from current contract state alone.
+- Do not treat viewer output, frontend hook state, or SQLite rows as higher-priority than deployed contract state for current truth questions.
+- Do not explain indexed analytics without naming the SQL view, DB table, or log processor stage involved.
+- Do not interpret an unqualified `action` question as base-only without saying so and justifying the narrowing.
+- Do not conclude that an account did not participate in an action from `LOVE20Join` or a base viewer alone when the action might be extension-backed.
+- Do not assume extension action participation totals are stored in `LOVE20Join.amountByActionId`; many extension-backed actions read participation from `ExtensionCenter`, extension contracts, or `GroupJoin`.
+- Distinguish `log_round` from `round` in the SQLite event DB:
+  - `log_round` is block-derived protocol round
+  - `round` is the event payload field decoded from ABI data
+- If the task depends on exact event signatures or topic decoding, switch to `love20-tkm-selectors-and-errors`.
+- If the task turns into a concrete user operation or write sequence, switch to `love20-tkm-contract-playbooks`.
+
+## Response Contract
+
+When answering, state:
+
+1. Primary truth source.
+2. Supporting adapter layers such as viewer, hook, or SQL view.
+3. Exact lookup keys: token, actionId, round, account, or block range.
+4. Participation owner (`LOVE20Join`, extension plus `ExtensionCenter`, or `GroupJoin`) when the question is about account/action participation.
+5. One caveat about round semantics, extension routing, or history-vs-current differences when relevant.

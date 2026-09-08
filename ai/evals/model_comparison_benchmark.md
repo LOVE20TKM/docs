@@ -71,13 +71,13 @@
 
 推荐 skill：
 
-- `$love20-navigator`
-- `$love20-core-protocol`
+- `$love20-tkm-navigator`
+- `$love20-tkm-core-protocol`
 
 Prompt：
 
 ```text
-Use $love20-navigator and $love20-core-protocol.
+Use $love20-tkm-navigator and $love20-tkm-core-protocol.
 
 请解释 LOVE20 的三阶段治理生命周期，从 stake、submit、vote、join、verify、mint 到奖励兑现。
 
@@ -99,13 +99,13 @@ Use $love20-navigator and $love20-core-protocol.
 
 推荐 skill：
 
-- `$love20-navigator`
-- `$love20-core-protocol`
+- `$love20-tkm-navigator`
+- `$love20-tkm-core-protocol`
 
 Prompt：
 
 ```text
-Use $love20-navigator and $love20-core-protocol.
+Use $love20-tkm-navigator and $love20-tkm-core-protocol.
 
 请对比 LOVE20 的公平发射和 claim delay：
 - 文档怎么说
@@ -130,12 +130,12 @@ Use $love20-navigator and $love20-core-protocol.
 
 推荐 skill：
 
-- `$love20-contract-playbooks`
+- `$love20-tkm-contract-playbooks`
 
 Prompt：
 
 ```text
-Use $love20-contract-playbooks.
+Use $love20-tkm-contract-playbooks.
 
 我想让一个用户发起 LOVE20 子币公平发射。请给我精确的交互手册：
 - 需要调用哪些合约和函数
@@ -160,13 +160,13 @@ Use $love20-contract-playbooks.
 
 推荐 skill：
 
-- `$love20-state-and-events`
-- `$love20-frontend-bridge`
+- `$love20-tkm-state-and-events`
+- `$love20-tkm-frontend-bridge`
 
 Prompt：
 
 ```text
-Use $love20-state-and-events and $love20-frontend-bridge.
+Use $love20-tkm-state-and-events and $love20-tkm-frontend-bridge.
 
 请追踪 LOVE20 某个 token 统计卡片的数据来源：
 - 页面或组件
@@ -191,13 +191,13 @@ Use $love20-state-and-events and $love20-frontend-bridge.
 
 推荐 skill：
 
-- `$love20-runbooks`
-- `$love20-selectors-and-errors`
+- `$love20-tkm-runbooks`
+- `$love20-tkm-selectors-and-errors`
 
 Prompt：
 
 ```text
-Use $love20-runbooks and $love20-selectors-and-errors.
+Use $love20-tkm-runbooks and $love20-tkm-selectors-and-errors.
 
 LOVE20Hub 的 contributeFirstTokenWithETH 失败了，提示 Invalid recipient address。
 
@@ -220,12 +220,12 @@ LOVE20Hub 的 contributeFirstTokenWithETH 失败了，提示 Invalid recipient a
 
 推荐 skill：
 
-- `$love20-selectors-and-errors`
+- `$love20-tkm-selectors-and-errors`
 
 Prompt：
 
 ```text
-Use $love20-selectors-and-errors.
+Use $love20-tkm-selectors-and-errors.
 
 请解码这个 LOVE20 回滚选择器：0xa748da06
 
@@ -248,13 +248,13 @@ Use $love20-selectors-and-errors.
 
 推荐 skill：
 
-- `$love20-navigator`
-- `$love20-extension-patterns`
+- `$love20-tkm-navigator`
+- `$love20-tkm-extension-patterns`
 
 Prompt：
 
 ```text
-Use $love20-navigator and $love20-extension-patterns.
+Use $love20-tkm-navigator and $love20-tkm-extension-patterns.
 
 如果我要回答“链群扩展的加入、验证、奖励分别在哪看”，请按阅读顺序给我导航：
 - 先看哪些 docs
@@ -278,12 +278,12 @@ Use $love20-navigator and $love20-extension-patterns.
 
 推荐 skill：
 
-- `$love20-prompts`
+- `$love20-tkm-prompts`
 
 Prompt：
 
 ```text
-Use $love20-prompts.
+Use $love20-tkm-prompts.
 
 把这个大需求拆成 3 个更精确的 LOVE20 prompts：
 “帮我理解这个协议、告诉我怎么交互、顺便排查页面为什么失败。”

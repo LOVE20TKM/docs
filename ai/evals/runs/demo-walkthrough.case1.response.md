@@ -6,7 +6,7 @@
 
 1. `docs/whitepaper/LOVE20协议设计.md`
    先确认公平发射、claim delay、round/phase 这些概念的协议意图。
-2. `docs/ai/skills/love20-navigator/references/source-of-truth.md`
+2. `docs/ai/skills/love20-tkm-navigator/references/source-of-truth.md`
    这里已经把 LOVE20 的 source-of-truth hierarchy 讲清楚了。
 3. `core/src/interfaces/ILOVE20Launch.sol`
    这是公平发射和 claim 相关的首选接口入口。
@@ -16,7 +16,7 @@
 如果问题继续涉及时间窗口或 claim 所属阶段，再补看：
 
 - `core/src/interfaces/IPhase.sol`
-- `docs/ai/skills/love20-core-protocol/references/governance-lifecycle.md`
+- `docs/ai/skills/love20-tkm-core-protocol/references/governance-lifecycle.md`
 
 判断原则：
 

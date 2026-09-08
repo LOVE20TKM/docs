@@ -42,7 +42,7 @@
   "results": [
     {
       "id": "navigator-fair-launch-source-of-truth",
-      "selected_skills": ["love20-navigator"],
+      "selected_skills": ["love20-tkm-navigator"],
       "response_file": "docs/ai/evals/runs/example.case1.response.md",
       "cited_files": [
         "docs/whitepaper/LOVE20协议设计.md"

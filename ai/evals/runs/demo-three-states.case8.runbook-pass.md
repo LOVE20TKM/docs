@@ -6,7 +6,7 @@
    - 这是 `LOVE20Hub.contributeFirstTokenWithETH` 路径
    - `"Invalid recipient address"` 属于 wrapper precondition failure，不是先看 core launch 规则
 2. 先看最快证据
-   - `docs/ai/skills/love20-runbooks/references/launch-and-stake-runbooks.md`
+   - `docs/ai/skills/love20-tkm-runbooks/references/launch-and-stake-runbooks.md`
    - `periphery/test/LOVE20Hub.contributeWithETH.t.sol`
 3. 第一批确认项
    - recipient address 是否是 zero address

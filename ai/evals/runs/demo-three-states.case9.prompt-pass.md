@@ -3,7 +3,7 @@
 可以改写成下面这个 prompt：
 
 ```text
-Use $love20-state-and-events and $love20-frontend-bridge.
+Use $love20-tkm-state-and-events and $love20-tkm-frontend-bridge.
 
 我需要追踪 LOVE20 页面上某个数字是怎么来的。
 
@@ -31,4 +31,4 @@ Use $love20-state-and-events and $love20-frontend-bridge.
 - 证据要求
 - 输出格式
 - source-of-truth hierarchy
-- 推荐搭配 skill：`love20-state-and-events` + `love20-frontend-bridge`
+- 推荐搭配 skill：`love20-tkm-state-and-events` + `love20-tkm-frontend-bridge`

@@ -1,0 +1,4 @@
+interface:
+  display_name: "LOVE20 Core Protocol"
+  short_description: "Explain LOVE20 mechanics, staking, and core contracts"
+  default_prompt: "Use $love20-tkm-core-protocol to explain a LOVE20 mechanism, SL unlock-period rule, or staking lifecycle and map it to the core contracts and lifecycle phases."

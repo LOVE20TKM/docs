@@ -1,4 +1,0 @@
-interface:
-  display_name: "LOVE20 Frontend Development"
-  short_description: "Build LOVE20 pages, hooks, and extension UI flows"
-  default_prompt: "Use $love20-frontend-dev to implement and verify a LOVE20 frontend change in interface-test before release."

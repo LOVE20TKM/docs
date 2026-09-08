@@ -5,9 +5,9 @@ from pathlib import Path
 
 
 EXPECTED_SKILL_NAMES = set(
-    "love20-contract-playbooks love20-core-protocol love20-extension-dev love20-extension-patterns "
-    "love20-frontend-bridge love20-frontend-dev love20-integration-dev love20-navigator love20-prompts "
-    "love20-runbooks love20-selectors-and-errors love20-state-and-events love20-test-and-release".split()
+    "love20-tkm-contract-playbooks love20-tkm-core-protocol love20-tkm-extension-dev love20-tkm-extension-patterns "
+    "love20-tkm-frontend-bridge love20-tkm-frontend-dev love20-tkm-integration-dev love20-tkm-navigator love20-tkm-prompts "
+    "love20-tkm-runbooks love20-tkm-selectors-and-errors love20-tkm-state-and-events love20-tkm-test-and-release".split()
 )
 SKILL_RE = re.compile(r'^---\nname: ([a-z0-9-]+)\ndescription: ("(?:[^"\\]|\\.)*")\n---\n')
 OPENAI_FIELD_RE = re.compile(r'^  ([a-z0-9_-]+): ("(?:[^"\\]|\\.)*")$')

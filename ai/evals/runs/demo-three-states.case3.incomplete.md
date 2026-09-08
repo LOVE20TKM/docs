@@ -18,7 +18,7 @@ LOVE20 不是“一个 round 做完再开始下一个 round”，而是滚动流
 如果先看文档，再看实现：
 
 1. `docs/whitepaper/LOVE20协议设计.md`
-2. `docs/ai/skills/love20-core-protocol/references/governance-lifecycle.md`
+2. `docs/ai/skills/love20-tkm-core-protocol/references/governance-lifecycle.md`
 3. `core/src/interfaces/IPhase.sol`
 4. `core/src/*.sol`
 

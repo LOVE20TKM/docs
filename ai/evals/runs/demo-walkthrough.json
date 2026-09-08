@@ -7,13 +7,13 @@
     {
       "id": "playbook-launch-child-token",
       "selected_skills": [
-        "love20-contract-playbooks"
+        "love20-tkm-contract-playbooks"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case4.playbook-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-contract-playbooks/references/operation-playbooks.md",
-        "docs/ai/skills/love20-contract-playbooks/references/prerequisites-and-timing.md",
-        "docs/ai/skills/love20-contract-playbooks/references/cast-script-index.md",
+        "docs/ai/skills/love20-tkm-contract-playbooks/references/operation-playbooks.md",
+        "docs/ai/skills/love20-tkm-contract-playbooks/references/prerequisites-and-timing.md",
+        "docs/ai/skills/love20-tkm-contract-playbooks/references/cast-script-index.md",
         "core/src/interfaces/ILOVE20Launch.sol"
       ],
       "judgement": {
@@ -29,12 +29,12 @@
     {
       "id": "playbook-mint-and-burn-rewards",
       "selected_skills": [
-        "love20-contract-playbooks"
+        "love20-tkm-contract-playbooks"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case14.mint-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-contract-playbooks/references/operation-playbooks.md",
-        "docs/ai/skills/love20-contract-playbooks/references/cast-script-index.md",
+        "docs/ai/skills/love20-tkm-contract-playbooks/references/operation-playbooks.md",
+        "docs/ai/skills/love20-tkm-contract-playbooks/references/cast-script-index.md",
         "core/src/interfaces/ILOVE20Mint.sol",
         "periphery/src/LOVE20MintViewer.sol"
       ],
@@ -51,12 +51,12 @@
     {
       "id": "core-governance-lifecycle-explainer",
       "selected_skills": [
-        "love20-core-protocol"
+        "love20-tkm-core-protocol"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.case3.pass.md",
       "cited_files": [
         "docs/whitepaper/LOVE20协议设计.md",
-        "docs/ai/skills/love20-core-protocol/references/governance-lifecycle.md",
+        "docs/ai/skills/love20-tkm-core-protocol/references/governance-lifecycle.md",
         "core/src/interfaces/IPhase.sol",
         "core/src/LOVE20Mint.sol"
       ],
@@ -73,11 +73,11 @@
     {
       "id": "core-parent-child-token-behavior",
       "selected_skills": [
-        "love20-core-protocol"
+        "love20-tkm-core-protocol"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case13.core-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-core-protocol/references/protocol-overview.md",
+        "docs/ai/skills/love20-tkm-core-protocol/references/protocol-overview.md",
         "core/src/interfaces/ILOVE20Launch.sol",
         "core/src/interfaces/ILOVE20Token.sol",
         "core/src/LOVE20TokenFactory.sol"
@@ -95,12 +95,12 @@
     {
       "id": "extension-new-factory-integration",
       "selected_skills": [
-        "love20-extension-patterns"
+        "love20-tkm-extension-patterns"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case7.extension-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-extension-patterns/references/extension-framework.md",
-        "docs/ai/skills/love20-extension-patterns/references/extension-examples.md",
+        "docs/ai/skills/love20-tkm-extension-patterns/references/extension-framework.md",
+        "docs/ai/skills/love20-tkm-extension-patterns/references/extension-examples.md",
         "extension/src/interface/IExtensionCenter.sol",
         "extension/src/ExtensionCenter.sol"
       ],
@@ -117,11 +117,11 @@
     {
       "id": "extension-group-vs-lp-patterns",
       "selected_skills": [
-        "love20-extension-patterns"
+        "love20-tkm-extension-patterns"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case15.extension-compare-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-extension-patterns/references/extension-examples.md",
+        "docs/ai/skills/love20-tkm-extension-patterns/references/extension-examples.md",
         "extension-lp/src/ExtensionLp.sol",
         "extension-group/src/ExtensionGroupAction.sol",
         "extension-group/src/GroupJoin.sol"
@@ -139,12 +139,12 @@
     {
       "id": "extension-dev-new-token-join-flow",
       "selected_skills": [
-        "love20-extension-dev"
+        "love20-tkm-extension-dev"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.extension-dev-new-token-join-flow.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-extension-dev/references/dev-workflow.md",
-        "docs/ai/skills/love20-extension-dev/references/contract-and-test-checklist.md",
+        "docs/ai/skills/love20-tkm-extension-dev/references/dev-workflow.md",
+        "docs/ai/skills/love20-tkm-extension-dev/references/contract-and-test-checklist.md",
         "extension/src/ExtensionBaseRewardTokenJoin.sol",
         "extension/src/examples/ExampleTokenJoin.sol",
         "extension-lp/src/ExtensionLp.sol",
@@ -171,12 +171,12 @@
     {
       "id": "extension-dev-group-write-surface",
       "selected_skills": [
-        "love20-extension-dev"
+        "love20-tkm-extension-dev"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.extension-dev-group-write-surface.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-extension-dev/references/dev-workflow.md",
-        "docs/ai/skills/love20-extension-dev/references/contract-and-test-checklist.md",
+        "docs/ai/skills/love20-tkm-extension-dev/references/dev-workflow.md",
+        "docs/ai/skills/love20-tkm-extension-dev/references/contract-and-test-checklist.md",
         "extension-group/src/ExtensionGroupService.sol",
         "extension-group/src/interface/IGroupService.sol",
         "extension-group/test/ExtensionGroupService.t.sol",
@@ -198,12 +198,12 @@
     {
       "id": "frontend-trace-token-stat-card",
       "selected_skills": [
-        "love20-frontend-bridge"
+        "love20-tkm-frontend-bridge"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case10.frontend-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-frontend-bridge/references/frontend-map.md",
-        "docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md",
+        "docs/ai/skills/love20-tkm-frontend-bridge/references/frontend-map.md",
+        "docs/ai/skills/love20-tkm-frontend-bridge/references/data-loading-map.md",
         "periphery/src/LOVE20TokenViewer.sol",
         "interface-test/src/hooks/contracts/useLOVE20TokenViewer.ts"
       ],
@@ -220,12 +220,12 @@
     {
       "id": "frontend-dev-new-extension-plugin",
       "selected_skills": [
-        "love20-frontend-dev"
+        "love20-tkm-frontend-dev"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.frontend-dev-new-extension-plugin.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-frontend-dev/references/dev-workflow.md",
-        "docs/ai/skills/love20-frontend-dev/references/read-write-and-registration.md",
+        "docs/ai/skills/love20-tkm-frontend-dev/references/dev-workflow.md",
+        "docs/ai/skills/love20-tkm-frontend-dev/references/read-write-and-registration.md",
         "interface-test/docs/extension.md",
         "interface-test/src/abis/ExtensionLp.ts",
         "interface-test/src/abis/ExtensionLpFactory.ts",
@@ -253,12 +253,12 @@
     {
       "id": "frontend-dev-new-write-page",
       "selected_skills": [
-        "love20-frontend-dev"
+        "love20-tkm-frontend-dev"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.frontend-dev-new-write-page.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-frontend-dev/references/dev-workflow.md",
-        "docs/ai/skills/love20-frontend-dev/references/read-write-and-registration.md",
+        "docs/ai/skills/love20-tkm-frontend-dev/references/dev-workflow.md",
+        "docs/ai/skills/love20-tkm-frontend-dev/references/read-write-and-registration.md",
         "interface-test/src/lib/universalTransaction.ts",
         "interface-test/src/hooks/contracts/useLOVE20Join.ts",
         "interface-test/src/pages/acting/join.tsx",
@@ -278,12 +278,12 @@
     {
       "id": "integration-dev-extension-end-to-end",
       "selected_skills": [
-        "love20-integration-dev"
+        "love20-tkm-integration-dev"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.integration-dev-extension-end-to-end.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-integration-dev/references/integration-workflow.md",
-        "docs/ai/skills/love20-integration-dev/references/sync-points.md",
+        "docs/ai/skills/love20-tkm-integration-dev/references/integration-workflow.md",
+        "docs/ai/skills/love20-tkm-integration-dev/references/sync-points.md",
         "extension-lp/src/ExtensionLp.sol",
         "extension-lp/src/ExtensionLpFactory.sol",
         "extension-lp/script/network/thinkium70001_public/address.extension.lp.params",
@@ -306,12 +306,12 @@
     {
       "id": "integration-dev-viewer-and-log-sync",
       "selected_skills": [
-        "love20-integration-dev"
+        "love20-tkm-integration-dev"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.integration-dev-viewer-and-log-sync.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-integration-dev/references/integration-workflow.md",
-        "docs/ai/skills/love20-integration-dev/references/sync-points.md",
+        "docs/ai/skills/love20-tkm-integration-dev/references/integration-workflow.md",
+        "docs/ai/skills/love20-tkm-integration-dev/references/sync-points.md",
         "periphery/src/LOVE20RoundViewer.sol",
         "script/script/log/one_click_process.sh",
         "interface-test/src/hooks/contracts/useLOVE20RoundViewer.ts"
@@ -329,12 +329,12 @@
     {
       "id": "frontend-trace-stake-lp-flow",
       "selected_skills": [
-        "love20-frontend-bridge"
+        "love20-tkm-frontend-bridge"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case16.frontend-stake-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-frontend-bridge/references/data-loading-map.md",
-        "docs/ai/skills/love20-contract-playbooks/references/periphery-and-viewers.md",
+        "docs/ai/skills/love20-tkm-frontend-bridge/references/data-loading-map.md",
+        "docs/ai/skills/love20-tkm-contract-playbooks/references/periphery-and-viewers.md",
         "interface-test/src/hooks/composite/useStakeLpPageData.ts",
         "periphery/src/LOVE20Hub.sol"
       ],
@@ -351,12 +351,12 @@
     {
       "id": "navigator-fair-launch-source-of-truth",
       "selected_skills": [
-        "love20-navigator"
+        "love20-tkm-navigator"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.case1.response.md",
       "cited_files": [
         "docs/whitepaper/LOVE20协议设计.md",
-        "docs/ai/skills/love20-navigator/references/source-of-truth.md",
+        "docs/ai/skills/love20-tkm-navigator/references/source-of-truth.md",
         "core/src/interfaces/ILOVE20Launch.sol",
         "core/src/LOVE20Launch.sol"
       ],
@@ -373,11 +373,11 @@
     {
       "id": "navigator-routing-for-extension-question",
       "selected_skills": [
-        "love20-navigator"
+        "love20-tkm-navigator"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.case2.pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-navigator/references/repo-index.md",
+        "docs/ai/skills/love20-tkm-navigator/references/repo-index.md",
         "extension/README.md",
         "extension-group/src/ExtensionGroupAction.sol",
         "group/src/LOVE20Group.sol"
@@ -395,14 +395,14 @@
     {
       "id": "prompts-rewrite-vague-state-question",
       "selected_skills": [
-        "love20-prompts"
+        "love20-tkm-prompts"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case9.prompt-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-prompts/references/prompt-selection.md",
-        "docs/ai/skills/love20-prompts/references/interaction-state-and-debug-prompts.md",
-        "docs/ai/skills/love20-state-and-events/SKILL.md",
-        "docs/ai/skills/love20-frontend-bridge/SKILL.md"
+        "docs/ai/skills/love20-tkm-prompts/references/prompt-selection.md",
+        "docs/ai/skills/love20-tkm-prompts/references/interaction-state-and-debug-prompts.md",
+        "docs/ai/skills/love20-tkm-state-and-events/SKILL.md",
+        "docs/ai/skills/love20-tkm-frontend-bridge/SKILL.md"
       ],
       "judgement": {
         "must_cover": {
@@ -417,13 +417,13 @@
     {
       "id": "prompts-split-broad-request",
       "selected_skills": [
-        "love20-prompts"
+        "love20-tkm-prompts"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case18.prompts-split-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-prompts/references/prompt-selection.md",
-        "docs/ai/skills/love20-prompts/references/interaction-state-and-debug-prompts.md",
-        "docs/ai/skills/love20-prompts/references/protocol-and-architecture-prompts.md"
+        "docs/ai/skills/love20-tkm-prompts/references/prompt-selection.md",
+        "docs/ai/skills/love20-tkm-prompts/references/interaction-state-and-debug-prompts.md",
+        "docs/ai/skills/love20-tkm-prompts/references/protocol-and-architecture-prompts.md"
       ],
       "judgement": {
         "must_cover": {
@@ -438,12 +438,12 @@
     {
       "id": "test-release-extension-change-matrix",
       "selected_skills": [
-        "love20-test-and-release"
+        "love20-tkm-test-and-release"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.test-release-extension-change-matrix.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-test-and-release/references/test-matrix.md",
-        "docs/ai/skills/love20-test-and-release/references/release-checklist.md",
+        "docs/ai/skills/love20-tkm-test-and-release/references/test-matrix.md",
+        "docs/ai/skills/love20-tkm-test-and-release/references/release-checklist.md",
         "extension-lp/test/ExtensionLp.t.sol",
         "extension-lp/test/integration/Flow.t.sol",
         "extension-lp/script/network/thinkium70001_public/address.extension.lp.params",
@@ -463,12 +463,12 @@
     {
       "id": "test-release-core-viewer-rollout",
       "selected_skills": [
-        "love20-test-and-release"
+        "love20-tkm-test-and-release"
       ],
       "response_file": "docs/ai/evals/runs/demo-walkthrough.test-release-core-viewer-rollout.response.md",
       "cited_files": [
-        "docs/ai/skills/love20-test-and-release/references/test-matrix.md",
-        "docs/ai/skills/love20-test-and-release/references/release-checklist.md",
+        "docs/ai/skills/love20-tkm-test-and-release/references/test-matrix.md",
+        "docs/ai/skills/love20-tkm-test-and-release/references/release-checklist.md",
         "core/test/integration/Flow.t.sol",
         "periphery/test/LOVE20RoundViewer.t.sol",
         "core/script/network/thinkium70001_public/address.params",
@@ -488,12 +488,12 @@
     {
       "id": "runbook-eth-contribute-invalid-recipient",
       "selected_skills": [
-        "love20-runbooks"
+        "love20-tkm-runbooks"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case8.runbook-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-runbooks/references/evidence-sources.md",
-        "docs/ai/skills/love20-runbooks/references/launch-and-stake-runbooks.md",
+        "docs/ai/skills/love20-tkm-runbooks/references/evidence-sources.md",
+        "docs/ai/skills/love20-tkm-runbooks/references/launch-and-stake-runbooks.md",
         "periphery/test/LOVE20Hub.contributeWithETH.t.sol",
         "periphery/src/LOVE20Hub.sol"
       ],
@@ -510,11 +510,11 @@
     {
       "id": "runbook-group-name-invisible-space",
       "selected_skills": [
-        "love20-runbooks"
+        "love20-tkm-runbooks"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case17.runbook-group-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-runbooks/references/extensions-and-groups-runbooks.md",
+        "docs/ai/skills/love20-tkm-runbooks/references/extensions-and-groups-runbooks.md",
         "group/test/UnicodeWhitespaceTest.t.sol",
         "group/test/LOVE20Group.t.sol"
       ],
@@ -531,12 +531,12 @@
     {
       "id": "selectors-decode-custom-error",
       "selected_skills": [
-        "love20-selectors-and-errors"
+        "love20-tkm-selectors-and-errors"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case6.selector-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-selectors-and-errors/references/generated-error-selector-index.md",
-        "docs/ai/skills/love20-selectors-and-errors/references/decoding-workflow.md",
+        "docs/ai/skills/love20-tkm-selectors-and-errors/references/generated-error-selector-index.md",
+        "docs/ai/skills/love20-tkm-selectors-and-errors/references/decoding-workflow.md",
         "interface-test/src/errors/contractErrorParser.ts",
         "interface-test/src/errors/unifiedErrorMap.ts"
       ],
@@ -553,11 +553,11 @@
     {
       "id": "selectors-map-chinese-error-message",
       "selected_skills": [
-        "love20-selectors-and-errors"
+        "love20-tkm-selectors-and-errors"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case12.selector-ui-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-selectors-and-errors/references/source-files.md",
+        "docs/ai/skills/love20-tkm-selectors-and-errors/references/source-files.md",
         "interface-test/src/errors/contractErrorParser.ts",
         "interface-test/src/errors/unifiedErrorMap.ts",
         "interface-test/src/errors/errorMessages.ts"
@@ -575,12 +575,12 @@
     {
       "id": "state-govdata-read-path",
       "selected_skills": [
-        "love20-state-and-events"
+        "love20-tkm-state-and-events"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case5.state-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-state-and-events/references/entity-lookup-playbooks.md",
-        "docs/ai/skills/love20-state-and-events/references/generated-state-event-index.md",
+        "docs/ai/skills/love20-tkm-state-and-events/references/entity-lookup-playbooks.md",
+        "docs/ai/skills/love20-tkm-state-and-events/references/generated-state-event-index.md",
         "periphery/src/LOVE20RoundViewer.sol",
         "interface-test/src/hooks/composite/useMyGovData.ts"
       ],
@@ -597,12 +597,12 @@
     {
       "id": "state-reward-and-flow-history",
       "selected_skills": [
-        "love20-state-and-events"
+        "love20-tkm-state-and-events"
       ],
       "response_file": "docs/ai/evals/runs/demo-three-states.case11.history-pass.md",
       "cited_files": [
-        "docs/ai/skills/love20-state-and-events/references/event-and-indexing.md",
-        "docs/ai/skills/love20-state-and-events/references/generated-state-event-index.md",
+        "docs/ai/skills/love20-tkm-state-and-events/references/event-and-indexing.md",
+        "docs/ai/skills/love20-tkm-state-and-events/references/generated-state-event-index.md",
         "script/script/log/sql/stat/flow.sql",
         "script/script/log/sql/init/02_views.sql"
       ],

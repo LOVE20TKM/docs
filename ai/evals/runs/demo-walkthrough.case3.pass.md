@@ -9,7 +9,7 @@ LOVE20 的治理生命周期不是单轮串行，而是滚动流水线：
 关键入口：
 
 - `docs/whitepaper/LOVE20协议设计.md`
-- `docs/ai/skills/love20-core-protocol/references/governance-lifecycle.md`
+- `docs/ai/skills/love20-tkm-core-protocol/references/governance-lifecycle.md`
 - `core/src/interfaces/IPhase.sol`
 - `core/src/LOVE20Submit.sol`
 - `core/src/LOVE20Vote.sol`

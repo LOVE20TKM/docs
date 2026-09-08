@@ -49,7 +49,7 @@
 ### B 组 Prompt
 
 ```text
-Use $love20-core-protocol and $love20-navigator.
+Use $love20-tkm-core-protocol and $love20-tkm-navigator.
 
 请解释 LOVE20 的三阶段治理生命周期，从 stake、submit、vote、join、verify、mint 一直到奖励兑现。要求同时说明协议意图和合约里的真实行为。
 ```
@@ -57,7 +57,7 @@ Use $love20-core-protocol and $love20-navigator.
 ### C 组 Prompt
 
 ```text
-Use $love20-core-protocol and $love20-navigator.
+Use $love20-tkm-core-protocol and $love20-tkm-navigator.
 
 请解释 LOVE20 的三阶段治理生命周期，从 stake、submit、vote、join、verify、mint 一直到奖励兑现。要求同时说明协议意图和合约里的真实行为。
 
@@ -90,7 +90,7 @@ Use $love20-core-protocol and $love20-navigator.
 ### B 组 Prompt
 
 ```text
-Use $love20-contract-playbooks and $love20-core-protocol.
+Use $love20-tkm-contract-playbooks and $love20-tkm-core-protocol.
 
 我想让一个用户发起 LOVE20 子币公平发射。请给我精确的交互手册：需要哪些合约、函数、批准、前置条件、时间限制，以及能复用哪些 cast 脚本。
 ```
@@ -98,7 +98,7 @@ Use $love20-contract-playbooks and $love20-core-protocol.
 ### C 组 Prompt
 
 ```text
-Use $love20-contract-playbooks and $love20-core-protocol.
+Use $love20-tkm-contract-playbooks and $love20-tkm-core-protocol.
 
 我想让一个用户发起 LOVE20 子币公平发射。请给我精确的交互手册：需要哪些合约、函数、批准、前置条件、时间限制，以及能复用哪些 cast 脚本。
 
@@ -131,7 +131,7 @@ LOVE20 页面上某个 token 的统计卡片数据是从哪里来的？请从页
 ### B 组 Prompt
 
 ```text
-Use $love20-frontend-bridge and $love20-state-and-events.
+Use $love20-tkm-frontend-bridge and $love20-tkm-state-and-events.
 
 LOVE20 页面上某个 token 的统计卡片数据是从哪里来的？请从页面或 hook 一直追到 viewer/合约函数，并指出环境变量和 ABI 入口。
 ```
@@ -139,7 +139,7 @@ LOVE20 页面上某个 token 的统计卡片数据是从哪里来的？请从页
 ### C 组 Prompt
 
 ```text
-Use $love20-frontend-bridge and $love20-state-and-events.
+Use $love20-tkm-frontend-bridge and $love20-tkm-state-and-events.
 
 LOVE20 页面上某个 token 的统计卡片数据是从哪里来的？请从页面或 hook 一直追到 viewer/合约函数，并指出环境变量和 ABI 入口。
 
@@ -172,7 +172,7 @@ LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 Invalid recipien
 ### B 组 Prompt
 
 ```text
-Use $love20-runbooks and $love20-contract-playbooks.
+Use $love20-tkm-runbooks and $love20-tkm-contract-playbooks.
 
 LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 Invalid recipient address。请给我最短的排查路径和该先看的测试/合约文件。
 ```
@@ -180,7 +180,7 @@ LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 Invalid recipien
 ### C 组 Prompt
 
 ```text
-Use $love20-runbooks and $love20-contract-playbooks.
+Use $love20-tkm-runbooks and $love20-tkm-contract-playbooks.
 
 LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 Invalid recipient address。请给我最短的排查路径和该先看的测试/合约文件。
 
@@ -213,7 +213,7 @@ LOVE20Hub 的 contributeFirstTokenWithETH 失败了，报的是 Invalid recipien
 ### B 组 Prompt
 
 ```text
-Use $love20-selectors-and-errors and $love20-runbooks.
+Use $love20-tkm-selectors-and-errors and $love20-tkm-runbooks.
 
 我有一个 LOVE20 回滚选择器 0xa748da06。请告诉我它对应什么错误、可能来自哪些合约、前端会怎么翻译它。
 ```
@@ -221,7 +221,7 @@ Use $love20-selectors-and-errors and $love20-runbooks.
 ### C 组 Prompt
 
 ```text
-Use $love20-selectors-and-errors and $love20-runbooks.
+Use $love20-tkm-selectors-and-errors and $love20-tkm-runbooks.
 
 我有一个 LOVE20 回滚选择器 0xa748da06。请告诉我它对应什么错误、可能来自哪些合约、前端会怎么翻译它。
 
@@ -254,7 +254,7 @@ Use $love20-selectors-and-errors and $love20-runbooks.
 ### B 组 Prompt
 
 ```text
-Use $love20-prompts, $love20-core-protocol, $love20-contract-playbooks, and $love20-runbooks.
+Use $love20-tkm-prompts, $love20-tkm-core-protocol, $love20-tkm-contract-playbooks, and $love20-tkm-runbooks.
 
 把这个大需求拆成 3 个更精确的 LOVE20 prompts：帮我理解这个协议、告诉我怎么交互、顺便排查页面为什么失败。每个 prompt 都要说明适合搭配哪个 LOVE20 skill。
 ```
@@ -262,7 +262,7 @@ Use $love20-prompts, $love20-core-protocol, $love20-contract-playbooks, and $lov
 ### C 组 Prompt
 
 ```text
-Use $love20-prompts, $love20-core-protocol, $love20-contract-playbooks, and $love20-runbooks.
+Use $love20-tkm-prompts, $love20-tkm-core-protocol, $love20-tkm-contract-playbooks, and $love20-tkm-runbooks.
 
 把这个大需求拆成 3 个更精确的 LOVE20 prompts：帮我理解这个协议、告诉我怎么交互、顺便排查页面为什么失败。每个 prompt 都要说明适合搭配哪个 LOVE20 skill。
 

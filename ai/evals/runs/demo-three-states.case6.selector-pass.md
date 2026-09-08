@@ -12,7 +12,7 @@
 
 推荐解码路径：
 
-1. 先查 `docs/ai/skills/love20-selectors-and-errors/references/generated-error-selector-index.md`
+1. 先查 `docs/ai/skills/love20-tkm-selectors-and-errors/references/generated-error-selector-index.md`
 2. 再看 frontend 解码层：
    - `interface-test/src/errors/contractErrorParser.ts`
    - `interface-test/src/errors/unifiedErrorMap.ts`

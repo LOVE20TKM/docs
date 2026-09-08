@@ -4,7 +4,7 @@
 
 先看：
 
-1. `docs/ai/skills/love20-runbooks/references/extensions-and-groups-runbooks.md`
+1. `docs/ai/skills/love20-tkm-runbooks/references/extensions-and-groups-runbooks.md`
 2. `group/test/UnicodeWhitespaceTest.t.sol`
 3. `group/test/LOVE20Group.t.sol`
 
